@@ -9,6 +9,7 @@ class Territorio{
     int produtos;
     int ouro;
     int pontos;
+    int oooo;
 
     public:
     Territorio();
