@@ -13,7 +13,8 @@
 using namespace std;
 
 class Imperio {
-    vector<Territorio> territorios;
+    vector<Territorio> territorios; // todos os territorios existentes
+    vector<Territorio> territConquistados; // territorios conqusitados pelo imperio
     vector<string> nomes{"Planicie", "Montanha", "Fortaleza", "Mina", "Duna", "Castelo", "Refugio dos Piratas", "Pescaria"};
     int banco;
     int tecnologia[5][2];
@@ -23,6 +24,10 @@ public:
     string getAsString(string str) const;
     vector<Territorio> getTerritorios() const;
     vector<string> getNomesTerritorios() const;
+    void mostra(string nome) const;
+    void mostra() const;
+    bool criaTerritorios(string palavra,int n);
+
 
 };
 

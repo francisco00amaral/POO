@@ -4,6 +4,9 @@
 
 #include "Utils.h"
 
+
+
+
 //comandos pre jogo
 bool cria(Imperio &ip, istringstream &iss) {
     string palavra;
@@ -25,8 +28,7 @@ bool cria(Imperio &ip, istringstream &iss) {
             return false;
         }
 
-    return ip.criaTerritorios(palavra, val);//este método deve ser do tipo bool
-    //FALTA IMPLEMENTAR ISTO
+    return ip.criaTerritorios(palavra, val);
 }
 
 bool carrega(Imperio &ip, istringstream &iss){
@@ -56,14 +58,18 @@ void lista(Imperio &ip, istringstream &iss){
     string palavra;
     bool flag = false;
 
-    if ((iss >> palavra).fail())//verifica se existe o tipo de territorio pedido
-        for(auto x : ip.getNomesTerritorios())//percorre vetor com nomes
-            if(palavra == x) {//compara nome com os existentes
+    if ((iss >> palavra).fail()){//verifica se existe o tipo de territorio pedido
+        for(auto x : ip.getNomesTerritorios()){//percorre vetor com nomes
+            if(palavra == x){//compara nome com os existentes
+                ip.mostra(palavra);
                 flag = true;
             }
-    if(flag){
+        }
+    }
+    if(flag == false){
         cout << "Nao ha territorios com esse nome.(lista)" << endl;
-        return;
+        cout << "Listando o mundo todo: " << endl;
+        ip.mostra();
     }
 }
 
