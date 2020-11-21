@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/3exe_POO/TP/main.cpp
+iostream
+-
+fstream
+-
+sstream
+-
+src/dados/h/Territorio.h
+D:/3exe_POO/TP/src/dados/h/Territorio.h
+
+D:/3exe_POO/TP/src/dados/h/Territorio.h
+iostream
+-
+string
+-
+sstream
+-
+vector
+-
+
