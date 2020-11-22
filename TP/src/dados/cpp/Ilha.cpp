@@ -16,7 +16,6 @@ Ilha::Ilha(string nome) : Territorio(nome + to_string(count++)) {
         this->ouro = 0;
         this->resistencia = 9;
         this->produtos = 2; // em cada turno do primeiro ano produz 2 unidades de prod, no segundo produz 4;
-        this->
     }
     if(nome.find("Refugio") != string::npos){
         this->ouro = 1;

@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/3exe_POO/TP/main.cpp" "D:/3exe_POO/TP/cmake-build-debug/CMakeFiles/TP.dir/main.cpp.obj"
-  "D:/3exe_POO/TP/src/dados/cpp/Continente.cpp" "D:/3exe_POO/TP/cmake-build-debug/CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.obj"
-  "D:/3exe_POO/TP/src/dados/cpp/Ilha.cpp" "D:/3exe_POO/TP/cmake-build-debug/CMakeFiles/TP.dir/src/dados/cpp/Ilha.cpp.obj"
-  "D:/3exe_POO/TP/src/dados/cpp/Imperio.cpp" "D:/3exe_POO/TP/cmake-build-debug/CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj"
-  "D:/3exe_POO/TP/src/dados/cpp/Territorio.cpp" "D:/3exe_POO/TP/cmake-build-debug/CMakeFiles/TP.dir/src/dados/cpp/Territorio.cpp.obj"
-  "D:/3exe_POO/TP/src/funcoes/Utils.cpp" "D:/3exe_POO/TP/cmake-build-debug/CMakeFiles/TP.dir/src/funcoes/Utils.cpp.obj"
+  "D:/3exe_POO/TP_git/TP/main.cpp" "D:/3exe_POO/TP_git/TP/cmake-build-debug/CMakeFiles/TP.dir/main.cpp.obj"
+  "D:/3exe_POO/TP_git/TP/src/dados/cpp/Continente.cpp" "D:/3exe_POO/TP_git/TP/cmake-build-debug/CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.obj"
+  "D:/3exe_POO/TP_git/TP/src/dados/cpp/Ilha.cpp" "D:/3exe_POO/TP_git/TP/cmake-build-debug/CMakeFiles/TP.dir/src/dados/cpp/Ilha.cpp.obj"
+  "D:/3exe_POO/TP_git/TP/src/dados/cpp/Imperio.cpp" "D:/3exe_POO/TP_git/TP/cmake-build-debug/CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj"
+  "D:/3exe_POO/TP_git/TP/src/dados/cpp/Territorio.cpp" "D:/3exe_POO/TP_git/TP/cmake-build-debug/CMakeFiles/TP.dir/src/dados/cpp/Territorio.cpp.obj"
+  "D:/3exe_POO/TP_git/TP/src/funcoes/Utils.cpp" "D:/3exe_POO/TP_git/TP/cmake-build-debug/CMakeFiles/TP.dir/src/funcoes/Utils.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

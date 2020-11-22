@@ -62,10 +62,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.1.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\3exe_POO\TP
+CMAKE_SOURCE_DIR = D:\3exe_POO\TP_git\TP
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\3exe_POO\TP\cmake-build-debug
+CMAKE_BINARY_DIR = D:\3exe_POO\TP_git\TP\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/TP.dir/depend.make
@@ -78,81 +78,81 @@ include CMakeFiles/TP.dir/flags.make
 
 CMakeFiles/TP.dir/main.cpp.obj: CMakeFiles/TP.dir/flags.make
 CMakeFiles/TP.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\3exe_POO\TP\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TP.dir/main.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP.dir\main.cpp.obj -c D:\3exe_POO\TP\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\3exe_POO\TP_git\TP\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TP.dir/main.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP.dir\main.cpp.obj -c D:\3exe_POO\TP_git\TP\main.cpp
 
 CMakeFiles/TP.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP.dir/main.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3exe_POO\TP\main.cpp > CMakeFiles\TP.dir\main.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3exe_POO\TP_git\TP\main.cpp > CMakeFiles\TP.dir\main.cpp.i
 
 CMakeFiles/TP.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP.dir/main.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3exe_POO\TP\main.cpp -o CMakeFiles\TP.dir\main.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3exe_POO\TP_git\TP\main.cpp -o CMakeFiles\TP.dir\main.cpp.s
 
 CMakeFiles/TP.dir/src/dados/cpp/Territorio.cpp.obj: CMakeFiles/TP.dir/flags.make
 CMakeFiles/TP.dir/src/dados/cpp/Territorio.cpp.obj: ../src/dados/cpp/Territorio.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\3exe_POO\TP\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TP.dir/src/dados/cpp/Territorio.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP.dir\src\dados\cpp\Territorio.cpp.obj -c D:\3exe_POO\TP\src\dados\cpp\Territorio.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\3exe_POO\TP_git\TP\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TP.dir/src/dados/cpp/Territorio.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP.dir\src\dados\cpp\Territorio.cpp.obj -c D:\3exe_POO\TP_git\TP\src\dados\cpp\Territorio.cpp
 
 CMakeFiles/TP.dir/src/dados/cpp/Territorio.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP.dir/src/dados/cpp/Territorio.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3exe_POO\TP\src\dados\cpp\Territorio.cpp > CMakeFiles\TP.dir\src\dados\cpp\Territorio.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3exe_POO\TP_git\TP\src\dados\cpp\Territorio.cpp > CMakeFiles\TP.dir\src\dados\cpp\Territorio.cpp.i
 
 CMakeFiles/TP.dir/src/dados/cpp/Territorio.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP.dir/src/dados/cpp/Territorio.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3exe_POO\TP\src\dados\cpp\Territorio.cpp -o CMakeFiles\TP.dir\src\dados\cpp\Territorio.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3exe_POO\TP_git\TP\src\dados\cpp\Territorio.cpp -o CMakeFiles\TP.dir\src\dados\cpp\Territorio.cpp.s
 
 CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.obj: CMakeFiles/TP.dir/flags.make
 CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.obj: ../src/dados/cpp/Continente.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\3exe_POO\TP\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP.dir\src\dados\cpp\Continente.cpp.obj -c D:\3exe_POO\TP\src\dados\cpp\Continente.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\3exe_POO\TP_git\TP\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP.dir\src\dados\cpp\Continente.cpp.obj -c D:\3exe_POO\TP_git\TP\src\dados\cpp\Continente.cpp
 
 CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3exe_POO\TP\src\dados\cpp\Continente.cpp > CMakeFiles\TP.dir\src\dados\cpp\Continente.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3exe_POO\TP_git\TP\src\dados\cpp\Continente.cpp > CMakeFiles\TP.dir\src\dados\cpp\Continente.cpp.i
 
 CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3exe_POO\TP\src\dados\cpp\Continente.cpp -o CMakeFiles\TP.dir\src\dados\cpp\Continente.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3exe_POO\TP_git\TP\src\dados\cpp\Continente.cpp -o CMakeFiles\TP.dir\src\dados\cpp\Continente.cpp.s
 
 CMakeFiles/TP.dir/src/dados/cpp/Ilha.cpp.obj: CMakeFiles/TP.dir/flags.make
 CMakeFiles/TP.dir/src/dados/cpp/Ilha.cpp.obj: ../src/dados/cpp/Ilha.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\3exe_POO\TP\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TP.dir/src/dados/cpp/Ilha.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP.dir\src\dados\cpp\Ilha.cpp.obj -c D:\3exe_POO\TP\src\dados\cpp\Ilha.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\3exe_POO\TP_git\TP\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TP.dir/src/dados/cpp/Ilha.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP.dir\src\dados\cpp\Ilha.cpp.obj -c D:\3exe_POO\TP_git\TP\src\dados\cpp\Ilha.cpp
 
 CMakeFiles/TP.dir/src/dados/cpp/Ilha.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP.dir/src/dados/cpp/Ilha.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3exe_POO\TP\src\dados\cpp\Ilha.cpp > CMakeFiles\TP.dir\src\dados\cpp\Ilha.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3exe_POO\TP_git\TP\src\dados\cpp\Ilha.cpp > CMakeFiles\TP.dir\src\dados\cpp\Ilha.cpp.i
 
 CMakeFiles/TP.dir/src/dados/cpp/Ilha.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP.dir/src/dados/cpp/Ilha.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3exe_POO\TP\src\dados\cpp\Ilha.cpp -o CMakeFiles\TP.dir\src\dados\cpp\Ilha.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3exe_POO\TP_git\TP\src\dados\cpp\Ilha.cpp -o CMakeFiles\TP.dir\src\dados\cpp\Ilha.cpp.s
 
 CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj: CMakeFiles/TP.dir/flags.make
 CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj: ../src/dados/cpp/Imperio.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\3exe_POO\TP\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP.dir\src\dados\cpp\Imperio.cpp.obj -c D:\3exe_POO\TP\src\dados\cpp\Imperio.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\3exe_POO\TP_git\TP\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP.dir\src\dados\cpp\Imperio.cpp.obj -c D:\3exe_POO\TP_git\TP\src\dados\cpp\Imperio.cpp
 
 CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3exe_POO\TP\src\dados\cpp\Imperio.cpp > CMakeFiles\TP.dir\src\dados\cpp\Imperio.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3exe_POO\TP_git\TP\src\dados\cpp\Imperio.cpp > CMakeFiles\TP.dir\src\dados\cpp\Imperio.cpp.i
 
 CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3exe_POO\TP\src\dados\cpp\Imperio.cpp -o CMakeFiles\TP.dir\src\dados\cpp\Imperio.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3exe_POO\TP_git\TP\src\dados\cpp\Imperio.cpp -o CMakeFiles\TP.dir\src\dados\cpp\Imperio.cpp.s
 
 CMakeFiles/TP.dir/src/funcoes/Utils.cpp.obj: CMakeFiles/TP.dir/flags.make
 CMakeFiles/TP.dir/src/funcoes/Utils.cpp.obj: ../src/funcoes/Utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\3exe_POO\TP\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TP.dir/src/funcoes/Utils.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP.dir\src\funcoes\Utils.cpp.obj -c D:\3exe_POO\TP\src\funcoes\Utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\3exe_POO\TP_git\TP\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/TP.dir/src/funcoes/Utils.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP.dir\src\funcoes\Utils.cpp.obj -c D:\3exe_POO\TP_git\TP\src\funcoes\Utils.cpp
 
 CMakeFiles/TP.dir/src/funcoes/Utils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP.dir/src/funcoes/Utils.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3exe_POO\TP\src\funcoes\Utils.cpp > CMakeFiles\TP.dir\src\funcoes\Utils.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3exe_POO\TP_git\TP\src\funcoes\Utils.cpp > CMakeFiles\TP.dir\src\funcoes\Utils.cpp.i
 
 CMakeFiles/TP.dir/src/funcoes/Utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP.dir/src/funcoes/Utils.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3exe_POO\TP\src\funcoes\Utils.cpp -o CMakeFiles\TP.dir\src\funcoes\Utils.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3exe_POO\TP_git\TP\src\funcoes\Utils.cpp -o CMakeFiles\TP.dir\src\funcoes\Utils.cpp.s
 
 # Object files for target TP
 TP_OBJECTS = \
@@ -176,7 +176,7 @@ TP.exe: CMakeFiles/TP.dir/build.make
 TP.exe: CMakeFiles/TP.dir/linklibs.rsp
 TP.exe: CMakeFiles/TP.dir/objects1.rsp
 TP.exe: CMakeFiles/TP.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\3exe_POO\TP\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable TP.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\3exe_POO\TP_git\TP\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable TP.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\TP.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -189,6 +189,6 @@ CMakeFiles/TP.dir/clean:
 .PHONY : CMakeFiles/TP.dir/clean
 
 CMakeFiles/TP.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\3exe_POO\TP D:\3exe_POO\TP D:\3exe_POO\TP\cmake-build-debug D:\3exe_POO\TP\cmake-build-debug D:\3exe_POO\TP\cmake-build-debug\CMakeFiles\TP.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\3exe_POO\TP_git\TP D:\3exe_POO\TP_git\TP D:\3exe_POO\TP_git\TP\cmake-build-debug D:\3exe_POO\TP_git\TP\cmake-build-debug D:\3exe_POO\TP_git\TP\cmake-build-debug\CMakeFiles\TP.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/TP.dir/depend
 
