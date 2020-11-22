@@ -26,4 +26,7 @@ void runComando(Imperio& ip);//corre comandos do jogo
 //comandos do jogo
 bool conquista(Imperio &ip, istringstream &iss);
 
+// funcao de teste , pode dar jeito;
+void MostraConquistados(Imperio &ip);
+
 #endif //TP_UTILS_H

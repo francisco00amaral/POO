@@ -27,6 +27,9 @@ public:
     void mostra(string nome) const;
     void mostra() const;
     bool criaTerritorios(string palavra,int n);
+    void conquer(Territorio t){territConquistados.push_back(t);}
+    vector <Territorio> getConquistados() const{ return territConquistados;}
+
 
 
 };

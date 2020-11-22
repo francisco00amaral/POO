@@ -14,7 +14,7 @@ using namespace std;
 
 #include "Territorio.h"
 
-class Ilha : protected Territorio{
+class Ilha : public Territorio{
 
 public:
     Ilha(string nome);

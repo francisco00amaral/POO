@@ -3,6 +3,8 @@
 //
 
 #include "../h/Imperio.h"
+#include "../h/Continente.h"
+#include "../h/Ilha.h"
 
 string Imperio::getAsString() const {
     ostringstream os;
@@ -18,15 +20,18 @@ vector<Territorio> Imperio::getTerritorios() const{
     return territorios;
 }
 
-void mostra(string nome) const{
+
+void Imperio::mostra(string nome) const{
+    cout << "Entrou na func" << endl;
     for(auto x : territorios){
-        if(x.getNome() == nome){
+        if(x.getNome() == nome){ // N FUNCIONA PORQUE O NOME DA CENA É DUNA1 E ELE RECEBE COMO PARAMETRO DUNA;
+            cout << "Abcd" << endl;
             cout << x.getAsString() << endl; 
             }
     }
 }
 
-void mostra() const{
+void Imperio::mostra() const{
     for(auto x : territorios){
            cout << x.getAsString() << endl; 
     }
@@ -48,7 +53,7 @@ string Imperio::getAsString(string str) const {
     return os.str();
 }
 
-bool criaTerritorios(string palavra,int n){
+bool Imperio::criaTerritorios(string palavra,int n){
     for(int i=0;i<n;i++){
         if(palavra == "Pescaria" || palavra == "Refugio dos Piratas"){
             Ilha t(palavra);

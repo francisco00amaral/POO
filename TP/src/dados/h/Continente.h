@@ -13,7 +13,7 @@ using namespace std;
 
 #include "Territorio.h"
 
-class Continente : protected Territorio{
+class Continente : public Territorio{
 
 public:
     Continente(string nome);
