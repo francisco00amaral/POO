@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/cpp/Ilha.cpp
+../h/Ilha.h
+C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Ilha.h
+
+C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Ilha.h
+iostream
+-
+string
+-
+sstream
+-
+vector
+-
+Territorio.h
+C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Territorio.h
+
 C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Imperio.h
 iostream
 -

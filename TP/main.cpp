@@ -15,24 +15,13 @@ int main() {
     string palavra;
     Imperio ip;
 
-    /* Territorio a;
-
-    cout << a.getAsString() << endl;
-
-    Continente b("Mina");
-    Continente c("Mina");
-        Continente d("Mina");
-    Ilha e("Pescaria");
-    Ilha f("Pescaria");
-    cout << e.getAsString();
-    cout << f.getAsString();
-        cout << b.getAsString();
-    cout << d.getAsString();
-
-    cout << c.getAsString(); */
+    ip.inicial(); // serve para adicionar o Territorio inicial aos vetor de territoriso total e conquistados
+    // interpretacao que tive do enunciado é que ele começa com o territorio incial já "conquistado"
 
 
     istringstream iss;
+
+
 
     while(palavra != "exit"){
         cout << "Consola inicial do jogo.\n"
@@ -52,7 +41,7 @@ int main() {
         } else if(palavra == "carrega"){
             carrega(ip, iss);
         }else if(palavra == "start"){
-            // startJogo(ip);
+            startJogo(ip);
         }
         else if(palavra == "conquista"){
             conquista(ip,iss);

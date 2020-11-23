@@ -16,9 +16,11 @@ using namespace std;
 
 //comandos pre jogo
 bool cria(Imperio &ip, istringstream &iss);
+void mostraNomes(Imperio &ip);
 bool carrega(Imperio &ip, istringstream &iss);
 void lista(Imperio &ip, istringstream &iss);
 void startJogo(Imperio &ip);
+
 
 //auxiliar jogo
 void runComando(Imperio& ip);//corre comandos do jogo

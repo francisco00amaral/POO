@@ -5,9 +5,9 @@
 #include "../h/Territorio.h"
 
 
-static int count = 0;
+// static int count = 0;
 
-Territorio::Territorio(string nome) : nome(nome) {
+Territorio::Territorio(const string &nome) : nome(nome) {
     this->ouro = 0;
     this->resistencia = 9;
     this->produtos = 0;

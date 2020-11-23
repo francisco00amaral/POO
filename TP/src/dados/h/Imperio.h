@@ -21,18 +21,20 @@ class Imperio {
     int forcaMilitar;
 public:
     string getAsString() const;
-    string getAsString(string str) const;
+    string getAsString(const string &str) const;
     vector<Territorio> getTerritorios() const;
     vector<string> getNomesTerritorios() const;
-    void mostra(string nome) const;
+    void mostra(const string &nome) const;
     void mostra() const;
-    bool criaTerritorios(string palavra,int n);
+    bool criaTerritorios(const string &palavra,int n);
     void conquer(Territorio t){territConquistados.push_back(t);}
     vector <Territorio> getConquistados() const{ return territConquistados;}
+    void inicial();
 
 
 
-};
+
+    };
 
 
 #endif //TP_IMPERIO_H

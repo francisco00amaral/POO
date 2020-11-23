@@ -6,9 +6,11 @@
 #include "../h/Continente.h"
 #include "../h/Ilha.h"
 
+// for autos com const &?
+
 string Imperio::getAsString() const {
     ostringstream os;
-    for(auto x : territorios){
+    for(const auto &x : territorios){
         os << x.getAsString();
         os << endl;
     }
@@ -21,9 +23,8 @@ vector<Territorio> Imperio::getTerritorios() const{
 }
 
 
-void Imperio::mostra(string nome) const{
-    cout << "Entrou na func" << endl;
-    for(auto x : territorios){
+void Imperio::mostra(const string &nome) const{
+    for(const auto &x : territorios){
         if(x.getNome() == nome){ // N FUNCIONA PORQUE O NOME DA CENA É DUNA1 E ELE RECEBE COMO PARAMETRO DUNA;
             cout << "Abcd" << endl;
             cout << x.getAsString() << endl; 
@@ -32,7 +33,7 @@ void Imperio::mostra(string nome) const{
 }
 
 void Imperio::mostra() const{
-    for(auto x : territorios){
+    for(const auto &x : territorios){
            cout << x.getAsString() << endl; 
     }
 }
@@ -42,10 +43,10 @@ vector<string> Imperio::getNomesTerritorios() const {
     return nomes;
 }
 
-string Imperio::getAsString(string str) const {
+string Imperio::getAsString(const string &str) const {
     ostringstream os;
-    for(auto x : territorios){
-        if(x.getNome().compare(str)){
+    for(const auto &x : territorios){
+        if(x.getNome() == str){
             os << x.getAsString();
             os << endl;
         }
@@ -53,7 +54,7 @@ string Imperio::getAsString(string str) const {
     return os.str();
 }
 
-bool Imperio::criaTerritorios(string palavra,int n){
+bool Imperio::criaTerritorios(const string &palavra,int n){
     for(int i=0;i<n;i++){
         if(palavra == "Pescaria" || palavra == "Refugio dos Piratas"){
             Ilha t(palavra);
@@ -65,4 +66,11 @@ bool Imperio::criaTerritorios(string palavra,int n){
         }
     }
     return true;
+}
+
+// metodo para quando o jogo começa adicionar o territorio inicial ao vetor de territorios
+void Imperio::inicial(){
+    Territorio a;
+    territorios.push_back(a);
+    territConquistados.push_back(a);
 }

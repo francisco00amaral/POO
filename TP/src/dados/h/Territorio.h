@@ -19,7 +19,7 @@ protected:
     int ouro;
     int pontos;
 public:
-    Territorio(string nome = "Inicial");
+    Territorio(const string &nome = "Inicial");
     string getNome() const{return nome;}
     int getRes() const{return resistencia;}
     int getOuro() const{return ouro;}

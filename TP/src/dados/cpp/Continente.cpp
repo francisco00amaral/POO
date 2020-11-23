@@ -6,7 +6,7 @@
 
 static int count = 1;
 
-Continente::Continente(string nome) : Territorio(nome + to_string(count++)) {
+Continente::Continente(const string& nome) : Territorio(nome + to_string(count++)) {
 
     this->pontos = 1;
 
