@@ -7,8 +7,6 @@
 //comandos pre jogo
 bool cria(Imperio &ip, istringstream &iss){
 
-    cout << "VERIFICAR REFUGIO PIRATAS" << endl;
-
     mostraNomes(ip);
     string palavra;
     bool flag = false;
@@ -68,20 +66,17 @@ bool carrega(Imperio &ip, istringstream &iss){
 void lista(Imperio &ip, istringstream &iss) {
     string palavra;
 
-    iss >> palavra;
-
-    cout << "VERIFICAR LOGICA" << endl;
-
-    if ((iss >> palavra).good()) {//garante que e introduzido uma string;
-        for (const auto &x : ip.getNomesTerritorios()) { // percorre vetor com nomes
+    if (!(iss >> palavra).fail()) {//garante que e introduzido uma string;
+        for (const auto &x : ip.getNomesTerritorios()) { // verifica se nome passado existe
             if (palavra == x) { // / compara nome passado por argumento com os existentes
-                ip.mostra(palavra);
+                ip.mostra(palavra);//envia tipo de territorio
             }
         }
-    }
-    else
+    } else {
         ip.mostra();
+    }
 }
+
 /* void startJogo(Imperio &ip){
 
 } */ 
@@ -93,19 +88,18 @@ void lista(Imperio &ip, istringstream &iss) {
 } */
 
 //comandos do jogo
-bool conquista(Imperio &ip, istringstream &iss){
+bool conquista(Imperio &ip, istringstream &iss) {
     string palavra;
     iss >> palavra;
-    // if((iss >> palavra).good()){
-        cout << "ssss ss ss " << endl;
-        for(const auto &x : ip.getTerritorios()){
-            if(palavra == x.getNome()){
-                cout << "ta conquistado ate saltas" << endl;
+    if ((iss >> palavra).good()) {
+        for (const auto &x : ip.getTerritorios()) {
+            if (palavra == x.getNome()) {
                 ip.conquer(x); // falta verificar se dá para conquistar, ver resistencias bla bla
                 return true;
             }
         }
 
+    }
     return false;
 }
 

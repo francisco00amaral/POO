@@ -22,11 +22,10 @@ vector<Territorio> Imperio::getTerritorios() const{
     return territorios;
 }
 
-
+//recebe tipo de territorio e mostra todos os territorios do mesmo tipo
 void Imperio::mostra(const string &nome) const{
     for(const auto &x : territorios){
-        if(x.getNome() == nome){ // N FUNCIONA PORQUE O NOME DA CENA É DUNA1 E ELE RECEBE COMO PARAMETRO DUNA;
-            cout << "Abcd" << endl;
+        if(x.getNome().find(nome) != string::npos){
             cout << x.getAsString() << endl; 
             }
     }
@@ -54,7 +53,7 @@ string Imperio::getAsString(const string &str) const {
     return os.str();
 }
 
-bool Imperio::criaTerritorios(const string &palavra,int n){
+bool Imperio::criaTerritorios(string &palavra,int n){
     for(int i=0;i<n;i++){
         if(palavra == "Pescaria" || palavra == "Refugio dos Piratas"){
             Ilha t(palavra);

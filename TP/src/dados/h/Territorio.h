@@ -13,7 +13,7 @@ using namespace std;
 
 class Territorio {//este vai ser usado como TERRITORIO INICIAL SOMENTE
 protected:
-    const string nome;
+    string nome;
     int resistencia;
     int produtos;
     int ouro;

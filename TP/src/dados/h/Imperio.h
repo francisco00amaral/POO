@@ -15,7 +15,7 @@ using namespace std;
 class Imperio {
     vector<Territorio> territorios; // todos os territorios existentes
     vector<Territorio> territConquistados; // territorios conqusitados pelo imperio
-    vector<string> nomes{"Planicie", "Montanha", "Fortaleza", "Mina", "Duna", "Castelo", "Refugio dos Piratas", "Pescaria"};
+    vector<string> nomes{"Planicie", "Montanha", "Fortaleza", "Mina", "Duna", "Castelo", "Refugio", "Pescaria"};
     int banco;
     int tecnologia[5][2];
     int forcaMilitar;
@@ -26,7 +26,7 @@ public:
     vector<string> getNomesTerritorios() const;
     void mostra(const string &nome) const;
     void mostra() const;
-    bool criaTerritorios(const string &palavra,int n);
+    bool criaTerritorios(string &palavra,int n);
     void conquer(Territorio t){territConquistados.push_back(t);}
     vector <Territorio> getConquistados() const{ return territConquistados;}
     void inicial();

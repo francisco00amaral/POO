@@ -16,7 +16,7 @@ using namespace std;
 class Continente : public Territorio{
 
 public:
-    Continente(const string &nome);
+    Continente(string &nome);
     int getPontos() const;
 };
 
