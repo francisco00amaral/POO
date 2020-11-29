@@ -6,16 +6,19 @@
 
 //comandos pre jogo
 bool cria(Imperio &ip, istringstream &iss){
+
+    cout << "VERIFICAR REFUGIO PIRATAS" << endl;
+
     mostraNomes(ip);
     string palavra;
     bool flag = false;
     if((iss >> palavra).good())// verifica que e passado uma string;
-        for (const auto &x : ip.getNomesTerritorios()){
+        for(const auto &x : ip.getNomesTerritorios()){
             if (palavra == x)
                 flag = true;
         }
 
-    if(flag == false){//se flag for ativada sai da função
+    if(!flag){//se flag for ativada sai da função
         cout << "Sintaxe para criar territorios -> <cria> Tipo <numero>" << endl;
         cout << "Impossivel criar territorios com o nome indicado.(cria)" << endl;
         return false;
@@ -29,7 +32,6 @@ bool cria(Imperio &ip, istringstream &iss){
             return false;
         }
     }
-
     return ip.criaTerritorios(palavra, val);
 }
 
@@ -42,12 +44,16 @@ bool carrega(Imperio &ip, istringstream &iss){
         cout << "Path incorreto." << endl;
         return false;
     }
-    ifstream file(path);
+    ifstream file;
+    file.open(path);
     if(file.is_open()){
         while(getline(file, linha)){//lé linha a linha
             istringstream iss2(linha);//cada linha tem argumentos
+            string str;
+            iss2 >> str;
             flag = cria(ip, iss2);//enviar argumentos para a função que cria territorios
-            if(flag){
+            cout << flag << true << endl;
+            if(!flag){
                 cout << "Erro ao criar territorios(carrega)." << endl;
             }
         }
@@ -59,27 +65,23 @@ bool carrega(Imperio &ip, istringstream &iss){
     return true;
 }
 
-void lista(Imperio &ip, istringstream &iss){
+void lista(Imperio &ip, istringstream &iss) {
     string palavra;
-    bool flag = false;
+
     iss >> palavra;
 
-   // if ((iss >> palavra).good()){//garante que e introduzido uma string;
-        cout << "Palavra ta boa" << endl;
-        for(const auto &x : ip.getNomesTerritorios()){ // percorre vetor com nomes
-            if(palavra == x){ // / compara nome passado por argumento com os existentes
-                cout << "palavra existe no vetor de nomes" << endl;
+    cout << "VERIFICAR LOGICA" << endl;
+
+    if ((iss >> palavra).good()) {//garante que e introduzido uma string;
+        for (const auto &x : ip.getNomesTerritorios()) { // percorre vetor com nomes
+            if (palavra == x) { // / compara nome passado por argumento com os existentes
                 ip.mostra(palavra);
-                flag = true;
             }
         }
-    if(!(flag)){
-        cout << "Nao existem territorios com esse nome.(lista)" << endl;
-        cout << "Listando o mundo todo: " << endl;
-        ip.mostra();
     }
+    else
+        ip.mostra();
 }
-
 /* void startJogo(Imperio &ip){
 
 } */ 

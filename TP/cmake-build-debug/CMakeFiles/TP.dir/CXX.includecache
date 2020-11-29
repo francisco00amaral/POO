@@ -6,23 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/cpp/Ilha.cpp
-../h/Ilha.h
-C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Ilha.h
-
-C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Ilha.h
-iostream
--
-string
--
-sstream
--
-vector
--
-Territorio.h
-C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Territorio.h
-
-C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Imperio.h
+D:/3exe_POO/TP/TP/src/dados/h/Imperio.h
 iostream
 -
 vector
@@ -32,9 +16,9 @@ sstream
 string
 -
 Territorio.h
-C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Territorio.h
+D:/3exe_POO/TP/TP/src/dados/h/Territorio.h
 
-C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Territorio.h
+D:/3exe_POO/TP/TP/src/dados/h/Territorio.h
 iostream
 -
 string
@@ -44,11 +28,11 @@ sstream
 vector
 -
 
-C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/funcoes/Utils.cpp
+D:/3exe_POO/TP/TP/src/funcoes/Utils.cpp
 Utils.h
-C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/funcoes/Utils.h
+D:/3exe_POO/TP/TP/src/funcoes/Utils.h
 
-C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/funcoes/Utils.h
+D:/3exe_POO/TP/TP/src/funcoes/Utils.h
 iostream
 -
 sstream
@@ -60,5 +44,5 @@ vector
 fstream
 -
 ../dados/h/Imperio.h
-C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Imperio.h
+D:/3exe_POO/TP/TP/src/dados/h/Imperio.h
 
