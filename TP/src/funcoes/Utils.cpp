@@ -93,7 +93,7 @@ bool conquista(Imperio &ip, istringstream &iss) {
     if (!(iss >> palavra).fail()) {
         for (auto &x : ip.getTerritorios()) {
             if (palavra == x.getNome()) {
-                ip.conquer(x); // falta verificar se dá para conquistar, ver resistencias bla bla
+                ip.conquer(x);
                 return true;
             }
         }

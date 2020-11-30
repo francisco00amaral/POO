@@ -73,7 +73,6 @@ void Imperio::inicial(){
     territConquistados.push_back(a);
 }
 
-// TA COM UM PROBLEMA DE A FORÇA MILITAR ESTAR SEMPRE A FICAR COM OS RESTOS DA SOMA DO FATOR SORTE
 void Imperio::conquer(Territorio &t){
     cout << "TÁ A QUANTO:  " << t.getConquistado() << endl;
     if(t.isConquistado()){
@@ -97,17 +96,23 @@ void Imperio::conquer(Territorio &t){
         if(forcaMilitar < 0)
             forcaMilitar = 0;
             }
-    }
+}
 
-    // POR AGORA ASSIM FUNCIONA, MAS QUANDO ACRESCENTARMOS AQUELAS CENAS Q AUMENTAM ESPAÇO COFRE VAI TER MUDANÇA
-    void Imperio::adicionaProd(const Territorio &t){
-    armazem += t.getProd();
-            if(armazem > 3)
-                armazem = 3;
-    }
+vector<Territorio> Imperio::getConquistados() const{
+    return territConquistados;
+}
+
+// POR AGORA ASSIM FUNCIONA, MAS QUANDO ACRESCENTARMOS AQUELAS CENAS Q AUMENTAM ESPAÇO COFRE VAI TER MUDANÇA
+void Imperio::adicionaProd(const Territorio &t){
+armazem += t.getProd();
+        if(armazem > 3)
+            armazem = 3;
+}
+
 void Imperio::adicionaOuro(const Territorio &t){
         cofre += t.getOuro();
         if(cofre > 3)
             cofre = 3;
 
     }
+
