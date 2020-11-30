@@ -12,10 +12,17 @@ Territorio::Territorio(const string &nome) : nome(nome) {
     this->resistencia = 9;
     this->produtos = 0;
     this->pontos = 0;
+    this->conquistado = true;
 }
 
 string Territorio::getAsString() const {
     ostringstream os;
-    os << "Territorio: " << nome << " Ouro: " << ouro << " Resistencia: " << resistencia;
+    os << "Territorio: " << nome << "Conquistado: "  << conquistado << " Ouro: " << ouro << " Resistencia: " << resistencia;
     return os.str();
+}
+bool Territorio::isConquistado() const{
+    if(getConquistado())
+        return true;
+    else
+        return false;
 }

@@ -1,6 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <ctime>
+#include <cstdlib>
 #include "src/dados/h/Territorio.h"
 #include "src/dados/h/Imperio.h"
 #include "src/dados/h/Continente.h"
@@ -10,7 +12,7 @@
 using namespace std;
 
 int main() {
-
+    srand(time(0));
     string linha;
     string palavra;
     Imperio ip;
@@ -19,14 +21,15 @@ int main() {
     // interpretacao que tive do enunciado é que ele começa com o territorio incial já "conquistado"
 
 
-    istringstream iss;
+    // istringstream iss;
+    cout << "\nBem vindo ao jogo single-player de conquista e expansao territorial" << endl;
 
-
-
-    while(palavra != "exit"){
-        cout << "Consola inicial do jogo.\n"
-                "Comandos disponiveis:\tlista\tcria\tcarrega\tstart\t"
-                "exit\n" << endl;
+    int turnos = 0;
+    cout << "Inicio de jogo" << endl;
+    // VER ESTA PARTE DE TROCAS DE PRODUTOS POR OURO
+    while(palavra != "avanca"){
+        // COMPOR ISTO BLA BLA
+        cout <<  "Comandos disponiveis:\tlista\tcria\tcarrega\tstart\t" << endl;
         cout << "Indique o comando:" << endl;
         getline(cin, linha);
         istringstream iss(linha);
@@ -48,9 +51,10 @@ int main() {
         }
         else if(palavra == "mostraConquer"){ // teste para ver se fica no vetor dos conquistados
             MostraConquistados(ip);
-
+            ip.getAsString();
         }
     }
+
 
     return 0;
 }

@@ -16,9 +16,10 @@ class Imperio {
     vector<Territorio> territorios; // todos os territorios existentes
     vector<Territorio> territConquistados; // territorios conqusitados pelo imperio
     vector<string> nomes{"Planicie", "Montanha", "Fortaleza", "Mina", "Duna", "Castelo", "Refugio", "Pescaria"};
-    int banco;
+    int cofre;
     int tecnologia[5][2];
-    int forcaMilitar;
+    int armazem;
+    int forcaMilitar = 0;
 public:
     string getAsString() const;
     string getAsString(const string &str) const;
@@ -27,8 +28,10 @@ public:
     void mostra(const string &nome) const;
     void mostra() const;
     bool criaTerritorios(string &palavra,int n);
-    void conquer(Territorio t){territConquistados.push_back(t);}
+    void conquer(Territorio &t);
     vector <Territorio> getConquistados() const{ return territConquistados;}
+    void adicionaOuro(const Territorio &t);
+    void adicionaProd(const Territorio &t);
     void inicial();
 
 

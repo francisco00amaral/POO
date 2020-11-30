@@ -6,7 +6,6 @@
 #include "../h/Continente.h"
 #include "../h/Ilha.h"
 
-// for autos com const &?
 
 string Imperio::getAsString() const {
     ostringstream os;
@@ -73,3 +72,42 @@ void Imperio::inicial(){
     territorios.push_back(a);
     territConquistados.push_back(a);
 }
+
+// TA COM UM PROBLEMA DE A FORÇA MILITAR ESTAR SEMPRE A FICAR COM OS RESTOS DA SOMA DO FATOR SORTE
+void Imperio::conquer(Territorio &t){
+    cout << "TÁ A QUANTO:  " << t.getConquistado() << endl;
+    if(t.isConquistado()){
+        cout << "Territorio ja esta conquistado!" << endl;
+        return;
+    }
+    int sorte = (rand() % 6) + 1; // NUMERO ALEATORIO ENTRE 1 E 6 INCLUSIVE;
+    int forca = forcaMilitar;
+
+    forca += sorte;
+
+    if(forca >= t.getRes()){
+        adicionaProd(t);
+        adicionaOuro(t);
+        t.setConquistado();
+        territConquistados.push_back(t); // FALTA ADICIONAR OS PRODUTOS E OURO...
+    }
+    else{
+        cout << "Nao foi possivel conquistar o territorio " << t.getNome() << endl;
+        forcaMilitar--;
+        if(forcaMilitar < 0)
+            forcaMilitar = 0;
+            }
+    }
+
+    // POR AGORA ASSIM FUNCIONA, MAS QUANDO ACRESCENTARMOS AQUELAS CENAS Q AUMENTAM ESPAÇO COFRE VAI TER MUDANÇA
+    void Imperio::adicionaProd(const Territorio &t){
+    armazem += t.getProd();
+            if(armazem > 3)
+                armazem = 3;
+    }
+void Imperio::adicionaOuro(const Territorio &t){
+        cofre += t.getOuro();
+        if(cofre > 3)
+            cofre = 3;
+
+    }

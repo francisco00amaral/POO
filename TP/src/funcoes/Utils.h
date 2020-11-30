@@ -10,16 +10,20 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <cstdlib>
+#include <ctime>
 #include "../dados/h/Imperio.h"
 
 using namespace std;
 
 //comandos pre jogo
+void startJogo(Imperio &ip);
 bool cria(Imperio &ip, istringstream &iss);
 void mostraNomes(Imperio &ip);
 bool carrega(Imperio &ip, istringstream &iss);
 void lista(Imperio &ip, istringstream &iss);
-void startJogo(Imperio &ip);
+void fase1(Imperio &ip,istringstream &iss,string comando);
+void fase3(Imperio &ip,istringstream &iss,string comando);
 
 
 //auxiliar jogo

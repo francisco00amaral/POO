@@ -90,15 +90,17 @@ void lista(Imperio &ip, istringstream &iss) {
 //comandos do jogo
 bool conquista(Imperio &ip, istringstream &iss) {
     string palavra;
-    iss >> palavra;
-    if ((iss >> palavra).good()) {
-        for (const auto &x : ip.getTerritorios()) {
+    if (!(iss >> palavra).fail()) {
+        for (auto &x : ip.getTerritorios()) {
             if (palavra == x.getNome()) {
                 ip.conquer(x); // falta verificar se dá para conquistar, ver resistencias bla bla
                 return true;
             }
         }
-
+    }
+    else{
+        cout << "Territorio nao existente" << endl;
+        return false;
     }
     return false;
 }
@@ -121,3 +123,40 @@ void mostraNomes(Imperio &ip){
 void startJogo(Imperio &ip){
     ip.inicial();
 }
+
+/* void fase1(Imperio &ip,istringstream &iss,string comando){
+    string palavra;
+    if((iss >> palavra).fail()){
+        cout << "Comando invalido." << endl;
+        return;
+    }
+    if(palavra == "conquista") {
+        conquista(ip, iss);
+    }
+    else if(comando == "passar"){
+        return;
+    }
+}
+
+void fase3(Imperio &ip,istringstream &iss,string comando){
+    string palavra;
+    string palavra2;
+    if((iss >> palavra).fail()){
+        cout << "Comando invalido." << endl;
+        return;
+    }
+    if(palavra == "maismilitar"){
+        // FAZ FUNCAO DE AUMENTAR FORCA MILITAR;
+    }
+    else if(palavra == "adquire"){
+        if((iss >> palavra2).good()){// verifica que e passado uma string;
+            // aqui vai percorrer um vetor com nomes de objetos de tecnologias e ver se existe;
+            // depois vai ver se tem €€ para isso e desconta se tiver;
+            }
+        // VER SE TEM RECURSOS PARA ISSO
+    }
+    else if(comando == "avanca"){
+        return;
+    }
+
+} */
