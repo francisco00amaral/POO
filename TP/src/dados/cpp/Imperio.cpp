@@ -17,7 +17,13 @@ string Imperio::getAsString() const {
     return os.str();
 }
 
-vector<Territorio> Imperio::getTerritorios() const{
+vector <Territorio>& Imperio::getConquistados()
+{
+    return territConquistados;
+}
+
+
+vector<Territorio>& Imperio::getTerritorios(){
     return territorios;
 }
 
@@ -28,11 +34,24 @@ void Imperio::mostra(const string &nome) const{
             cout << x.getAsString() << endl; 
             }
     }
+    cout << endl;
+    for(const auto &x : territConquistados){
+        if(x.getNome().find(nome) != string::npos){
+            cout << "Conquistados" << endl;
+            cout << x.getAsString() << endl;
+        }
+    }
 }
 
 void Imperio::mostra() const{
     for(const auto &x : territorios){
            cout << x.getAsString() << endl; 
+    }
+    cout << endl;
+
+    for(const auto &x : territConquistados){
+        cout << "Territorios conquistados: ";
+        cout << x.getAsString() << endl;
     }
 }
 
@@ -54,7 +73,7 @@ string Imperio::getAsString(const string &str) const {
 
 bool Imperio::criaTerritorios(string &palavra,int n){
     for(int i=0;i<n;i++){
-        if(palavra == "Pescaria" || palavra == "Refugio dos Piratas"){
+        if(palavra == "Pescaria" || palavra == "Refugio"){
             Ilha t(palavra);
             territorios.push_back(t);         
         }
@@ -73,31 +92,32 @@ void Imperio::inicial(){
     territConquistados.push_back(a);
 }
 
-// TA COM UM PROBLEMA DE A FORÇA MILITAR ESTAR SEMPRE A FICAR COM OS RESTOS DA SOMA DO FATOR SORTE
 void Imperio::conquer(Territorio &t){
-    cout << "TÁ A QUANTO:  " << t.getConquistado() << endl;
-    if(t.isConquistado()){
-        cout << "Territorio ja esta conquistado!" << endl;
-        return;
-    }
+
     int sorte = (rand() % 6) + 1; // NUMERO ALEATORIO ENTRE 1 E 6 INCLUSIVE;
     int forca = forcaMilitar;
 
     forca += sorte;
 
+
     if(forca >= t.getRes()){
         adicionaProd(t);
         adicionaOuro(t);
-        t.setConquistado();
-        territConquistados.push_back(t); // FALTA ADICIONAR OS PRODUTOS E OURO...
+        territConquistados.push_back(t);
+        for(auto i = territorios.begin(); i != territorios.end();++i){
+            if(i->getNome() == t.getNome()){
+                territorios.erase(i);
+            }
+        }
     }
+
     else{
         cout << "Nao foi possivel conquistar o territorio " << t.getNome() << endl;
         forcaMilitar--;
         if(forcaMilitar < 0)
             forcaMilitar = 0;
             }
-    }
+}
 
     // POR AGORA ASSIM FUNCIONA, MAS QUANDO ACRESCENTARMOS AQUELAS CENAS Q AUMENTAM ESPAÇO COFRE VAI TER MUDANÇA
     void Imperio::adicionaProd(const Territorio &t){
@@ -109,5 +129,4 @@ void Imperio::adicionaOuro(const Territorio &t){
         cofre += t.getOuro();
         if(cofre > 3)
             cofre = 3;
-
     }
