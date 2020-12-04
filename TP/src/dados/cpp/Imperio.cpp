@@ -93,30 +93,48 @@ void Imperio::inicial(){
 }
 
 void Imperio::conquer(Territorio &t){
-
+    // vector<Territorio>::iterator  it = territorios.begin();
     int sorte = (rand() % 6) + 1; // NUMERO ALEATORIO ENTRE 1 E 6 INCLUSIVE;
     int forca = forcaMilitar;
 
     forca += sorte;
 
+    cout << "Nome do objeto passado fora por aprametro" << t.getNome();
 
-    if(forca >= t.getRes()){
+    if(forca >= t.getRes()) {
         adicionaProd(t);
         adicionaOuro(t);
         territConquistados.push_back(t);
-        for(auto i = territorios.begin(); i != territorios.end();++i){
+        /* for (; it != territorios.end();) {
+              cout << it->getAsString() << endl;
+             if (it->getNome() == t.getNome()) {
+                 cout << "Nome do iterador: " <<  it->getNome() << endl;
+                 cout << "Nome do objeto passado por aprametro" << t.getNome() << endl;
+                 bool ola = it->getNome() == t.getNome();
+                 cout << "Bool : " << ola;
+                 it = territorios.erase(it);
+             } else {
+                 ++it;
+             }
+         }
+         for (it = territorios.begin(); it != territorios.end();++it) {
+             cout << "Depois do erase: " << endl;
+             cout << it->getAsString() << endl;
+             }
+         }*/
+    }
+
+       for(auto i = territorios.begin(); i != territorios.end();i++){
             if(i->getNome() == t.getNome()){
+                cout << "ADE" << endl;
                 territorios.erase(i);
             }
         }
-    }
 
-    else{
         cout << "Nao foi possivel conquistar o territorio " << t.getNome() << endl;
         forcaMilitar--;
         if(forcaMilitar < 0)
             forcaMilitar = 0;
-            }
 }
 
     // POR AGORA ASSIM FUNCIONA, MAS QUANDO ACRESCENTARMOS AQUELAS CENAS Q AUMENTAM ESPAÇO COFRE VAI TER MUDANÇA
