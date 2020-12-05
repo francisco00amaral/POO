@@ -92,49 +92,28 @@ void Imperio::inicial(){
     territConquistados.push_back(a);
 }
 
-void Imperio::conquer(Territorio &t){
-    // vector<Territorio>::iterator  it = territorios.begin();
+void Imperio::conquer(Territorio t){
     int sorte = (rand() % 6) + 1; // NUMERO ALEATORIO ENTRE 1 E 6 INCLUSIVE;
     int forca = forcaMilitar;
-
     forca += sorte;
 
-    cout << "Nome do objeto passado fora por aprametro" << t.getNome();
+    vector<Territorio>::iterator  it = territorios.begin();
 
-    if(forca >= t.getRes()) {
-        adicionaProd(t);
-        adicionaOuro(t);
-        territConquistados.push_back(t);
-        /* for (; it != territorios.end();) {
-              cout << it->getAsString() << endl;
-             if (it->getNome() == t.getNome()) {
-                 cout << "Nome do iterador: " <<  it->getNome() << endl;
-                 cout << "Nome do objeto passado por aprametro" << t.getNome() << endl;
-                 bool ola = it->getNome() == t.getNome();
-                 cout << "Bool : " << ola;
-                 it = territorios.erase(it);
-             } else {
-                 ++it;
-             }
-         }
-         for (it = territorios.begin(); it != territorios.end();++it) {
-             cout << "Depois do erase: " << endl;
-             cout << it->getAsString() << endl;
-             }
-         }*/
-    }
-
-       for(auto i = territorios.begin(); i != territorios.end();i++){
-            if(i->getNome() == t.getNome()){
-                cout << "ADE" << endl;
-                territorios.erase(i);
+    for(int i = 0; i < territorios.size(); i++){
+        if(t.getNome() == territorios[i].getNome()){
+            if(t.getRes() < forca){//conquista
+                territorios.erase(it + i);
+                territConquistados.push_back(t);
+            }
+            else{//n conquista
+                cout << "Nao foi possivel conquistar o territorio " << t.getNome() << endl;
+                forcaMilitar--;
+                if(forcaMilitar < 0)
+                    forcaMilitar = 0;
             }
         }
+    }
 
-        cout << "Nao foi possivel conquistar o territorio " << t.getNome() << endl;
-        forcaMilitar--;
-        if(forcaMilitar < 0)
-            forcaMilitar = 0;
 }
 
     // POR AGORA ASSIM FUNCIONA, MAS QUANDO ACRESCENTARMOS AQUELAS CENAS Q AUMENTAM ESPAÇO COFRE VAI TER MUDANÇA

@@ -28,7 +28,7 @@ public:
     void mostra(const string &nome) const;
     void mostra() const;
     bool criaTerritorios(string &palavra,int n);
-    void conquer(Territorio &t);
+    void conquer(Territorio t);
     vector <Territorio>& getConquistados();
     void adicionaOuro(const Territorio &t);
     void adicionaProd(const Territorio &t);
