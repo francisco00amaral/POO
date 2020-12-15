@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
@@ -60,3 +61,67 @@ sstream
 vector
 -
 
+=======
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/3exe_POO/TP/TP/src/dados/cpp/Imperio.cpp
+../h/Imperio.h
+D:/3exe_POO/TP/TP/src/dados/h/Imperio.h
+../h/Continente.h
+D:/3exe_POO/TP/TP/src/dados/h/Continente.h
+../h/Ilha.h
+D:/3exe_POO/TP/TP/src/dados/h/Ilha.h
+
+D:/3exe_POO/TP/TP/src/dados/h/Continente.h
+iostream
+-
+sstream
+-
+string
+-
+vector
+-
+Territorio.h
+D:/3exe_POO/TP/TP/src/dados/h/Territorio.h
+
+D:/3exe_POO/TP/TP/src/dados/h/Ilha.h
+iostream
+-
+string
+-
+sstream
+-
+vector
+-
+Territorio.h
+D:/3exe_POO/TP/TP/src/dados/h/Territorio.h
+
+D:/3exe_POO/TP/TP/src/dados/h/Imperio.h
+iostream
+-
+vector
+-
+sstream
+-
+string
+-
+Territorio.h
+D:/3exe_POO/TP/TP/src/dados/h/Territorio.h
+
+D:/3exe_POO/TP/TP/src/dados/h/Territorio.h
+iostream
+-
+string
+-
+sstream
+-
+vector
+-
+
+>>>>>>> afterduvidasprof

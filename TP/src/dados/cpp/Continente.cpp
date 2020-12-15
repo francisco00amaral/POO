@@ -15,9 +15,6 @@ static int countFortaleza = 1;
 Continente::Continente(string& nome) : Territorio(nome) {
 
     this->pontos = 1;
-    this->conquistado = false;
-
-    // FALTA VERIFICAR NOS X TURNOS ALGUNS RECEBEM + OURO E MAIS PRODUTOS
 
     if(nome.find("Mina") != string::npos){
         this->nome += to_string(countMina++);

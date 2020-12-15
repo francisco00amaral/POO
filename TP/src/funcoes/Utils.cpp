@@ -90,25 +90,29 @@ void lista(Imperio &ip, istringstream &iss) {
 //comandos do jogo
 bool conquista(Imperio &ip, istringstream &iss) {
     string palavra;
-    if (!(iss >> palavra).fail()) {
-        for (auto &x : ip.getTerritorios()) {
+    if ((iss >> palavra).fail()){
+        return false;
+    }
+    for (auto &x : ip.getTerritorios()) {
             if (palavra == x.getNome()) {
                 ip.conquer(x);
                 return true;
             }
         }
-    }
-    else{
+    for(const auto &x : ip.getConquistados()){
+                if(palavra == x.getNome()) {
+                    cout << "Territorio ja conquistado!" << endl;
+                    return false;
+                }
+            }
         cout << "Territorio nao existente" << endl;
         return false;
-    }
-    return false;
 }
 
 void MostraConquistados(Imperio &ip){
     cout << "Territorios atualmente conquistados: " << endl;
     for(const auto &x : ip.getConquistados()){
-        cout << x.getNome() << endl;
+        cout << x.getAsString() << endl;
     }
 }
 

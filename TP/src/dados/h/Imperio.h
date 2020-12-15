@@ -23,13 +23,13 @@ class Imperio {
 public:
     string getAsString() const;
     string getAsString(const string &str) const;
-    vector<Territorio> getTerritorios() const;
+    vector<Territorio>& getTerritorios();
     vector<string> getNomesTerritorios() const;
     void mostra(const string &nome) const;
     void mostra() const;
     bool criaTerritorios(string &palavra,int n);
-    void conquer(Territorio &t);
-    vector <Territorio> getConquistados() const;
+    void conquer(Territorio t);
+    vector <Territorio>& getConquistados();
     void adicionaOuro(const Territorio &t);
     void adicionaProd(const Territorio &t);
     void inicial();
