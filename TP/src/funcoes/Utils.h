@@ -35,4 +35,6 @@ bool conquista(Imperio &ip, istringstream &iss);
 // funcao de teste , pode dar jeito;
 void MostraConquistados(Imperio &ip);
 
+void toLower(string& str);
+
 #endif //TP_UTILS_H

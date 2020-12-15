@@ -104,6 +104,9 @@
 		<Unit filename="D:/3exe_POO/TP/TP/src/dados/cpp/Imperio.cpp">
 			<Option target="TP"/>
 		</Unit>
+		<Unit filename="D:/3exe_POO/TP/TP/src/dados/cpp/Mundo.cpp">
+			<Option target="TP"/>
+		</Unit>
 		<Unit filename="D:/3exe_POO/TP/TP/src/dados/cpp/Territorio.cpp">
 			<Option target="TP"/>
 		</Unit>
@@ -116,6 +119,9 @@
 		<Unit filename="D:/3exe_POO/TP/TP/src/dados/h/Imperio.h">
 			<Option target="TP"/>
 		</Unit>
+		<Unit filename="D:/3exe_POO/TP/TP/src/dados/h/Mundo.h">
+			<Option target="TP"/>
+		</Unit>
 		<Unit filename="D:/3exe_POO/TP/TP/src/dados/h/Territorio.h">
 			<Option target="TP"/>
 		</Unit>
@@ -123,6 +129,18 @@
 			<Option target="TP"/>
 		</Unit>
 		<Unit filename="D:/3exe_POO/TP/TP/src/funcoes/Utils.h">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP/TP/src/interface/Interface.cpp">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP/TP/src/interface/Interface.h">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP/TP/src/logica/LogicManager.cpp">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP/TP/src/logica/LogicManager.h">
 			<Option target="TP"/>
 		</Unit>
 		<Unit filename="D:/3exe_POO/TP/TP/CMakeLists.txt">

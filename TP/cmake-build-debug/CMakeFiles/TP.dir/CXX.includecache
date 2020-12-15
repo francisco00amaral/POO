@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
@@ -7,39 +6,7 @@
 
 #IncludeRegexTransform: 
 
-D:/3exe_POO/TP/TP/src/dados/cpp/Imperio.cpp
-../h/Imperio.h
-D:/3exe_POO/TP/TP/src/dados/h/Imperio.h
-../h/Continente.h
-D:/3exe_POO/TP/TP/src/dados/h/Continente.h
-../h/Ilha.h
-D:/3exe_POO/TP/TP/src/dados/h/Ilha.h
-
-D:/3exe_POO/TP/TP/src/dados/h/Continente.h
-iostream
--
-sstream
--
-string
--
-vector
--
-Territorio.h
-D:/3exe_POO/TP/TP/src/dados/h/Territorio.h
-
-D:/3exe_POO/TP/TP/src/dados/h/Ilha.h
-iostream
--
-string
--
-sstream
--
-vector
--
-Territorio.h
-D:/3exe_POO/TP/TP/src/dados/h/Territorio.h
-
-D:/3exe_POO/TP/TP/src/dados/h/Imperio.h
+../src/dados/h/Imperio.h
 iostream
 -
 vector
@@ -49,9 +16,21 @@ sstream
 string
 -
 Territorio.h
-D:/3exe_POO/TP/TP/src/dados/h/Territorio.h
+../src/dados/h/Territorio.h
 
-D:/3exe_POO/TP/TP/src/dados/h/Territorio.h
+../src/dados/h/Mundo.h
+Imperio.h
+../src/dados/h/Imperio.h
+iostream
+-
+sstream
+-
+string
+-
+vector
+-
+
+../src/dados/h/Territorio.h
 iostream
 -
 string
@@ -61,24 +40,7 @@ sstream
 vector
 -
 
-=======
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
-
-#IncludeRegexScan: ^.*$
-
-#IncludeRegexComplain: ^$
-
-#IncludeRegexTransform: 
-
-D:/3exe_POO/TP/TP/src/dados/cpp/Imperio.cpp
-../h/Imperio.h
-D:/3exe_POO/TP/TP/src/dados/h/Imperio.h
-../h/Continente.h
-D:/3exe_POO/TP/TP/src/dados/h/Continente.h
-../h/Ilha.h
-D:/3exe_POO/TP/TP/src/dados/h/Ilha.h
-
-D:/3exe_POO/TP/TP/src/dados/h/Continente.h
+../src/funcoes/Utils.h
 iostream
 -
 sstream
@@ -87,41 +49,42 @@ string
 -
 vector
 -
-Territorio.h
-D:/3exe_POO/TP/TP/src/dados/h/Territorio.h
+fstream
+-
+cstdlib
+-
+ctime
+-
+../dados/h/Imperio.h
+../src/dados/h/Imperio.h
 
-D:/3exe_POO/TP/TP/src/dados/h/Ilha.h
+../src/logica/LogicManager.h
+Mundo.h
+../src/logica/Mundo.h
 iostream
--
-string
--
-sstream
--
-vector
--
-Territorio.h
-D:/3exe_POO/TP/TP/src/dados/h/Territorio.h
-
-D:/3exe_POO/TP/TP/src/dados/h/Imperio.h
-iostream
--
-vector
 -
 sstream
 -
 string
 -
-Territorio.h
-D:/3exe_POO/TP/TP/src/dados/h/Territorio.h
 
-D:/3exe_POO/TP/TP/src/dados/h/Territorio.h
-iostream
+D:/3exe_POO/TP/TP/src/interface/Interface.cpp
+Utils.h
 -
-string
+Interface.h
+D:/3exe_POO/TP/TP/src/interface/Interface.h
+
+D:/3exe_POO/TP/TP/src/interface/Interface.h
+logica/LogicManager.h
+D:/3exe_POO/TP/TP/src/interface/logica/LogicManager.h
+iostream
 -
 sstream
 -
-vector
+string
+-
+algorithm
+-
+cctype
 -
 
->>>>>>> afterduvidasprof

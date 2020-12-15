@@ -250,6 +250,33 @@ src/dados/cpp/Imperio.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.s
 .PHONY : src/dados/cpp/Imperio.cpp.s
 
+src/dados/cpp/Mundo.obj: src/dados/cpp/Mundo.cpp.obj
+
+.PHONY : src/dados/cpp/Mundo.obj
+
+# target to build an object file
+src/dados/cpp/Mundo.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj
+.PHONY : src/dados/cpp/Mundo.cpp.obj
+
+src/dados/cpp/Mundo.i: src/dados/cpp/Mundo.cpp.i
+
+.PHONY : src/dados/cpp/Mundo.i
+
+# target to preprocess a source file
+src/dados/cpp/Mundo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.i
+.PHONY : src/dados/cpp/Mundo.cpp.i
+
+src/dados/cpp/Mundo.s: src/dados/cpp/Mundo.cpp.s
+
+.PHONY : src/dados/cpp/Mundo.s
+
+# target to generate assembly for a file
+src/dados/cpp/Mundo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.s
+.PHONY : src/dados/cpp/Mundo.cpp.s
+
 src/dados/cpp/Territorio.obj: src/dados/cpp/Territorio.cpp.obj
 
 .PHONY : src/dados/cpp/Territorio.obj
@@ -304,6 +331,60 @@ src/funcoes/Utils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/funcoes/Utils.cpp.s
 .PHONY : src/funcoes/Utils.cpp.s
 
+src/interface/Interface.obj: src/interface/Interface.cpp.obj
+
+.PHONY : src/interface/Interface.obj
+
+# target to build an object file
+src/interface/Interface.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/interface/Interface.cpp.obj
+.PHONY : src/interface/Interface.cpp.obj
+
+src/interface/Interface.i: src/interface/Interface.cpp.i
+
+.PHONY : src/interface/Interface.i
+
+# target to preprocess a source file
+src/interface/Interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/interface/Interface.cpp.i
+.PHONY : src/interface/Interface.cpp.i
+
+src/interface/Interface.s: src/interface/Interface.cpp.s
+
+.PHONY : src/interface/Interface.s
+
+# target to generate assembly for a file
+src/interface/Interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/interface/Interface.cpp.s
+.PHONY : src/interface/Interface.cpp.s
+
+src/logica/LogicManager.obj: src/logica/LogicManager.cpp.obj
+
+.PHONY : src/logica/LogicManager.obj
+
+# target to build an object file
+src/logica/LogicManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/LogicManager.cpp.obj
+.PHONY : src/logica/LogicManager.cpp.obj
+
+src/logica/LogicManager.i: src/logica/LogicManager.cpp.i
+
+.PHONY : src/logica/LogicManager.i
+
+# target to preprocess a source file
+src/logica/LogicManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/LogicManager.cpp.i
+.PHONY : src/logica/LogicManager.cpp.i
+
+src/logica/LogicManager.s: src/logica/LogicManager.cpp.s
+
+.PHONY : src/logica/LogicManager.s
+
+# target to generate assembly for a file
+src/logica/LogicManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/LogicManager.cpp.s
+.PHONY : src/logica/LogicManager.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -325,12 +406,21 @@ help:
 	@echo ... src/dados/cpp/Imperio.obj
 	@echo ... src/dados/cpp/Imperio.i
 	@echo ... src/dados/cpp/Imperio.s
+	@echo ... src/dados/cpp/Mundo.obj
+	@echo ... src/dados/cpp/Mundo.i
+	@echo ... src/dados/cpp/Mundo.s
 	@echo ... src/dados/cpp/Territorio.obj
 	@echo ... src/dados/cpp/Territorio.i
 	@echo ... src/dados/cpp/Territorio.s
 	@echo ... src/funcoes/Utils.obj
 	@echo ... src/funcoes/Utils.i
 	@echo ... src/funcoes/Utils.s
+	@echo ... src/interface/Interface.obj
+	@echo ... src/interface/Interface.i
+	@echo ... src/interface/Interface.s
+	@echo ... src/logica/LogicManager.obj
+	@echo ... src/logica/LogicManager.i
+	@echo ... src/logica/LogicManager.s
 .PHONY : help
 
 

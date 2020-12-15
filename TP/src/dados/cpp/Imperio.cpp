@@ -118,16 +118,17 @@ void Imperio::conquer(Territorio t){
 
 }
 
-    // POR AGORA ASSIM FUNCIONA, MAS QUANDO ACRESCENTARMOS AQUELAS CENAS Q AUMENTAM ESPAÇO COFRE VAI TER MUDANÇA
-    void Imperio::adicionaProd(const Territorio &t){
+// POR AGORA ASSIM FUNCIONA, MAS QUANDO ACRESCENTARMOS AQUELAS CENAS Q AUMENTAM ESPAÇO COFRE VAI TER MUDANÇA
+void Imperio::adicionaProd(const Territorio &t){
     armazem += t.getProd();
             if(armazem > 3)
                 armazem = 3;
-    }
+}
+
+
 
 void Imperio::adicionaOuro(const Territorio &t){
         cofre += t.getOuro();
         if(cofre > 3)
             cofre = 3;
     }
-
