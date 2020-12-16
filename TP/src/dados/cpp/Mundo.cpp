@@ -11,3 +11,10 @@ Mundo::Mundo() {
 Mundo::~Mundo() {
 
 }
+
+bool Mundo::verificaExistenciaTerritorio(string nome) const{
+    for(const auto& x : territorios)
+        if(x->getNome() == nome)
+            return true;
+    return false;
+}

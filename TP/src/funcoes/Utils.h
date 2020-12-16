@@ -35,6 +35,8 @@ bool conquista(Imperio &ip, istringstream &iss);
 // funcao de teste , pode dar jeito;
 void MostraConquistados(Imperio &ip);
 
+//passa strings para lower case
 void toLower(string& str);
+
 
 #endif //TP_UTILS_H

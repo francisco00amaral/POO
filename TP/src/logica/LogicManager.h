@@ -16,6 +16,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -41,6 +42,7 @@ public:
     void lista(istringstream& iss) const;
     void grava(istringstream& iss);
     void ativa(istringstream& iss);
+    void apaga(istringstream& iss);
     void toma(istringstream& iss);
     void modifica(istringstream& iss);
     void fevento(istringstream& iss);

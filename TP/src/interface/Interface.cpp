@@ -117,6 +117,8 @@ void Interface::startGame(){
             manager.grava(iss);
         }else if(resposta == "ativa"){
             manager.ativa(iss);
+        }else if(resposta == "apaga"){
+            manager.apaga(iss);
         }else if(resposta == "toma"){//DEBUG
             manager.toma(iss);
         }else if(resposta == "modifica"){//DEBUG
