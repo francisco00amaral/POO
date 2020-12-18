@@ -5,7 +5,7 @@ CMakeFiles/TP.dir/main.cpp.obj
  ../src/dados/h/Imperio.h
  ../src/dados/h/Mundo.h
  ../src/interface/Interface.h
- ../src/logica/LogicManager.h
+ ../src/logica/Manager.h
  D:/3exe_POO/TP/TP/main.cpp
  D:/3exe_POO/TP/TP/src/dados/h/Continente.h
  D:/3exe_POO/TP/TP/src/dados/h/Ilha.h
@@ -17,15 +17,16 @@ CMakeFiles/TP.dir/src/Interface/Interface.cpp.obj
  ../src/dados/h/Mundo.h
  ../src/dados/h/Territorio.h
  ../src/funcoes/Utils.h
- ../src/logica/LogicManager.h
+ ../src/logica/Manager.h
  D:/3exe_POO/TP/TP/src/interface/Interface.cpp
  D:/3exe_POO/TP/TP/src/interface/Interface.h
-CMakeFiles/TP.dir/src/Logica/LogicManager.cpp.obj
+CMakeFiles/TP.dir/src/Logica/Manager.cpp.obj
  ../src/dados/h/Imperio.h
  ../src/dados/h/Mundo.h
  ../src/dados/h/Territorio.h
- D:/3exe_POO/TP/TP/src/logica/LogicManager.cpp
- D:/3exe_POO/TP/TP/src/logica/LogicManager.h
+ ../src/funcoes/Utils.h
+ D:/3exe_POO/TP/TP/src/logica/Manager.cpp
+ D:/3exe_POO/TP/TP/src/logica/Manager.h
 CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.obj
  D:/3exe_POO/TP/TP/src/dados/cpp/Continente.cpp
  D:/3exe_POO/TP/TP/src/dados/h/Continente.h

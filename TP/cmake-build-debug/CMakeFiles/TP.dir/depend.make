@@ -4,7 +4,7 @@
 CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Imperio.h
 CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Mundo.h
 CMakeFiles/TP.dir/main.cpp.obj: ../src/interface/Interface.h
-CMakeFiles/TP.dir/main.cpp.obj: ../src/logica/LogicManager.h
+CMakeFiles/TP.dir/main.cpp.obj: ../src/logica/Manager.h
 CMakeFiles/TP.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Continente.h
 CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Ilha.h
@@ -16,15 +16,16 @@ CMakeFiles/TP.dir/src/Interface/Interface.cpp.obj: ../src/dados/h/Imperio.h
 CMakeFiles/TP.dir/src/Interface/Interface.cpp.obj: ../src/dados/h/Mundo.h
 CMakeFiles/TP.dir/src/Interface/Interface.cpp.obj: ../src/dados/h/Territorio.h
 CMakeFiles/TP.dir/src/Interface/Interface.cpp.obj: ../src/funcoes/Utils.h
-CMakeFiles/TP.dir/src/Interface/Interface.cpp.obj: ../src/logica/LogicManager.h
+CMakeFiles/TP.dir/src/Interface/Interface.cpp.obj: ../src/logica/Manager.h
 CMakeFiles/TP.dir/src/Interface/Interface.cpp.obj: ../src/interface/Interface.cpp
 CMakeFiles/TP.dir/src/Interface/Interface.cpp.obj: ../src/interface/Interface.h
 
-CMakeFiles/TP.dir/src/Logica/LogicManager.cpp.obj: ../src/dados/h/Imperio.h
-CMakeFiles/TP.dir/src/Logica/LogicManager.cpp.obj: ../src/dados/h/Mundo.h
-CMakeFiles/TP.dir/src/Logica/LogicManager.cpp.obj: ../src/dados/h/Territorio.h
-CMakeFiles/TP.dir/src/Logica/LogicManager.cpp.obj: ../src/logica/LogicManager.cpp
-CMakeFiles/TP.dir/src/Logica/LogicManager.cpp.obj: ../src/logica/LogicManager.h
+CMakeFiles/TP.dir/src/Logica/Manager.cpp.obj: ../src/dados/h/Imperio.h
+CMakeFiles/TP.dir/src/Logica/Manager.cpp.obj: ../src/dados/h/Mundo.h
+CMakeFiles/TP.dir/src/Logica/Manager.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/Logica/Manager.cpp.obj: ../src/funcoes/Utils.h
+CMakeFiles/TP.dir/src/Logica/Manager.cpp.obj: ../src/logica/Manager.cpp
+CMakeFiles/TP.dir/src/Logica/Manager.cpp.obj: ../src/logica/Manager.h
 
 CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.obj: ../src/dados/cpp/Continente.cpp
 CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.obj: ../src/dados/h/Continente.h

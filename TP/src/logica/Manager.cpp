@@ -23,24 +23,26 @@ void Manager::init() {
 void Manager::cria(istringstream &iss) {
     string tipo;
     if((iss >> tipo).fail()){
-        cout << "Erro ao criar territorio(s)." << endl;
-        return;
-    }
-
-    toLower(tipo);
-
-    if(!mundo.verificaExistenciaTerritorio(tipo)){
-        cout << "Tipo de territorio passado nao existe." << endl;
+        cout << "Erro ao ler argumentos." << endl;
         return;
     }
 
     int quant;
     if((iss >> quant).fail()){
-        cout << "Quantidade invalida." << endl;
+        cout << "Erro ao ler argumentos." << endl;
         return;
     }
 
-    mundo.mCria(tipo, quant);
+    toLower(tipo);
+
+    resCria res = mundo.mCria(tipo, quant);
+
+    if(res == CRIADO)
+        cout << "Territorio(s) criado(s) com sucesso." << endl;
+    else if(res == TIPO_INEXISTENTE)
+        cout << "Tipo de territorio nao existe." << endl;
+    else if(res == QUANTIDADE_NEGATIVA)
+        cout << "Quantidade definida e negativa." << endl;
 
 }
 
@@ -57,7 +59,8 @@ void Manager::carrega(istringstream &iss) {
     if(file.is_open()){
 
         string linha;
-        while(getline(file, linha)){
+        resCria res = CRIADO;
+        while(getline(file, linha) && res == CRIADO){
 
             istringstream iss2(linha);
             string tipo;
@@ -73,7 +76,7 @@ void Manager::carrega(istringstream &iss) {
                     return;
                 }
             }
-            mundo.mCria(tipo, quant);
+            res = mundo.mCria(tipo, quant);
         }
 
     }else{
@@ -86,7 +89,7 @@ void Manager::carrega(istringstream &iss) {
 
 
 //durante o jogo
-void Manager::conquista(fase phase, istringstream &iss) const {
+void Manager::conquista(istringstream &iss) const {
 
     string nome;
     if((iss >> nome).fail()){
@@ -96,103 +99,131 @@ void Manager::conquista(fase phase, istringstream &iss) const {
 
     toLower(nome);
 
-    if(mundo.verificaExistenciaTerritorio(nome))
-        mundo.mConquista(nome);
-    else
-        cout << "Territorio nao existe ou ja foi conquistado." << endl;
+    resConquista res = mundo.mConquista(nome);
+    if(res == CONQUISTADO)
+        cout << "Territorio conquistado com sucesso." << endl;
+    else if(res == NAO_CONQUISTADO)
+        cout << "Territorio nao foi conquistado." << endl;
+    else if(res == INEXISTENTE)
+        cout << "Territorio passado nao existe." << endl;
 
 }
 
 
-void Manager::passa(istringstream &iss) {
-    if(mundo.mPassa())
-        cout << "Troca efetuada com sucesso." << endl;
-    else
-        cout << "Troca nao efetuada com sucesso." << endl;
-
+void Manager::passa() {
+    mundo.mPassa();
 }
 
 
 void Manager::maisOuro(istringstream& iss) {
-    if(mundo.mMaisOuro())
+
+    //maisProduto impede a escolha desta opção
+    resMaisOP res = mundo.mMaisOuro();
+    if(res == TROCADO)
         cout << "Troca efetuada com sucesso." << endl;
-    else
-        cout << "Troca nao efetuada com sucesso." << endl;
+    else if(res == NAO_TROCADO)
+        cout << "Troca nao efetuada." << endl;
+    else if(res == REPETIDO)
+        cout << "Ja foi feita a outra troca(maisProduto)." << endl;
+    else if(res == SEM_RECURSOS)
+        cout << "Sem recursos para efetuar a troca." << endl;
+    else if(res == SEM_BOLSA)
+        cout << "Adquira a Bolsa de Valores(tecnologia) primeiro." << endl;
 
 }
 
 
 void Manager::maisProduto(istringstream& iss) {
-    if(mundo.mMaisProduto())
+
+    //maisOuro impede a escolha desta opção
+    resMaisOP res = mundo.mMaisProduto();
+    if(res == TROCADO)
         cout << "Troca efetuada com sucesso." << endl;
-    else
-        cout << "Troca nao efetuada com sucesso." << endl;
+    else if(res == NAO_TROCADO)
+        cout << "Troca nao efetuada." << endl;
+    else if(res == REPETIDO)
+        cout << "Ja foi feita a outra troca.(maisOuro)" << endl;
+    else if(res == SEM_RECURSOS)
+        cout << "Sem recursos para efetuar a troca." << endl;
+    else if(res == SEM_BOLSA)
+        cout << "Adquira a Bolsa de Valores(tecnologia) primeiro." << endl;
 
 }
 
 
 void Manager::maisMilitar(istringstream& iss) {
-    if(mundo.mMaisMilitar())
-        cout << "Troca efetuada com sucesso." << endl;
-    else
-        cout << "Troca nao efetuada com sucesso." << endl;
+
+    resMA res = mundo.mMaisMilitar();
+    if(res == ADQUIRIDO)
+        cout << "Compra efetuada com sucesso." << endl;
+    else if(res == ITERADO)
+        cout << "Compra já feita neste turno." << endl;
+    else if(res == RECURSOS)
+        cout << "Falta recursos para fazer a compra." << endl;
+    else if(res == NAO_ADQUIRIDO)
+        cout << "Força militar ja no maximo possivel." << endl;
 
 }
 
 
 void Manager::adquire(istringstream &iss) {
-    int tipo;
+
+    string tipo;
     if((iss >> tipo).fail()){
         cout << "Erro ao ler os argumentos passados." << endl;
         return;
     }
 
-    if(tipo > 5 || tipo < 1){
-        cout << "Tipo nao existente." << endl;
-        return;
-    }
-
-    if(mundo.mAdquire(tipo))
-        cout << "Tecnologia obtida com sucesso." << endl;
-    else
-        cout << "Tecnologia nao obtida." << endl;
+    resMA res = mundo.mAdquire(tipo);
+    if(res == ADQUIRIDO)
+        cout << "Tecnologia adquirida com sucesso." << endl;
+    else if(res == ITERADO)
+        cout << "Tecnologia já adquirida neste turno." << endl;
+    else if(res == RECURSOS)
+        cout << "Falta recursos para adquirir a tecnologia." << endl;
+    else if(res == NAO_ADQUIRIDO)
+        cout << "Tecnologia nao existente." << endl;
 
 }
 
 
 void Manager::lista(istringstream &iss) const {
-    string nome;
-    if((iss >> nome).fail())
-        mundo.mLista();
 
-    toLower(nome);
+    if(iss.rdbuf()->in_avail() > 0){
 
-    if(mundo.verificaExistenciaTerritorio(nome))
+        string nome;
+        if((iss >> nome).fail()){
+            cout << "Erro ao ler os argumentos." << endl;
+            return;
+        }
+
+        toLower(nome);
+
         mundo.mLista(nome);
-    else{
-        cout << "Territorio nao existente. A mostrar todos os territorios existentes." << endl;
+
+    }else
         mundo.mLista();
-    }
 
 }
 
 
-void Manager::grava(istringstream &iss) {
+void Manager::grava(fase& phase, istringstream &iss) {
     //ainda falta aprender isto
 }
 
 
-void Manager::ativa(istringstream &iss) {
+void Manager::ativa(fase& phase, istringstream &iss) {
     //ainda falta aprender isto
 }
 
 
-void Manager::apaga(istringstream &iss){
+void Manager::apaga(fase& phase, istringstream &iss){
     //ainda falta aprender isto
 }
 
 
 void Manager::toma(istringstream &iss) {
+
     string tipo;
     if((iss >> tipo).fail()){
         cout << "Erro ao obter os argumentos." << endl;
@@ -207,10 +238,10 @@ void Manager::toma(istringstream &iss) {
             return;
         }
 
-        enum::tomaRes res = mundo.mTomaTerr(nome);
-        if(res == SUCCESS)
+        resToma res = mundo.mTomaTerr(nome);
+        if(res == TOMADO)
             cout << "Territorio tomado com sucesso." << endl;
-        else
+        else if(res == TERRTORIO_INEXISTENTE)
             cout << "Territorio nao existente." << endl;
 
         return;
@@ -221,12 +252,12 @@ void Manager::toma(istringstream &iss) {
             return;
         }
 
-        enum::tomaRes res = mundo.mTomaTech(tecnologia);
-        if(res == SUCCESS)
-            cout << "Tecnologia adquirida com sucesso." << endl;
-        else if(res == FAIL)
-            cout << "Tecnologia ja desbloqueada anteriormente." << endl;
-        else
+        resToma res = mundo.mTomaTech(tecnologia);
+        if(res == TOMADO)
+            cout << "Tecnologia tomada com sucesso." << endl;
+        else if(res == TECNOLOGIA_JA_ADQUIRIDA)
+            cout << "Tecnologia ja adquirida anteriormente." << endl;
+        else if(res == TECNOLOGIA_INEXISTENTE)
             cout << "Tecnologia pedida nao existe." << endl;
 
         return;
@@ -240,6 +271,7 @@ void Manager::toma(istringstream &iss) {
 
 
 void Manager::modifica(istringstream &iss) {
+
     string tipo;
     if((iss >> tipo).fail()){
         cout << "Erro ao obter os argumentos." << endl;
@@ -249,19 +281,18 @@ void Manager::modifica(istringstream &iss) {
     toLower(tipo);
 
     int quant;
-    enum::modRes res;
     if(tipo == "ouro"){
         if((iss >> quant).fail()){
             cout << "Erro ao ler os argumentos." << endl;
             return;
         }
 
-        res = mundo.mModificaOuro(quant);
-        if(res == OK)
-            cout << "Alteracao feita com sucesso." << endl;
-        else if(res == SPACE)
+        resModifica res = mundo.mModificaOuro(quant);
+        if(res == MODIFICADO)
+            cout << "Modificacao feita ao ouro com sucesso." << endl;
+        else if(res == VAL_ACIMA_MAX)
             cout << "Valor designado supera a capaciade maxima." << endl;
-        else
+        else if(res == VAL_NEGATIVO)
             cout << "Valor negativo." << endl;
 
         return;
@@ -273,11 +304,11 @@ void Manager::modifica(istringstream &iss) {
         }
 
         res = mundo.mModificaProduto(quant);
-        if(res == OK)
-            cout << "Alteracao feita com sucesso." << endl;
-        else if(res == SPACE)
+        if(res == MODIFICADO)
+            cout << "Alteracao feita aos produtos com sucesso." << endl;
+        else if(res == VAL_ACIMA_MAX)
             cout << "Valor designado supera a capaciade maxima." << endl;
-        else
+        else if(res == VAL_NEGATIVO)
             cout << "Valor negativo." << endl;
 
         return;
@@ -289,19 +320,35 @@ void Manager::modifica(istringstream &iss) {
 
 
 void Manager::fevento(istringstream &iss) {
-    int numEvento;
-    if((iss >> numEvento).fail()){
-        cout << "Erro ao ler os argumentos." << endl;
-        return;
-    }
 
-    if(mundo.mForceEvent(numEvento))
-        cout << "Evento aplicado com sucesso." << endl;
-    else
-        cout << "Evento pedido nao existe." << endl;
+    if(iss.rdbuf()->in_avail() == 0) {//se n tiver nada no iss
+
+        mundo.mFevento();
+        cout << "Evento random aplicado com sucesso." << endl;
+
+    }else{//caso tenha alguma coisa no iss
+
+        string tipo;
+        if((iss >> tipo).fail()){
+            cout << "Erro ao ler os argumentos." << endl;
+            return;
+        }
+
+        if(mundo.mFevento(tipo))
+            cout << "Evento aplicado com sucesso." << endl;
+        else
+            cout << "Evento pedido nao existe." << endl;
+
+    }
 
 }
 
+
+//passa para a proxima fase
+//fase != turno
+void Manager::avanca(fase& phase){
+    mundo.mAvanca(phase);
+}
 
 
 //ocasião especial
@@ -311,6 +358,8 @@ void Manager::update() {
 }
 
 
+//recolhe ouro e produtos no inicio de cada fase de recolha(2ª fase)
+//fase != turno
 void Manager::harvest() const {
     mundo.mHarvest();
 }

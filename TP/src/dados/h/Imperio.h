@@ -8,6 +8,7 @@
 #include <vector>
 #include <sstream>
 #include <string>
+#include <unordered_map>
 #include "Territorio.h"
 
 using namespace std;
@@ -16,9 +17,12 @@ class Imperio {
     vector<Territorio*> territConquistados; // territorios conqusitados pelo imperio
     const vector<string> nomes{"planicie", "montanha", "fortaleza", "mina", "duna", "castelo", "refugio", "pescaria"};
     int cofre = 0;
-    bool tecnologias[5] = {false, false, false, false, false};
+    unordered_map<string, bool> tecnologias {
+        {"drones", false}, {"misseis", false}, {"defesas", false}, {"bolsa", false}, {"banco", false}
+    };
     int armazem = 0;
     int forcaMilitar = 0;
+
 public:
     string getAsString() const;
     string getAsString(const string &str) const;

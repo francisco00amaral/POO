@@ -83,29 +83,28 @@ void Interface::startGame(){
 
         switch(phase){
             case CONQUISTA:
-                faseConquista(manager, phase);
+                faseConquista(phase);
                 break;
             case RECOLHA:
-                faseRecolha(manager, phase);
+                faseRecolha(phase);
                 break;
             case COMPRA:
-                faseCompra(manager, phase);
+                faseCompra(phase);
                 break;
             case EVENTO:
-                faseEvento(manager, phase);
+                faseEvento(phase);
                 break;
         }
-
 
     }
 
 }
 
 
-void Interface::faseConquista(const Manager& manager, fase& phase){
+void Interface::faseConquista(fase& phase){
 
     cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ??? significa opcional)" << endl;
-    cout << "conquista <nome>\tpassa\tlista <nome???>\ttoma <tipo> <nome>\n"
+    cout << "conquista <nome>\tpassa\tlista <nome???>\ttoma <tipo> <nome>\tavanca\n"
             "grava <nome>\tativa <nome>\tapaga <nome>" << endl;
 
     string resposta;
@@ -119,13 +118,15 @@ void Interface::faseConquista(const Manager& manager, fase& phase){
     toLower(resposta);
 
     if(resposta == "conquista")
-        manager.conquista(phase, iss);
+        manager.conquista(iss);
     else if(resposta == "passa")
-        manager.passa(phase, iss);
+        manager.passa();
     else if(resposta == "lista")
         manager.lista(iss);
+    else if(resposta == "avanca")
+        manager.avanca(phase);
     else if(resposta == "toma")
-        manager.toma(phase, iss);
+        manager.toma(iss);
     else if(resposta == "grava")
         manager.grava(phase, iss);
     else if(resposta == "ativa")
@@ -135,13 +136,13 @@ void Interface::faseConquista(const Manager& manager, fase& phase){
 
 }
 
-void Interface::faseRecolha(const Manager& manager, fase& phase){
+void Interface::faseRecolha(fase& phase){
 
     manager.harvest();
 
     cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ??? significa opcional)" << endl;
-    cout << "maisouro <quantidade>\tmaisprod <quantidade>\tmodifica <tipo recurso> <quantidade pretendida>\n"
-            "grava <nome>\tativa <nome>\tapaga <nome>" << endl;
+    cout << "maisouro <quantidade>\tmaisprod <quantidade>\tavanca\n"
+            "modifica <tipo recurso> <quantidade pretendida>\tgrava <nome>\tativa <nome>\tapaga <nome>" << endl;
 
     string resposta;
     getline(cin, resposta);
@@ -154,11 +155,13 @@ void Interface::faseRecolha(const Manager& manager, fase& phase){
     toLower(resposta);
 
     if(resposta == "maisouro")
-        manager.maisOuro(phase, iss);
+        manager.maisOuro(iss);
     else if(resposta == "maisprod")
-        manager.maisProduto(phase, iss);
+        manager.maisProduto(iss);
+    else if(resposta == "avanca")
+        manager.avanca(phase);
     else if(resposta == "modifica")
-        manager.modifica(phase, iss);
+        manager.modifica(iss);
     else if(resposta == "grava")
         manager.grava(phase, iss);
     else if(resposta == "ativa")
@@ -168,7 +171,7 @@ void Interface::faseRecolha(const Manager& manager, fase& phase){
 
 }
 
-void Interface::faseCompra(const Manager &manager, fase &phase) {
+void Interface::faseCompra(fase &phase) {
 
     cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ??? significa opcional)" << endl;
     cout << "maismilitar\tadquire <tipo de tecnologia>\tmodifica <tipo de recurso> <quantidade>\tavanca\n"
@@ -185,13 +188,13 @@ void Interface::faseCompra(const Manager &manager, fase &phase) {
     toLower(resposta);
 
     if(resposta == "maismilitar")
-        manager.maisMilitar(phase, iss);
+        manager.maisMilitar(iss);
     else if(resposta == "adquire")
-        manager.adquire(phase, iss);
-    else if(resposta == "modifica")
-        manager.modifica(phase, iss);
+        manager.adquire(iss);
     else if(resposta == "avanca")
         manager.avanca(phase);
+    else if(resposta == "modifica")
+        manager.modifica(iss);
     else if(resposta == "grava")
         manager.grava(phase, iss);
     else if(resposta == "ativa")
@@ -201,7 +204,7 @@ void Interface::faseCompra(const Manager &manager, fase &phase) {
 
 }
 
-void Interface::faseEvento(const Manager &manager, fase &phase) {
+void Interface::faseEvento(fase &phase) {
 
     cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ??? significa opcional)" << endl;
     cout << "fevento <nome-evento???>\tgrava <nome>\tativa <nome>\tapaga <nome>" << endl;
@@ -217,7 +220,9 @@ void Interface::faseEvento(const Manager &manager, fase &phase) {
     toLower(resposta);
 
     if(resposta == "fevento")
-        manager.fevento(phase, iss);
+        manager.fevento(iss);
+    else if(resposta == "avanca")
+        manager.avanca(phase);
     else if(resposta == "grava")
         manager.grava(phase, iss);
     else if(resposta == "ativa")

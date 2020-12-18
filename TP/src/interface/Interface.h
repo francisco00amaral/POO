@@ -22,10 +22,10 @@ public:
     ~Interface();
     void startLoad();
     void startGame();
-    void faseConquista(const Manager& manager, fase& phase);
-    void faseRecolha(const Manager& manager, fase& phase);
-    void faseCompra(const Manager& manager, fase& phase);
-    void faseEvento(const Manager& manager, fase& phase);
+    void faseConquista(fase& phase);
+    void faseRecolha(fase& phase);
+    void faseCompra(fase& phase);
+    void faseEvento(fase& phase);
 
 };
 

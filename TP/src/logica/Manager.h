@@ -33,19 +33,20 @@ public:
     void carrega(istringstream& iss);
 
     //durante o jogo
-    void conquista(fase phase, istringstream& iss) const;
-    void passa(istringstream& iss);//recebe iss somente pra fazer clear
-    void maisOuro(istringstream& iss);//recebe iss somente pra fazer clear
-    void maisProduto(istringstream& iss);//recebe iss somente pra fazer clear
-    void maisMilitar(istringstream& iss);//recebe iss somente pra fazer clear
+    void conquista(istringstream& iss) const;
+    void passa();
+    void maisOuro(istringstream& iss);
+    void maisProduto(istringstream& iss);
+    void maisMilitar(istringstream& iss);
     void adquire(istringstream& iss);
     void lista(istringstream& iss) const;
-    void grava(istringstream& iss);
-    void ativa(istringstream& iss);
-    void apaga(istringstream& iss);
+    void grava(fase& phase, istringstream& iss);
+    void ativa(fase& phase, istringstream& iss);
+    void apaga(fase& phase, istringstream& iss);
     void toma(istringstream& iss);
     void modifica(istringstream& iss);
     void fevento(istringstream& iss);
+    void avanca(fase& phase);
 
     //ocasiões especiais
     void update();//turno 6
