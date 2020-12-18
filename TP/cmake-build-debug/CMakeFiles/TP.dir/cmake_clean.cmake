@@ -7,7 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/TP.dir/src/dados/cpp/Territorio.cpp.obj"
   "CMakeFiles/TP.dir/src/funcoes/Utils.cpp.obj"
   "CMakeFiles/TP.dir/src/interface/Interface.cpp.obj"
-  "CMakeFiles/TP.dir/src/logica/LogicManager.cpp.obj"
+  "CMakeFiles/TP.dir/src/logica/Manager.cpp.obj"
   "TP.exe"
   "TP.exe.manifest"
   "TP.pdb"

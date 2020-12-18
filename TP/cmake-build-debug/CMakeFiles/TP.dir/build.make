@@ -174,19 +174,19 @@ CMakeFiles/TP.dir/src/interface/Interface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP.dir/src/interface/Interface.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3exe_POO\TP\TP\src\interface\Interface.cpp -o CMakeFiles\TP.dir\src\interface\Interface.cpp.s
 
-CMakeFiles/TP.dir/src/logica/LogicManager.cpp.obj: CMakeFiles/TP.dir/flags.make
-CMakeFiles/TP.dir/src/logica/LogicManager.cpp.obj: CMakeFiles/TP.dir/includes_CXX.rsp
-CMakeFiles/TP.dir/src/logica/LogicManager.cpp.obj: ../src/logica/LogicManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\3exe_POO\TP\TP\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TP.dir/src/logica/LogicManager.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP.dir\src\logica\LogicManager.cpp.obj -c D:\3exe_POO\TP\TP\src\logica\LogicManager.cpp
+CMakeFiles/TP.dir/src/logica/Manager.cpp.obj: CMakeFiles/TP.dir/flags.make
+CMakeFiles/TP.dir/src/logica/Manager.cpp.obj: CMakeFiles/TP.dir/includes_CXX.rsp
+CMakeFiles/TP.dir/src/logica/Manager.cpp.obj: ../src/logica/Manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\3exe_POO\TP\TP\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TP.dir/src/logica/Manager.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\TP.dir\src\logica\Manager.cpp.obj -c D:\3exe_POO\TP\TP\src\logica\Manager.cpp
 
-CMakeFiles/TP.dir/src/logica/LogicManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP.dir/src/logica/LogicManager.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3exe_POO\TP\TP\src\logica\LogicManager.cpp > CMakeFiles\TP.dir\src\logica\LogicManager.cpp.i
+CMakeFiles/TP.dir/src/logica/Manager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TP.dir/src/logica/Manager.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\3exe_POO\TP\TP\src\logica\Manager.cpp > CMakeFiles\TP.dir\src\logica\Manager.cpp.i
 
-CMakeFiles/TP.dir/src/logica/LogicManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP.dir/src/logica/LogicManager.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3exe_POO\TP\TP\src\logica\LogicManager.cpp -o CMakeFiles\TP.dir\src\logica\LogicManager.cpp.s
+CMakeFiles/TP.dir/src/logica/Manager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TP.dir/src/logica/Manager.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\3exe_POO\TP\TP\src\logica\Manager.cpp -o CMakeFiles\TP.dir\src\logica\Manager.cpp.s
 
 CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: CMakeFiles/TP.dir/flags.make
 CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: CMakeFiles/TP.dir/includes_CXX.rsp
@@ -211,7 +211,7 @@ TP_OBJECTS = \
 "CMakeFiles/TP.dir/src/funcoes/Utils.cpp.obj" \
 "CMakeFiles/TP.dir/main.cpp.obj" \
 "CMakeFiles/TP.dir/src/interface/Interface.cpp.obj" \
-"CMakeFiles/TP.dir/src/logica/LogicManager.cpp.obj" \
+"CMakeFiles/TP.dir/src/logica/Manager.cpp.obj" \
 "CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj"
 
 # External object files for target TP
@@ -224,7 +224,7 @@ TP.exe: CMakeFiles/TP.dir/src/dados/cpp/Territorio.cpp.obj
 TP.exe: CMakeFiles/TP.dir/src/funcoes/Utils.cpp.obj
 TP.exe: CMakeFiles/TP.dir/main.cpp.obj
 TP.exe: CMakeFiles/TP.dir/src/interface/Interface.cpp.obj
-TP.exe: CMakeFiles/TP.dir/src/logica/LogicManager.cpp.obj
+TP.exe: CMakeFiles/TP.dir/src/logica/Manager.cpp.obj
 TP.exe: CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj
 TP.exe: CMakeFiles/TP.dir/build.make
 TP.exe: CMakeFiles/TP.dir/linklibs.rsp

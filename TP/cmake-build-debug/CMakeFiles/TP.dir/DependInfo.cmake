@@ -6,7 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "D:/3exe_POO/TP/TP/main.cpp" "D:/3exe_POO/TP/TP/cmake-build-debug/CMakeFiles/TP.dir/main.cpp.obj"
   "D:/3exe_POO/TP/TP/src/interface/Interface.cpp" "D:/3exe_POO/TP/TP/cmake-build-debug/CMakeFiles/TP.dir/src/Interface/Interface.cpp.obj"
-  "D:/3exe_POO/TP/TP/src/logica/LogicManager.cpp" "D:/3exe_POO/TP/TP/cmake-build-debug/CMakeFiles/TP.dir/src/Logica/LogicManager.cpp.obj"
+  "D:/3exe_POO/TP/TP/src/logica/Manager.cpp" "D:/3exe_POO/TP/TP/cmake-build-debug/CMakeFiles/TP.dir/src/Logica/Manager.cpp.obj"
   "D:/3exe_POO/TP/TP/src/dados/cpp/Continente.cpp" "D:/3exe_POO/TP/TP/cmake-build-debug/CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.obj"
   "D:/3exe_POO/TP/TP/src/dados/cpp/Ilha.cpp" "D:/3exe_POO/TP/TP/cmake-build-debug/CMakeFiles/TP.dir/src/dados/cpp/Ilha.cpp.obj"
   "D:/3exe_POO/TP/TP/src/dados/cpp/Imperio.cpp" "D:/3exe_POO/TP/TP/cmake-build-debug/CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj"

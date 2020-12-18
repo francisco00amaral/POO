@@ -2,8 +2,8 @@
 // Created by migue on 15/12/2020.
 //
 
-#ifndef TP_LOGICMANAGER_H
-#define TP_LOGICMANAGER_H
+#ifndef TP_MANAGER_H
+#define TP_MANAGER_H
 
 /*Esta classe recebe o input do utilizador através da classe interface
  * e desencadeia toda a lógica correspondente ao comando recebido
@@ -20,11 +20,11 @@
 
 using namespace std;
 
-class LogicManager {
+class Manager {
     Mundo mundo;
 public:
-    LogicManager();
-    ~LogicManager();
+    Manager();
+    ~Manager();
 
     void init();//função chamada quando o manager é criado
 
@@ -33,11 +33,11 @@ public:
     void carrega(istringstream& iss);
 
     //durante o jogo
-    void conquista(istringstream& iss);
-    void passa();
-    void maisOuro();
-    void maisProduto();
-    void maisMilitar();
+    void conquista(fase phase, istringstream& iss) const;
+    void passa(istringstream& iss);//recebe iss somente pra fazer clear
+    void maisOuro(istringstream& iss);//recebe iss somente pra fazer clear
+    void maisProduto(istringstream& iss);//recebe iss somente pra fazer clear
+    void maisMilitar(istringstream& iss);//recebe iss somente pra fazer clear
     void adquire(istringstream& iss);
     void lista(istringstream& iss) const;
     void grava(istringstream& iss);
@@ -47,8 +47,9 @@ public:
     void modifica(istringstream& iss);
     void fevento(istringstream& iss);
 
-    //ocasião especial(turno 6)
-    void update();
+    //ocasiões especiais
+    void update();//turno 6
+    void harvest() const;//na fase de Recolha
 
     //mostra info atual(status bar)
     string mostraImperio() const;
@@ -56,4 +57,4 @@ public:
 };
 
 
-#endif //TP_LOGICMANAGER_H
+#endif //TP_MANAGER_H

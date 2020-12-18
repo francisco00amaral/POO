@@ -6,7 +6,7 @@
 #define TP_INTERFACE_H
 
 
-#include "logica/LogicManager.h"
+#include "logica/Manager.h"
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -16,12 +16,16 @@
 using namespace std;
 
 class Interface {
-    LogicManager manager;
+    Manager manager;
 public:
-    explicit Interface(LogicManager& manager);
+    explicit Interface(Manager& manager);
     ~Interface();
     void startLoad();
     void startGame();
+    void faseConquista(const Manager& manager, fase& phase);
+    void faseRecolha(const Manager& manager, fase& phase);
+    void faseCompra(const Manager& manager, fase& phase);
+    void faseEvento(const Manager& manager, fase& phase);
 
 };
 

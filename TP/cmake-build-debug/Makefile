@@ -358,32 +358,32 @@ src/interface/Interface.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/interface/Interface.cpp.s
 .PHONY : src/interface/Interface.cpp.s
 
-src/logica/LogicManager.obj: src/logica/LogicManager.cpp.obj
+src/logica/Manager.obj: src/logica/Manager.cpp.obj
 
-.PHONY : src/logica/LogicManager.obj
+.PHONY : src/logica/Manager.obj
 
 # target to build an object file
-src/logica/LogicManager.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/LogicManager.cpp.obj
-.PHONY : src/logica/LogicManager.cpp.obj
+src/logica/Manager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/Manager.cpp.obj
+.PHONY : src/logica/Manager.cpp.obj
 
-src/logica/LogicManager.i: src/logica/LogicManager.cpp.i
+src/logica/Manager.i: src/logica/Manager.cpp.i
 
-.PHONY : src/logica/LogicManager.i
+.PHONY : src/logica/Manager.i
 
 # target to preprocess a source file
-src/logica/LogicManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/LogicManager.cpp.i
-.PHONY : src/logica/LogicManager.cpp.i
+src/logica/Manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/Manager.cpp.i
+.PHONY : src/logica/Manager.cpp.i
 
-src/logica/LogicManager.s: src/logica/LogicManager.cpp.s
+src/logica/Manager.s: src/logica/Manager.cpp.s
 
-.PHONY : src/logica/LogicManager.s
+.PHONY : src/logica/Manager.s
 
 # target to generate assembly for a file
-src/logica/LogicManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/LogicManager.cpp.s
-.PHONY : src/logica/LogicManager.cpp.s
+src/logica/Manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/Manager.cpp.s
+.PHONY : src/logica/Manager.cpp.s
 
 # Help Target
 help:
@@ -418,9 +418,9 @@ help:
 	@echo ... src/interface/Interface.obj
 	@echo ... src/interface/Interface.i
 	@echo ... src/interface/Interface.s
-	@echo ... src/logica/LogicManager.obj
-	@echo ... src/logica/LogicManager.i
-	@echo ... src/logica/LogicManager.s
+	@echo ... src/logica/Manager.obj
+	@echo ... src/logica/Manager.i
+	@echo ... src/logica/Manager.s
 .PHONY : help
 
 

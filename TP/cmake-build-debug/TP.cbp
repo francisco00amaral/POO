@@ -137,10 +137,10 @@
 		<Unit filename="D:/3exe_POO/TP/TP/src/interface/Interface.h">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/src/logica/LogicManager.cpp">
+		<Unit filename="D:/3exe_POO/TP/TP/src/logica/Manager.cpp">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/src/logica/LogicManager.h">
+		<Unit filename="D:/3exe_POO/TP/TP/src/logica/Manager.h">
 			<Option target="TP"/>
 		</Unit>
 		<Unit filename="D:/3exe_POO/TP/TP/CMakeLists.txt">

@@ -3,24 +3,24 @@
 //
 
 #include <Utils.h>
-#include "LogicManager.h"
+#include "Manager.h"
 
-LogicManager::LogicManager() {
-
-}
-
-LogicManager::~LogicManager() {
+Manager::Manager() {
 
 }
 
-void LogicManager::init() {
+Manager::~Manager() {
+
+}
+
+void Manager::init() {
 
 }
 
 
 
 //pre-jogo
-void LogicManager::cria(istringstream &iss) {
+void Manager::cria(istringstream &iss) {
     string tipo;
     if((iss >> tipo).fail()){
         cout << "Erro ao criar territorio(s)." << endl;
@@ -42,11 +42,10 @@ void LogicManager::cria(istringstream &iss) {
 
     mundo.mCria(tipo, quant);
 
-    iss.clear();//para prevenir caso o utilizador tenha posto algum input a mais que n faça sentido
 }
 
 
-void LogicManager::carrega(istringstream &iss) {
+void Manager::carrega(istringstream &iss) {
     string path;
     if((iss >> path).fail()){
         cout << "Erro ao obter o nome do ficheiro." << endl;
@@ -82,16 +81,12 @@ void LogicManager::carrega(istringstream &iss) {
         return;
     }
 
-    iss.clear();
 }
 
 
 
-
-
-
 //durante o jogo
-void LogicManager::conquista(istringstream &iss) {
+void Manager::conquista(fase phase, istringstream &iss) const {
 
     string nome;
     if((iss >> nome).fail()){
@@ -99,8 +94,7 @@ void LogicManager::conquista(istringstream &iss) {
         return;
     }
 
-    //TODO verificar se fazer tolower de um int dá erro
-    //toLower(nome);
+    toLower(nome);
 
     if(mundo.verificaExistenciaTerritorio(nome))
         mundo.mConquista(nome);
@@ -110,39 +104,43 @@ void LogicManager::conquista(istringstream &iss) {
 }
 
 
-void LogicManager::passa() {
+void Manager::passa(istringstream &iss) {
     if(mundo.mPassa())
         cout << "Troca efetuada com sucesso." << endl;
     else
         cout << "Troca nao efetuada com sucesso." << endl;
+
 }
 
 
-void LogicManager::maisOuro() {
+void Manager::maisOuro(istringstream& iss) {
     if(mundo.mMaisOuro())
         cout << "Troca efetuada com sucesso." << endl;
     else
         cout << "Troca nao efetuada com sucesso." << endl;
+
 }
 
 
-void LogicManager::maisProduto() {
+void Manager::maisProduto(istringstream& iss) {
     if(mundo.mMaisProduto())
         cout << "Troca efetuada com sucesso." << endl;
     else
         cout << "Troca nao efetuada com sucesso." << endl;
+
 }
 
 
-void LogicManager::maisMilitar() {
+void Manager::maisMilitar(istringstream& iss) {
     if(mundo.mMaisMilitar())
         cout << "Troca efetuada com sucesso." << endl;
     else
         cout << "Troca nao efetuada com sucesso." << endl;
+
 }
 
 
-void LogicManager::adquire(istringstream &iss) {
+void Manager::adquire(istringstream &iss) {
     int tipo;
     if((iss >> tipo).fail()){
         cout << "Erro ao ler os argumentos passados." << endl;
@@ -158,9 +156,11 @@ void LogicManager::adquire(istringstream &iss) {
         cout << "Tecnologia obtida com sucesso." << endl;
     else
         cout << "Tecnologia nao obtida." << endl;
+
 }
 
-void LogicManager::lista(istringstream &iss) const {
+
+void Manager::lista(istringstream &iss) const {
     string nome;
     if((iss >> nome).fail())
         mundo.mLista();
@@ -176,22 +176,23 @@ void LogicManager::lista(istringstream &iss) const {
 
 }
 
-void LogicManager::grava(istringstream &iss) {
+
+void Manager::grava(istringstream &iss) {
     //ainda falta aprender isto
 }
 
 
-void LogicManager::ativa(istringstream &iss) {
+void Manager::ativa(istringstream &iss) {
     //ainda falta aprender isto
 }
 
 
-void LogicManager::apaga(istringstream &iss){
+void Manager::apaga(istringstream &iss){
     //ainda falta aprender isto
 }
 
 
-void LogicManager::toma(istringstream &iss) {
+void Manager::toma(istringstream &iss) {
     string tipo;
     if((iss >> tipo).fail()){
         cout << "Erro ao obter os argumentos." << endl;
@@ -201,37 +202,44 @@ void LogicManager::toma(istringstream &iss) {
     string nome;
     int tecnologia;
     if(tipo == "terr"){//escolhe territorio
-        if((iss >> nome).fail()){//verifica integridade dos argumentos
+        if((iss >> nome).fail()){
             cout << "Erro ao ler os argumentos." << endl;
             return;
         }
-        if(mundo.verificaExistenciaTerritorio(nome))//verifica se existe
-            mundo.mTomaTerr(nome);
-        else{//nao existe
+
+        enum::tomaRes res = mundo.mTomaTerr(nome);
+        if(res == SUCCESS)
+            cout << "Territorio tomado com sucesso." << endl;
+        else
             cout << "Territorio nao existente." << endl;
-            return;
-        }
+
+        return;
+
     }else if(tipo == "tech"){//escolhe tecnologia
-        if((iss >> tecnologia).fail()){//verifica integridade dos argumentos
+        if((iss >> tecnologia).fail()){
             cout << "Erro ao ler os argumentos." << endl;
             return;
         }
-        if(tecnologia > 5 || tecnologia < 1){
-            cout << "Tecnologia nao existente." << endl;
-        }else{
-            if(mundo.mTomaTech(tecnologia))
-                cout << "Tecnologia adquirida com sucesso." << endl;
-            else
-                cout << "Tecnologia ja adquirida anteriormente." << endl;
-        }
-    }else{
-        cout << "Tipo nao reconhecido." << endl;
+
+        enum::tomaRes res = mundo.mTomaTech(tecnologia);
+        if(res == SUCCESS)
+            cout << "Tecnologia adquirida com sucesso." << endl;
+        else if(res == FAIL)
+            cout << "Tecnologia ja desbloqueada anteriormente." << endl;
+        else
+            cout << "Tecnologia pedida nao existe." << endl;
+
         return;
+
     }
+
+    //tipo escolhido nao existe
+    cout << "Tipo nao reconhecido." << endl;
+
 }
 
 
-void LogicManager::modifica(istringstream &iss) {
+void Manager::modifica(istringstream &iss) {
     string tipo;
     if((iss >> tipo).fail()){
         cout << "Erro ao obter os argumentos." << endl;
@@ -241,54 +249,75 @@ void LogicManager::modifica(istringstream &iss) {
     toLower(tipo);
 
     int quant;
+    enum::modRes res;
     if(tipo == "ouro"){
         if((iss >> quant).fail()){
             cout << "Erro ao ler os argumentos." << endl;
             return;
         }
-        //TODO esta parte pode ser resolvida com Enums(para saber o resultado/n me apetece usar ints e quero dar flex)
-//        if(quant > mundo.get || quant < 1){
-//            cout << "Quantidade fora do intervalo definido." << endl;
-//                return;
-//        }
+
+        res = mundo.mModificaOuro(quant);
+        if(res == OK)
+            cout << "Alteracao feita com sucesso." << endl;
+        else if(res == SPACE)
+            cout << "Valor designado supera a capaciade maxima." << endl;
+        else
+            cout << "Valor negativo." << endl;
+
+        return;
+
     }else if(tipo == "prod"){
         if((iss >> quant).fail()){
             cout << "Erro ao ler os argumentos." << endl;
             return;
         }
-        //TODO esta parte pode ser resolvida com Enums(para saber o resultado/n me apetece usar ints e quero dar flex)
-//        if(quant > mundo.get || quant < 1){
-//            cout << "Quantidade dora do intervalo definido." << endl;
-//            return;
-//        }
-    }else{
-        cout << "Tipo inserido nao existe." << endl;
+
+        res = mundo.mModificaProduto(quant);
+        if(res == OK)
+            cout << "Alteracao feita com sucesso." << endl;
+        else if(res == SPACE)
+            cout << "Valor designado supera a capaciade maxima." << endl;
+        else
+            cout << "Valor negativo." << endl;
+
         return;
     }
+
+    cout << "Tipo inserido nao existe." << endl;
+
 }
 
 
-void LogicManager::fevento(istringstream &iss) {
+void Manager::fevento(istringstream &iss) {
     int numEvento;
     if((iss >> numEvento).fail()){
         cout << "Erro ao ler os argumentos." << endl;
         return;
     }
 
-    //TODO esta parte pode ser resolvida com Enums(para saber o resultado/n me apetece usar números mágicos(ints) e quero dar flex)
-//    mundo.mFevento();
+    if(mundo.mForceEvent(numEvento))
+        cout << "Evento aplicado com sucesso." << endl;
+    else
+        cout << "Evento pedido nao existe." << endl;
 
 }
 
 
+
 //ocasião especial
-void LogicManager::update() {
+//atualiza os valores de cada territorio(conquistados e nao conquistados) no turno 6
+void Manager::update() {
     mundo.mUpdate();
 }
 
 
+void Manager::harvest() const {
+    mundo.mHarvest();
+}
+
 //mostra info atual(status bar)
-string LogicManager::mostraImperio() const {
+string Manager::mostraImperio() const {
     return mundo.getInfoImperio();
 }
+
 

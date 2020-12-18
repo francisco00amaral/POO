@@ -12,31 +12,23 @@
 #include <fstream>
 #include <cstdlib>
 #include <ctime>
+#include <algorithm>
 #include "../dados/h/Imperio.h"
 
 using namespace std;
 
-//comandos pre jogo
-void startJogo(Imperio &ip);
-bool cria(Imperio &ip, istringstream &iss);
-void mostraNomes(Imperio &ip);
-bool carrega(Imperio &ip, istringstream &iss);
-void lista(Imperio &ip, istringstream &iss);
-void fase1(Imperio &ip,istringstream &iss,string comando);
-void fase3(Imperio &ip,istringstream &iss,string comando);
-
-
-//auxiliar jogo
-void runComando(Imperio& ip);//corre comandos do jogo
-
-//comandos do jogo
-bool conquista(Imperio &ip, istringstream &iss);
-
-// funcao de teste , pode dar jeito;
-void MostraConquistados(Imperio &ip);
 
 //passa strings para lower case
 void toLower(string& str);
 
+//Enumerações
+/*são usadas em certas funções para definir o resultado da função
+ * como por exemplo, se a função tiver 3 ou mais resultados diferentes*/
+
+enum fase{CONQUISTA, RECOLHA, COMPRA, EVENTO};//define a fase do turno
+
+enum modRes{OK, SPACE, NEGATIVE};//resultado da função mModifica
+
+enum tomaRes{SUCCESS, FAIL, UNKNOWN};//resultado da função mTomaTerr e mTomeTech
 
 #endif //TP_UTILS_H
