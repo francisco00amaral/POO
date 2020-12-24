@@ -21,4 +21,10 @@ add_executable(TP
         src/dados/h/Territorio.h
         src/funcoes/Utils.cpp
         src/funcoes/Utils.h
-        main.cpp src/interface/Interface.cpp src/interface/Interface.h src/logica/Manager.cpp src/logica/Manager.h src/dados/cpp/Mundo.cpp src/dados/h/Mundo.h)
+        main.cpp
+        src/interface/Interface.cpp
+        src/interface/Interface.h
+        src/logica/Manager.cpp
+        src/logica/Manager.h
+        src/dados/cpp/Mundo.cpp
+        src/dados/h/Mundo.h)

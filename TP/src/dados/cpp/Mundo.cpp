@@ -18,3 +18,13 @@ bool Mundo::verificaExistenciaTerritorio(string nome) const{
             return true;
     return false;
 }
+
+
+void Mundo::harvest(){
+
+
+    for(const auto& x : territorios){
+        x->getRes();
+    }
+
+}

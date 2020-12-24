@@ -32,10 +32,10 @@ enum resConquista{CONQUISTADO, NAO_CONQUISTADO, INEXISTENTE};
 /*resultados das funcoes maisOuro e maisProd */
 enum resMaisOP{TROCADO, NAO_TROCADO, REPETIDO, SEM_RECURSOS, SEM_BOLSA};
 
-/*resultados fas funcoes mMaisMilitar e mAdquire*/
+/*resultados das funcoes mMaisMilitar e mAdquire*/
 enum resMA{ADQUIRIDO, NAO_ADQUIRIDO, ITERADO, RECURSOS};
 
-/*resultados fa funcao mToma*/
+/*resultados da funcao mToma*/
 enum resToma{TOMADO, TERRTORIO_INEXISTENTE, TECNOLOGIA_INEXISTENTE, TECNOLOGIA_JA_ADQUIRIDA};
 
 /*resultados da funcao mModifica*/
