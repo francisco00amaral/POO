@@ -3,6 +3,7 @@
 
 CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Imperio.h
 CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Mundo.h
+CMakeFiles/TP.dir/main.cpp.obj: ../src/funcoes/Utils.h
 CMakeFiles/TP.dir/main.cpp.obj: ../src/interface/Interface.h
 CMakeFiles/TP.dir/main.cpp.obj: ../src/logica/Manager.h
 CMakeFiles/TP.dir/main.cpp.obj: ../main.cpp
@@ -12,20 +13,45 @@ CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Imperio.h
 CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Territorio.h
 CMakeFiles/TP.dir/main.cpp.obj: ../src/funcoes/Utils.h
 
-CMakeFiles/TP.dir/src/Interface/Interface.cpp.obj: ../src/dados/h/Imperio.h
-CMakeFiles/TP.dir/src/Interface/Interface.cpp.obj: ../src/dados/h/Mundo.h
-CMakeFiles/TP.dir/src/Interface/Interface.cpp.obj: ../src/dados/h/Territorio.h
-CMakeFiles/TP.dir/src/Interface/Interface.cpp.obj: ../src/funcoes/Utils.h
-CMakeFiles/TP.dir/src/Interface/Interface.cpp.obj: ../src/logica/Manager.h
-CMakeFiles/TP.dir/src/Interface/Interface.cpp.obj: ../src/interface/Interface.cpp
-CMakeFiles/TP.dir/src/Interface/Interface.cpp.obj: ../src/interface/Interface.h
+CMakeFiles/TP.dir/src/dados/Castelo.cpp.obj: ../src/dados/h/Continente.h
+CMakeFiles/TP.dir/src/dados/Castelo.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/dados/Castelo.cpp.obj: ../src/dados/Castelo.cpp
+CMakeFiles/TP.dir/src/dados/Castelo.cpp.obj: ../src/dados/Castelo.h
 
-CMakeFiles/TP.dir/src/Logica/Manager.cpp.obj: ../src/dados/h/Imperio.h
-CMakeFiles/TP.dir/src/Logica/Manager.cpp.obj: ../src/dados/h/Mundo.h
-CMakeFiles/TP.dir/src/Logica/Manager.cpp.obj: ../src/dados/h/Territorio.h
-CMakeFiles/TP.dir/src/Logica/Manager.cpp.obj: ../src/funcoes/Utils.h
-CMakeFiles/TP.dir/src/Logica/Manager.cpp.obj: ../src/logica/Manager.cpp
-CMakeFiles/TP.dir/src/Logica/Manager.cpp.obj: ../src/logica/Manager.h
+CMakeFiles/TP.dir/src/dados/Duna.cpp.obj: ../src/dados/h/Continente.h
+CMakeFiles/TP.dir/src/dados/Duna.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/dados/Duna.cpp.obj: ../src/dados/Duna.cpp
+CMakeFiles/TP.dir/src/dados/Duna.cpp.obj: ../src/dados/Duna.h
+
+CMakeFiles/TP.dir/src/dados/Fortaleza.cpp.obj: ../src/dados/h/Continente.h
+CMakeFiles/TP.dir/src/dados/Fortaleza.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/dados/Fortaleza.cpp.obj: ../src/dados/Fortaleza.cpp
+CMakeFiles/TP.dir/src/dados/Fortaleza.cpp.obj: ../src/dados/Fortaleza.h
+
+CMakeFiles/TP.dir/src/dados/Mina.cpp.obj: ../src/dados/h/Continente.h
+CMakeFiles/TP.dir/src/dados/Mina.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/dados/Mina.cpp.obj: ../src/dados/Mina.cpp
+CMakeFiles/TP.dir/src/dados/Mina.cpp.obj: ../src/dados/Mina.h
+
+CMakeFiles/TP.dir/src/dados/Montanha.cpp.obj: ../src/dados/h/Continente.h
+CMakeFiles/TP.dir/src/dados/Montanha.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/dados/Montanha.cpp.obj: ../src/dados/Montanha.cpp
+CMakeFiles/TP.dir/src/dados/Montanha.cpp.obj: ../src/dados/Montanha.h
+
+CMakeFiles/TP.dir/src/dados/Pescaria.cpp.obj: ../src/dados/h/Ilha.h
+CMakeFiles/TP.dir/src/dados/Pescaria.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/dados/Pescaria.cpp.obj: ../src/dados/Pescaria.cpp
+CMakeFiles/TP.dir/src/dados/Pescaria.cpp.obj: ../src/dados/Pescaria.h
+
+CMakeFiles/TP.dir/src/dados/Planicie.cpp.obj: ../src/dados/h/Continente.h
+CMakeFiles/TP.dir/src/dados/Planicie.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/dados/Planicie.cpp.obj: ../src/dados/Planicie.cpp
+CMakeFiles/TP.dir/src/dados/Planicie.cpp.obj: ../src/dados/Planicie.h
+
+CMakeFiles/TP.dir/src/dados/Refugio.cpp.obj: ../src/dados/h/Ilha.h
+CMakeFiles/TP.dir/src/dados/Refugio.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/dados/Refugio.cpp.obj: ../src/dados/Refugio.cpp
+CMakeFiles/TP.dir/src/dados/Refugio.cpp.obj: ../src/dados/Refugio.h
 
 CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.obj: ../src/dados/cpp/Continente.cpp
 CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.obj: ../src/dados/h/Continente.h
@@ -44,6 +70,7 @@ CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj: ../src/dados/h/Territorio.h
 CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/dados/h/Imperio.h
 CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/dados/h/Mundo.h
 CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/funcoes/Utils.h
 CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/dados/cpp/Mundo.cpp
 
 CMakeFiles/TP.dir/src/dados/cpp/Territorio.cpp.obj: ../src/dados/cpp/Territorio.cpp
@@ -53,4 +80,19 @@ CMakeFiles/TP.dir/src/funcoes/Utils.cpp.obj: ../src/dados/h/Imperio.h
 CMakeFiles/TP.dir/src/funcoes/Utils.cpp.obj: ../src/dados/h/Territorio.h
 CMakeFiles/TP.dir/src/funcoes/Utils.cpp.obj: ../src/funcoes/Utils.cpp
 CMakeFiles/TP.dir/src/funcoes/Utils.cpp.obj: ../src/funcoes/Utils.h
+
+CMakeFiles/TP.dir/src/interface/Interface.cpp.obj: ../src/dados/h/Imperio.h
+CMakeFiles/TP.dir/src/interface/Interface.cpp.obj: ../src/dados/h/Mundo.h
+CMakeFiles/TP.dir/src/interface/Interface.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/interface/Interface.cpp.obj: ../src/funcoes/Utils.h
+CMakeFiles/TP.dir/src/interface/Interface.cpp.obj: ../src/logica/Manager.h
+CMakeFiles/TP.dir/src/interface/Interface.cpp.obj: ../src/interface/Interface.cpp
+CMakeFiles/TP.dir/src/interface/Interface.cpp.obj: ../src/interface/Interface.h
+
+CMakeFiles/TP.dir/src/logica/Manager.cpp.obj: ../src/dados/h/Imperio.h
+CMakeFiles/TP.dir/src/logica/Manager.cpp.obj: ../src/dados/h/Mundo.h
+CMakeFiles/TP.dir/src/logica/Manager.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/logica/Manager.cpp.obj: ../src/funcoes/Utils.h
+CMakeFiles/TP.dir/src/logica/Manager.cpp.obj: ../src/logica/Manager.cpp
+CMakeFiles/TP.dir/src/logica/Manager.cpp.obj: ../src/logica/Manager.h
 

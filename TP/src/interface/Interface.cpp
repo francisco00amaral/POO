@@ -103,8 +103,8 @@ void Interface::startGame(){
 
 void Interface::faseConquista(fase& phase){
 
-    cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ??? significa opcional)" << endl;
-    cout << "conquista <nome>\tpassa\tlista <nome???>\ttoma <tipo> <nome>\tavanca\n"
+    cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ? significa opcional)" << endl;
+    cout << "conquista <nome>\tpassa\tlista <nome?>\ttoma <tipo> <nome>\tavanca\n"
             "grava <nome>\tativa <nome>\tapaga <nome>" << endl;
 
     string resposta;
@@ -140,7 +140,7 @@ void Interface::faseRecolha(fase& phase){
 
     manager.harvest();
 
-    cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ??? significa opcional)" << endl;
+    cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ? significa opcional)" << endl;
     cout << "maisouro <quantidade>\tmaisprod <quantidade>\tavanca\n"
             "modifica <tipo recurso> <quantidade pretendida>\tgrava <nome>\tativa <nome>\tapaga <nome>" << endl;
 
@@ -173,7 +173,7 @@ void Interface::faseRecolha(fase& phase){
 
 void Interface::faseCompra(fase &phase) {
 
-    cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ??? significa opcional)" << endl;
+    cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ? significa opcional)" << endl;
     cout << "maismilitar\tadquire <tipo de tecnologia>\tmodifica <tipo de recurso> <quantidade>\tavanca\n"
             "grava <nome>\tativa <nome>\tapaga <nome>" << endl;
 
@@ -206,8 +206,8 @@ void Interface::faseCompra(fase &phase) {
 
 void Interface::faseEvento(fase &phase) {
 
-    cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ??? significa opcional)" << endl;
-    cout << "fevento <nome-evento???>\tgrava <nome>\tativa <nome>\tapaga <nome>" << endl;
+    cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ? significa opcional)" << endl;
+    cout << "fevento <nome-evento?>\tgrava <nome>\tativa <nome>\tapaga <nome>" << endl;
 
     string resposta;
     getline(cin, resposta);

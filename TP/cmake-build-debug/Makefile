@@ -67,10 +67,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.1.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\3exe_POO\TP\TP
+CMAKE_SOURCE_DIR = D:\3exe_POO\TP_2\POO\TP
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\3exe_POO\TP\TP\cmake-build-debug
+CMAKE_BINARY_DIR = D:\3exe_POO\TP_2\POO\TP\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\3exe_POO\TP\TP\cmake-build-debug\CMakeFiles D:\3exe_POO\TP\TP\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\3exe_POO\TP_2\POO\TP\cmake-build-debug\CMakeFiles D:\3exe_POO\TP_2\POO\TP\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\3exe_POO\TP\TP\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\3exe_POO\TP_2\POO\TP\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -168,6 +168,222 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+src/dados/Castelo.obj: src/dados/Castelo.cpp.obj
+
+.PHONY : src/dados/Castelo.obj
+
+# target to build an object file
+src/dados/Castelo.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Castelo.cpp.obj
+.PHONY : src/dados/Castelo.cpp.obj
+
+src/dados/Castelo.i: src/dados/Castelo.cpp.i
+
+.PHONY : src/dados/Castelo.i
+
+# target to preprocess a source file
+src/dados/Castelo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Castelo.cpp.i
+.PHONY : src/dados/Castelo.cpp.i
+
+src/dados/Castelo.s: src/dados/Castelo.cpp.s
+
+.PHONY : src/dados/Castelo.s
+
+# target to generate assembly for a file
+src/dados/Castelo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Castelo.cpp.s
+.PHONY : src/dados/Castelo.cpp.s
+
+src/dados/Duna.obj: src/dados/Duna.cpp.obj
+
+.PHONY : src/dados/Duna.obj
+
+# target to build an object file
+src/dados/Duna.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Duna.cpp.obj
+.PHONY : src/dados/Duna.cpp.obj
+
+src/dados/Duna.i: src/dados/Duna.cpp.i
+
+.PHONY : src/dados/Duna.i
+
+# target to preprocess a source file
+src/dados/Duna.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Duna.cpp.i
+.PHONY : src/dados/Duna.cpp.i
+
+src/dados/Duna.s: src/dados/Duna.cpp.s
+
+.PHONY : src/dados/Duna.s
+
+# target to generate assembly for a file
+src/dados/Duna.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Duna.cpp.s
+.PHONY : src/dados/Duna.cpp.s
+
+src/dados/Fortaleza.obj: src/dados/Fortaleza.cpp.obj
+
+.PHONY : src/dados/Fortaleza.obj
+
+# target to build an object file
+src/dados/Fortaleza.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Fortaleza.cpp.obj
+.PHONY : src/dados/Fortaleza.cpp.obj
+
+src/dados/Fortaleza.i: src/dados/Fortaleza.cpp.i
+
+.PHONY : src/dados/Fortaleza.i
+
+# target to preprocess a source file
+src/dados/Fortaleza.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Fortaleza.cpp.i
+.PHONY : src/dados/Fortaleza.cpp.i
+
+src/dados/Fortaleza.s: src/dados/Fortaleza.cpp.s
+
+.PHONY : src/dados/Fortaleza.s
+
+# target to generate assembly for a file
+src/dados/Fortaleza.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Fortaleza.cpp.s
+.PHONY : src/dados/Fortaleza.cpp.s
+
+src/dados/Mina.obj: src/dados/Mina.cpp.obj
+
+.PHONY : src/dados/Mina.obj
+
+# target to build an object file
+src/dados/Mina.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Mina.cpp.obj
+.PHONY : src/dados/Mina.cpp.obj
+
+src/dados/Mina.i: src/dados/Mina.cpp.i
+
+.PHONY : src/dados/Mina.i
+
+# target to preprocess a source file
+src/dados/Mina.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Mina.cpp.i
+.PHONY : src/dados/Mina.cpp.i
+
+src/dados/Mina.s: src/dados/Mina.cpp.s
+
+.PHONY : src/dados/Mina.s
+
+# target to generate assembly for a file
+src/dados/Mina.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Mina.cpp.s
+.PHONY : src/dados/Mina.cpp.s
+
+src/dados/Montanha.obj: src/dados/Montanha.cpp.obj
+
+.PHONY : src/dados/Montanha.obj
+
+# target to build an object file
+src/dados/Montanha.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Montanha.cpp.obj
+.PHONY : src/dados/Montanha.cpp.obj
+
+src/dados/Montanha.i: src/dados/Montanha.cpp.i
+
+.PHONY : src/dados/Montanha.i
+
+# target to preprocess a source file
+src/dados/Montanha.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Montanha.cpp.i
+.PHONY : src/dados/Montanha.cpp.i
+
+src/dados/Montanha.s: src/dados/Montanha.cpp.s
+
+.PHONY : src/dados/Montanha.s
+
+# target to generate assembly for a file
+src/dados/Montanha.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Montanha.cpp.s
+.PHONY : src/dados/Montanha.cpp.s
+
+src/dados/Pescaria.obj: src/dados/Pescaria.cpp.obj
+
+.PHONY : src/dados/Pescaria.obj
+
+# target to build an object file
+src/dados/Pescaria.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Pescaria.cpp.obj
+.PHONY : src/dados/Pescaria.cpp.obj
+
+src/dados/Pescaria.i: src/dados/Pescaria.cpp.i
+
+.PHONY : src/dados/Pescaria.i
+
+# target to preprocess a source file
+src/dados/Pescaria.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Pescaria.cpp.i
+.PHONY : src/dados/Pescaria.cpp.i
+
+src/dados/Pescaria.s: src/dados/Pescaria.cpp.s
+
+.PHONY : src/dados/Pescaria.s
+
+# target to generate assembly for a file
+src/dados/Pescaria.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Pescaria.cpp.s
+.PHONY : src/dados/Pescaria.cpp.s
+
+src/dados/Planicie.obj: src/dados/Planicie.cpp.obj
+
+.PHONY : src/dados/Planicie.obj
+
+# target to build an object file
+src/dados/Planicie.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Planicie.cpp.obj
+.PHONY : src/dados/Planicie.cpp.obj
+
+src/dados/Planicie.i: src/dados/Planicie.cpp.i
+
+.PHONY : src/dados/Planicie.i
+
+# target to preprocess a source file
+src/dados/Planicie.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Planicie.cpp.i
+.PHONY : src/dados/Planicie.cpp.i
+
+src/dados/Planicie.s: src/dados/Planicie.cpp.s
+
+.PHONY : src/dados/Planicie.s
+
+# target to generate assembly for a file
+src/dados/Planicie.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Planicie.cpp.s
+.PHONY : src/dados/Planicie.cpp.s
+
+src/dados/Refugio.obj: src/dados/Refugio.cpp.obj
+
+.PHONY : src/dados/Refugio.obj
+
+# target to build an object file
+src/dados/Refugio.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Refugio.cpp.obj
+.PHONY : src/dados/Refugio.cpp.obj
+
+src/dados/Refugio.i: src/dados/Refugio.cpp.i
+
+.PHONY : src/dados/Refugio.i
+
+# target to preprocess a source file
+src/dados/Refugio.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Refugio.cpp.i
+.PHONY : src/dados/Refugio.cpp.i
+
+src/dados/Refugio.s: src/dados/Refugio.cpp.s
+
+.PHONY : src/dados/Refugio.s
+
+# target to generate assembly for a file
+src/dados/Refugio.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/dados/Refugio.cpp.s
+.PHONY : src/dados/Refugio.cpp.s
 
 src/dados/cpp/Continente.obj: src/dados/cpp/Continente.cpp.obj
 
@@ -397,6 +613,30 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... src/dados/Castelo.obj
+	@echo ... src/dados/Castelo.i
+	@echo ... src/dados/Castelo.s
+	@echo ... src/dados/Duna.obj
+	@echo ... src/dados/Duna.i
+	@echo ... src/dados/Duna.s
+	@echo ... src/dados/Fortaleza.obj
+	@echo ... src/dados/Fortaleza.i
+	@echo ... src/dados/Fortaleza.s
+	@echo ... src/dados/Mina.obj
+	@echo ... src/dados/Mina.i
+	@echo ... src/dados/Mina.s
+	@echo ... src/dados/Montanha.obj
+	@echo ... src/dados/Montanha.i
+	@echo ... src/dados/Montanha.s
+	@echo ... src/dados/Pescaria.obj
+	@echo ... src/dados/Pescaria.i
+	@echo ... src/dados/Pescaria.s
+	@echo ... src/dados/Planicie.obj
+	@echo ... src/dados/Planicie.i
+	@echo ... src/dados/Planicie.s
+	@echo ... src/dados/Refugio.obj
+	@echo ... src/dados/Refugio.i
+	@echo ... src/dados/Refugio.s
 	@echo ... src/dados/cpp/Continente.obj
 	@echo ... src/dados/cpp/Continente.i
 	@echo ... src/dados/cpp/Continente.s

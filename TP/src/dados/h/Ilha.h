@@ -18,7 +18,6 @@ class Ilha : public Territorio{
 
 public:
     Ilha(string nome);
-    int getPontos() const;
 };
 
 

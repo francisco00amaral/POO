@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="D:/3exe_POO/TP/TP/cmake-build-debug"/>
+				<Option working_dir="D:/3exe_POO/TP_2/POO/TP/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TP">
-				<Option output="D:/3exe_POO/TP/TP/cmake-build-debug/TP.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/3exe_POO/TP/TP/cmake-build-debug"/>
+				<Option output="D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/TP.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/3exe_POO/TP_2/POO/TP/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/3exe_POO/TP/TP/."/>
-					<Add directory="D:/3exe_POO/TP/TP/src"/>
-					<Add directory="D:/3exe_POO/TP/TP/src/dados"/>
-					<Add directory="D:/3exe_POO/TP/TP/src/dados/cpp"/>
-					<Add directory="D:/3exe_POO/TP/TP/src/dados/h"/>
-					<Add directory="D:/3exe_POO/TP/TP/src/funcoes"/>
+					<Add directory="D:/3exe_POO/TP_2/POO/TP/."/>
+					<Add directory="D:/3exe_POO/TP_2/POO/TP/src"/>
+					<Add directory="D:/3exe_POO/TP_2/POO/TP/src/dados"/>
+					<Add directory="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp"/>
+					<Add directory="D:/3exe_POO/TP_2/POO/TP/src/dados/h"/>
+					<Add directory="D:/3exe_POO/TP_2/POO/TP/src/funcoes"/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
@@ -38,25 +38,25 @@
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 TP"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 TP"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TP/fast">
-				<Option output="D:/3exe_POO/TP/TP/cmake-build-debug/TP.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/3exe_POO/TP/TP/cmake-build-debug"/>
+				<Option output="D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/TP.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/3exe_POO/TP_2/POO/TP/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="D:/3exe_POO/TP/TP/."/>
-					<Add directory="D:/3exe_POO/TP/TP/src"/>
-					<Add directory="D:/3exe_POO/TP/TP/src/dados"/>
-					<Add directory="D:/3exe_POO/TP/TP/src/dados/cpp"/>
-					<Add directory="D:/3exe_POO/TP/TP/src/dados/h"/>
-					<Add directory="D:/3exe_POO/TP/TP/src/funcoes"/>
+					<Add directory="D:/3exe_POO/TP_2/POO/TP/."/>
+					<Add directory="D:/3exe_POO/TP_2/POO/TP/src"/>
+					<Add directory="D:/3exe_POO/TP_2/POO/TP/src/dados"/>
+					<Add directory="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp"/>
+					<Add directory="D:/3exe_POO/TP_2/POO/TP/src/dados/h"/>
+					<Add directory="D:/3exe_POO/TP_2/POO/TP/src/funcoes"/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
@@ -65,85 +65,133 @@
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 TP/fast"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 TP/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="D:/3exe_POO/TP/TP/cmake-build-debug"/>
+				<Option working_dir="D:/3exe_POO/TP_2/POO/TP/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="D:/3exe_POO/TP/TP/cmake-build-debug"/>
+				<Option working_dir="D:/3exe_POO/TP_2/POO/TP/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/3exe_POO/TP/TP/main.cpp">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/main.cpp">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/src/dados/cpp/Continente.cpp">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Castelo.cpp">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/src/dados/cpp/Ilha.cpp">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Castelo.h">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/src/dados/cpp/Imperio.cpp">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Duna.cpp">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/src/dados/cpp/Mundo.cpp">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Duna.h">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/src/dados/cpp/Territorio.cpp">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Fortaleza.cpp">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/src/dados/h/Continente.h">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Fortaleza.h">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/src/dados/h/Ilha.h">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Mina.cpp">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/src/dados/h/Imperio.h">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Mina.h">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/src/dados/h/Mundo.h">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Montanha.cpp">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/src/dados/h/Territorio.h">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Montanha.h">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/src/funcoes/Utils.cpp">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Pescaria.cpp">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/src/funcoes/Utils.h">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Pescaria.h">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/src/interface/Interface.cpp">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Planicie.cpp">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/src/interface/Interface.h">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Planicie.h">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/src/logica/Manager.cpp">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Refugio.cpp">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/src/logica/Manager.h">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Refugio.h">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP/TP/CMakeLists.txt">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Continente.cpp">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Ilha.cpp">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Imperio.cpp">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Mundo.cpp">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Territorio.cpp">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/h/Continente.h">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/h/Ilha.h">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/h/Imperio.h">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/h/Mundo.h">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/h/Territorio.h">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/funcoes/Utils.cpp">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/funcoes/Utils.h">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/interface/Interface.cpp">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/interface/Interface.h">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/logica/Manager.cpp">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/logica/Manager.h">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

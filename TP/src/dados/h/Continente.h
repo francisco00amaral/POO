@@ -17,7 +17,7 @@ class Continente : public Territorio{
 
 public:
     Continente(string &nome);
-    int getPontos() const;
+
 };
 
 

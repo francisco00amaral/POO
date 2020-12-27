@@ -1,5 +1,13 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TP.dir/main.cpp.obj"
+  "CMakeFiles/TP.dir/src/dados/Castelo.cpp.obj"
+  "CMakeFiles/TP.dir/src/dados/Duna.cpp.obj"
+  "CMakeFiles/TP.dir/src/dados/Fortaleza.cpp.obj"
+  "CMakeFiles/TP.dir/src/dados/Mina.cpp.obj"
+  "CMakeFiles/TP.dir/src/dados/Montanha.cpp.obj"
+  "CMakeFiles/TP.dir/src/dados/Pescaria.cpp.obj"
+  "CMakeFiles/TP.dir/src/dados/Planicie.cpp.obj"
+  "CMakeFiles/TP.dir/src/dados/Refugio.cpp.obj"
   "CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.obj"
   "CMakeFiles/TP.dir/src/dados/cpp/Ilha.cpp.obj"
   "CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj"
