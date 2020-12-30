@@ -15,30 +15,34 @@ using namespace std;
 
 class Imperio {
     vector<Territorio*> territConquistados; // territorios conqusitados pelo imperio
-    const vector<string> nomes{"planicie", "montanha", "fortaleza", "mina", "duna", "castelo", "refugio", "pescaria"};
-    int cofre = 0;
-    unordered_map<string, bool> tecnologias {
-        {"drones", false}, {"misseis", false}, {"defesas", false}, {"bolsa", false}, {"banco", false}
+    int cofre = 0, maxCofre = 3;
+    int armazem = 0, maxArmazem = 3;
+    int forcaMilitar = 0, maxMilitar = 3;
+    unordered_map<string, tuple<bool, int>> tecnologias{
+            {"drones", {false, 4}},
+            {"misseis", {false, 4}},
+            {"defesas", {false, 4}},
+            {"bolsa", {false, 2}},
+            {"banco", {false, 3}}
     };
-    int armazem = 0;
-    int forcaMilitar = 0;
 
 public:
-    string getAsString() const;
-    string getAsString(const string &str) const;
-
-    vector<string>& getNomesTerritorios() const;
-    void mostra(const string &nome) const;
-    void mostra() const;
-    bool criaTerritorios(string &palavra,int n);
-    void conquer(Territorio t);
     vector <Territorio*>& getConquistados();
-    void adicionaOuro(const Territorio &t);
-    void adicionaProd(const Territorio &t);
-    void inicial();
-
-
-
+    bool verificaTecnologia(string nome) const;
+    int getForcaMilitar() const;
+    void setForcaMilitar(int val);
+    int getCofre() const;
+    void setCofre(int val);
+    int getArmazem() const;
+    void setArmazem(int val);
+    void updateMilitar();
+    int getMaxMilitar() const;
+    void updateOP();
+    int getMaxCofre() const;
+    int getMaxArmazem() const;
+    vector<string>& getKeyValues() const;
+    unordered_map<string, tuple<bool, int>> getUnMap() const;
+    void compraTecnologia(string nome);
 
     };
 

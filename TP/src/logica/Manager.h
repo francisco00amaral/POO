@@ -33,7 +33,7 @@ public:
     void carrega(istringstream& iss);
 
     //durante o jogo
-    void conquista(istringstream& iss) const;
+    void conquista(istringstream& iss, fase& phase);
     void passa();
     void maisOuro(istringstream& iss);
     void maisProduto(istringstream& iss);
@@ -49,8 +49,9 @@ public:
     void avanca(fase& phase);
 
     //ocasiões especiais
-    void update();//turno 6
+    void update();//dá update aos territorios e às flags de repetição
     void harvest() const;//na fase de Recolha
+    void mostraResultadoFinal();
 
     //mostra info atual(status bar)
     string mostraImperio() const;

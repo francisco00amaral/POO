@@ -26,6 +26,7 @@ public:
     void faseRecolha(fase& phase);
     void faseCompra(fase& phase);
     void faseEvento(fase& phase);
+    void fim();
 
 };
 

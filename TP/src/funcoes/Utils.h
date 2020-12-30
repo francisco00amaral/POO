@@ -21,19 +21,19 @@ using namespace std;
 /*são usadas em certas funções para definir o resultado da função
  * como por exemplo, se a função tiver 3 ou mais resultados diferentes*/
 
-enum fase{CONQUISTA, RECOLHA, COMPRA, EVENTO};//define a fase do turno
+enum fase{CONQUISTA, RECOLHA, COMPRA, EVENTO, FIM};//define a fase do turno
 
 /*resultados possiveis da função mCria*/
 enum resCria{CRIADO, TIPO_INEXISTENTE, QUANTIDADE_NEGATIVA};
 
 /*resultados possiveis da funcao mConquista*/
-enum resConquista{CONQUISTADO, NAO_CONQUISTADO, INEXISTENTE};
+enum resConquista{CONQUISTADO, NAO_CONQUISTADO, INEXISTENTE, SEM_MISSEIS, RE_CP, PERDEU_CP};
 
 /*resultados das funcoes maisOuro e maisProd */
-enum resMaisOP{TROCADO, NAO_TROCADO, REPETIDO, SEM_RECURSOS, SEM_BOLSA};
+enum resMaisOP{TROCADO, NAO_TROCADO, SEM_RECURSOS, SEM_BOLSA, RE_OP};
 
 /*resultados das funcoes mMaisMilitar e mAdquire*/
-enum resMA{ADQUIRIDO, NAO_ADQUIRIDO, ITERADO, RECURSOS};
+enum resMA{ADQUIRIDO, NAO_ADQUIRIDO, RECURSOS, RE_M, RE_T};
 
 /*resultados da funcao mToma*/
 enum resToma{TOMADO, TERRTORIO_INEXISTENTE, TECNOLOGIA_INEXISTENTE, TECNOLOGIA_JA_ADQUIRIDA};

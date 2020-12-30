@@ -75,9 +75,8 @@ void Interface::startGame(){
 
     while(count < 12){//o jogo só tem 12 turnos
 
-        //vai atualizar a informação dos territorios(upgrade)
-        if(count == 6)
-            manager.update();
+        //vai atualizar a informação do mundo(territorios e flags de repetição)
+        manager.update();
 
         cout << manager.mostraImperio() << "\n" << endl;//mostra estado do imperio
 
@@ -93,6 +92,9 @@ void Interface::startGame(){
                 break;
             case EVENTO:
                 faseEvento(phase);
+                break;
+            case FIM:
+                fim();
                 break;
         }
 
@@ -118,7 +120,7 @@ void Interface::faseConquista(fase& phase){
     toLower(resposta);
 
     if(resposta == "conquista")
-        manager.conquista(iss);
+        manager.conquista(iss, phase);
     else if(resposta == "passa")
         manager.passa();
     else if(resposta == "lista")
@@ -230,4 +232,9 @@ void Interface::faseEvento(fase &phase) {
     else if(resposta == "apaga")
         manager.apaga(phase, iss);
 
+}
+
+void Interface::fim(){
+    cout << "Chegou ao fim." << endl;
+    manager.mostraResultadoFinal();
 }

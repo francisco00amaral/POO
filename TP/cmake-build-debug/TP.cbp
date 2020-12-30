@@ -95,55 +95,16 @@
 		<Unit filename="D:/3exe_POO/TP_2/POO/TP/main.cpp">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Castelo.cpp">
-			<Option target="TP"/>
-		</Unit>
-		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Castelo.h">
-			<Option target="TP"/>
-		</Unit>
-		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Duna.cpp">
-			<Option target="TP"/>
-		</Unit>
-		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Duna.h">
-			<Option target="TP"/>
-		</Unit>
-		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Fortaleza.cpp">
-			<Option target="TP"/>
-		</Unit>
-		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Fortaleza.h">
-			<Option target="TP"/>
-		</Unit>
-		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Mina.cpp">
-			<Option target="TP"/>
-		</Unit>
-		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Mina.h">
-			<Option target="TP"/>
-		</Unit>
-		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Montanha.cpp">
-			<Option target="TP"/>
-		</Unit>
-		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Montanha.h">
-			<Option target="TP"/>
-		</Unit>
-		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Pescaria.cpp">
-			<Option target="TP"/>
-		</Unit>
-		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Pescaria.h">
-			<Option target="TP"/>
-		</Unit>
-		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Planicie.cpp">
-			<Option target="TP"/>
-		</Unit>
-		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Planicie.h">
-			<Option target="TP"/>
-		</Unit>
-		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Refugio.cpp">
-			<Option target="TP"/>
-		</Unit>
-		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/Refugio.h">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Castelo.cpp">
 			<Option target="TP"/>
 		</Unit>
 		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Continente.cpp">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Duna.cpp">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Fortaleza.cpp">
 			<Option target="TP"/>
 		</Unit>
 		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Ilha.cpp">
@@ -152,13 +113,37 @@
 		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Imperio.cpp">
 			<Option target="TP"/>
 		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Mina.cpp">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Montanha.cpp">
+			<Option target="TP"/>
+		</Unit>
 		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Mundo.cpp">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Pescaria.cpp">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Planicie.cpp">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Refugio.cpp">
 			<Option target="TP"/>
 		</Unit>
 		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Territorio.cpp">
 			<Option target="TP"/>
 		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/h/Castelo.h">
+			<Option target="TP"/>
+		</Unit>
 		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/h/Continente.h">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/h/Duna.h">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/h/Fortaleza.h">
 			<Option target="TP"/>
 		</Unit>
 		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/h/Ilha.h">
@@ -167,7 +152,22 @@
 		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/h/Imperio.h">
 			<Option target="TP"/>
 		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/h/Mina.h">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/h/Montanha.h">
+			<Option target="TP"/>
+		</Unit>
 		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/h/Mundo.h">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/h/Pescaria.h">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/h/Planicie.h">
+			<Option target="TP"/>
+		</Unit>
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/h/Refugio.h">
 			<Option target="TP"/>
 		</Unit>
 		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/dados/h/Territorio.h">

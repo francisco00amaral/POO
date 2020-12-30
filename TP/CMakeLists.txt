@@ -27,4 +27,4 @@ add_executable(TP
         src/logica/Manager.cpp
         src/logica/Manager.h
         src/dados/cpp/Mundo.cpp
-        src/dados/h/Mundo.h src/dados/Planicie.cpp src/dados/Planicie.h src/dados/Montanha.cpp src/dados/Montanha.h src/dados/Fortaleza.cpp src/dados/Fortaleza.h src/dados/Mina.cpp src/dados/Mina.h src/dados/Duna.cpp src/dados/Duna.h src/dados/Castelo.cpp src/dados/Castelo.h src/dados/Refugio.cpp src/dados/Refugio.h src/dados/Pescaria.cpp src/dados/Pescaria.h)
+        src/dados/h/Mundo.h src/dados/cpp/Planicie.cpp src/dados/h/Planicie.h src/dados/cpp/Montanha.cpp src/dados/h/Montanha.h src/dados/cpp/Fortaleza.cpp src/dados/h/Fortaleza.h src/dados/cpp/Mina.cpp src/dados/h/Mina.h src/dados/cpp/Duna.cpp src/dados/h/Duna.h src/dados/cpp/Castelo.cpp src/dados/h/Castelo.h src/dados/cpp/Refugio.cpp src/dados/h/Refugio.h src/dados/cpp/Pescaria.cpp src/dados/h/Pescaria.h)

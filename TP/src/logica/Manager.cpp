@@ -42,7 +42,7 @@ void Manager::cria(istringstream &iss) {
     else if(res == TIPO_INEXISTENTE)
         cout << "Tipo de territorio nao existe." << endl;
     else if(res == QUANTIDADE_NEGATIVA)
-        cout << "Quantidade definida e negativa." << endl;
+        cout << "Quantidade definida nao e positiva." << endl;
 
 }
 
@@ -89,7 +89,7 @@ void Manager::carrega(istringstream &iss) {
 
 
 //durante o jogo
-void Manager::conquista(istringstream &iss) const {
+void Manager::conquista(istringstream &iss, fase& phase) {
 
     string nome;
     if((iss >> nome).fail()){
@@ -99,14 +99,20 @@ void Manager::conquista(istringstream &iss) const {
 
     toLower(nome);
 
-    resConquista res = mundo.mConquista(nome);
+    resConquista res = mundo.mConquista(nome, phase);
     if(res == CONQUISTADO)
         cout << "Territorio conquistado com sucesso." << endl;
     else if(res == NAO_CONQUISTADO)
         cout << "Territorio nao foi conquistado." << endl;
     else if(res == INEXISTENTE)
         cout << "Territorio passado nao existe." << endl;
-
+    else if(res == SEM_MISSEIS)
+        cout << "Nao possui a tecnologia misseis teleguiados para conquistar um territorio do tipo Ilha." << endl;
+    else if(res == RE_CP)
+        cout << "Escolha já feita anteriormente." << endl;
+    else if(res == PERDEU_CP){
+        cout << "Ficaste sem forca militar e perdeste." << endl;
+    }
 }
 
 
@@ -123,8 +129,8 @@ void Manager::maisOuro(istringstream& iss) {
         cout << "Troca efetuada com sucesso." << endl;
     else if(res == NAO_TROCADO)
         cout << "Troca nao efetuada." << endl;
-    else if(res == REPETIDO)
-        cout << "Ja foi feita a outra troca(maisProduto)." << endl;
+    else if(res == RE_OP)
+        cout << "Ja foi feita uma troca." << endl;
     else if(res == SEM_RECURSOS)
         cout << "Sem recursos para efetuar a troca." << endl;
     else if(res == SEM_BOLSA)
@@ -141,7 +147,7 @@ void Manager::maisProduto(istringstream& iss) {
         cout << "Troca efetuada com sucesso." << endl;
     else if(res == NAO_TROCADO)
         cout << "Troca nao efetuada." << endl;
-    else if(res == REPETIDO)
+    else if(res == RE_OP)
         cout << "Ja foi feita a outra troca.(maisOuro)" << endl;
     else if(res == SEM_RECURSOS)
         cout << "Sem recursos para efetuar a troca." << endl;
@@ -156,7 +162,7 @@ void Manager::maisMilitar(istringstream& iss) {
     resMA res = mundo.mMaisMilitar();
     if(res == ADQUIRIDO)
         cout << "Compra efetuada com sucesso." << endl;
-    else if(res == ITERADO)
+    else if(res == RE_M)
         cout << "Compra já feita neste turno." << endl;
     else if(res == RECURSOS)
         cout << "Falta recursos para fazer a compra." << endl;
@@ -352,7 +358,7 @@ void Manager::avanca(fase& phase){
 
 
 //ocasião especial
-//atualiza os valores de cada territorio(conquistados e nao conquistados) no turno 6
+//atualiza os valores de cada territorio(conquistados e nao conquistados)
 void Manager::update() {
     mundo.mUpdate();
 }
