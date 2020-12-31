@@ -23,7 +23,7 @@ Mundo::~Mundo() {
 
 resCria Mundo::mCria(const string &tipo, int quant) {
 
-    if(!verificaExistenciaTerritorio(tipo))
+    if(!verificaNomeTerritorio(tipo))
         return TIPO_INEXISTENTE;
 
     if(quant <= 0)
@@ -153,6 +153,7 @@ resMA Mundo::mMaisMilitar() {
     if(imperio.getArmazem() > 1 && imperio.getCofre() > 1){//verifica se tem recursos para trocar
         if(imperio.getForcaMilitar() < imperio.getMaxMilitar()){
             imperio.setForcaMilitar(imperio.getForcaMilitar()+1);
+            flagMaisMilitar = true;
             return ADQUIRIDO;
         }
         else
@@ -171,6 +172,7 @@ resMA Mundo::mAdquire(const string &tipo) {
 
     if(verificaPrecoTecnologia(tipo) <= imperio.getCofre()){//verifica se tem recursos
         imperio.compraTecnologia(tipo);
+        flagMaisTecno = true;
         return ADQUIRIDO;
     }
     else//nao tem recursos
@@ -179,11 +181,14 @@ resMA Mundo::mAdquire(const string &tipo) {
 }
 
 void Mundo::mLista(string nome) const {
-
+    for(const auto &it : territorios){
+        if(it->getNome() == nome)
+            cout << it->getAsString() << endl;
+    }
 }
 
 void Mundo::mLista() const {
-
+    for(const auto &it : territorios)
 }
 
 void Mundo::mGrava(fase &phase, istringstream &iss) {
@@ -284,5 +289,12 @@ int Mundo::verificaPrecoTecnologia(string nome) const{
             return get<int>(it.second);
     }
     return 0;
+}
+
+bool Mundo::verificaNomeTerritorio(string nome) const {
+    for(const auto &it : nomes)
+        if(it == nome)
+            return true;
+    return false;
 }
 

@@ -18,6 +18,7 @@ using namespace std;
 class Mundo {
     Imperio imperio;
     vector<Territorio*> territorios;//territorios do mundo(não pertencentes ao império)
+    vector<string> nomes = {"castelo", "duna", "fortaleza", "mina", "montanha", "planicie", "pescaria", "refugio"};
 
     //flags que impedem a repetição de comandos
     bool flagCP = false;
@@ -31,6 +32,7 @@ class Mundo {
     bool verificaExistenciaTerritorio(string nome) const;
     bool verificaExistenciaTecnologia(string nome) const;
     int verificaPrecoTecnologia(string nome) const;
+    bool verificaNomeTerritorio(string nome) const;
 
 public:
     Mundo();

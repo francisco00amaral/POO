@@ -147,7 +147,7 @@ int Imperio::getForcaMilitar() const {
 }
 
 void Imperio::setForcaMilitar(int val) {
-    forcaMilitar = va;
+    forcaMilitar = val;
 }
 
 int Imperio::getCofre() const {
@@ -188,7 +188,7 @@ int Imperio::getMaxArmazem() const{
 }
 
 vector<string>& Imperio::getKeyValues() const{
-    vector<string> nomes;
+    static vector<string> nomes;
     for(const auto& it : tecnologias)
         nomes.push_back(it.first);
     return nomes;

@@ -183,7 +183,7 @@ void Manager::adquire(istringstream &iss) {
     resMA res = mundo.mAdquire(tipo);
     if(res == ADQUIRIDO)
         cout << "Tecnologia adquirida com sucesso." << endl;
-    else if(res == ITERADO)
+    else if(res == RE_T)
         cout << "Tecnologia já adquirida neste turno." << endl;
     else if(res == RECURSOS)
         cout << "Falta recursos para adquirir a tecnologia." << endl;
@@ -207,7 +207,8 @@ void Manager::lista(istringstream &iss) const {
 
         mundo.mLista(nome);
 
-    }else
+    }
+    else
         mundo.mLista();
 
 }
@@ -236,8 +237,7 @@ void Manager::toma(istringstream &iss) {
         return;
     }
 
-    string nome;
-    int tecnologia;
+    string nome;//nome do territorio ou da tecnologia
     if(tipo == "terr"){//escolhe territorio
         if((iss >> nome).fail()){
             cout << "Erro ao ler os argumentos." << endl;
@@ -248,17 +248,17 @@ void Manager::toma(istringstream &iss) {
         if(res == TOMADO)
             cout << "Territorio tomado com sucesso." << endl;
         else if(res == TERRTORIO_INEXISTENTE)
-            cout << "Territorio nao existente." << endl;
+            cout << "Territorio nao existente ou ja conquistado." << endl;
 
         return;
 
     }else if(tipo == "tech"){//escolhe tecnologia
-        if((iss >> tecnologia).fail()){
+        if((iss >> nome).fail()){
             cout << "Erro ao ler os argumentos." << endl;
             return;
         }
 
-        resToma res = mundo.mTomaTech(tecnologia);
+        resToma res = mundo.mTomaTech(nome);
         if(res == TOMADO)
             cout << "Tecnologia tomada com sucesso." << endl;
         else if(res == TECNOLOGIA_JA_ADQUIRIDA)
@@ -309,7 +309,7 @@ void Manager::modifica(istringstream &iss) {
             return;
         }
 
-        res = mundo.mModificaProduto(quant);
+        resModifica res = mundo.mModificaProduto(quant);
         if(res == MODIFICADO)
             cout << "Alteracao feita aos produtos com sucesso." << endl;
         else if(res == VAL_ACIMA_MAX)
@@ -372,7 +372,12 @@ void Manager::harvest() const {
 
 //mostra info atual(status bar)
 string Manager::mostraImperio() const {
-    return mundo.getInfoImperio();
+    //return mundo.getInfoImperio();
+    return "string somente para return\n";
+}
+
+void Manager::mostraResultadoFinal() {
+
 }
 
 
