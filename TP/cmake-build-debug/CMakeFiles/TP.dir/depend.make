@@ -13,49 +13,24 @@ CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Imperio.h
 CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Territorio.h
 CMakeFiles/TP.dir/main.cpp.obj: ../src/funcoes/Utils.h
 
-CMakeFiles/TP.dir/src/dados/Castelo.cpp.obj: ../src/dados/h/Continente.h
-CMakeFiles/TP.dir/src/dados/Castelo.cpp.obj: ../src/dados/h/Territorio.h
-CMakeFiles/TP.dir/src/dados/Castelo.cpp.obj: ../src/dados/Castelo.cpp
-CMakeFiles/TP.dir/src/dados/Castelo.cpp.obj: ../src/dados/Castelo.h
-
-CMakeFiles/TP.dir/src/dados/Duna.cpp.obj: ../src/dados/h/Continente.h
-CMakeFiles/TP.dir/src/dados/Duna.cpp.obj: ../src/dados/h/Territorio.h
-CMakeFiles/TP.dir/src/dados/Duna.cpp.obj: ../src/dados/Duna.cpp
-CMakeFiles/TP.dir/src/dados/Duna.cpp.obj: ../src/dados/Duna.h
-
-CMakeFiles/TP.dir/src/dados/Fortaleza.cpp.obj: ../src/dados/h/Continente.h
-CMakeFiles/TP.dir/src/dados/Fortaleza.cpp.obj: ../src/dados/h/Territorio.h
-CMakeFiles/TP.dir/src/dados/Fortaleza.cpp.obj: ../src/dados/Fortaleza.cpp
-CMakeFiles/TP.dir/src/dados/Fortaleza.cpp.obj: ../src/dados/Fortaleza.h
-
-CMakeFiles/TP.dir/src/dados/Mina.cpp.obj: ../src/dados/h/Continente.h
-CMakeFiles/TP.dir/src/dados/Mina.cpp.obj: ../src/dados/h/Territorio.h
-CMakeFiles/TP.dir/src/dados/Mina.cpp.obj: ../src/dados/Mina.cpp
-CMakeFiles/TP.dir/src/dados/Mina.cpp.obj: ../src/dados/Mina.h
-
-CMakeFiles/TP.dir/src/dados/Montanha.cpp.obj: ../src/dados/h/Continente.h
-CMakeFiles/TP.dir/src/dados/Montanha.cpp.obj: ../src/dados/h/Territorio.h
-CMakeFiles/TP.dir/src/dados/Montanha.cpp.obj: ../src/dados/Montanha.cpp
-CMakeFiles/TP.dir/src/dados/Montanha.cpp.obj: ../src/dados/Montanha.h
-
-CMakeFiles/TP.dir/src/dados/Pescaria.cpp.obj: ../src/dados/h/Ilha.h
-CMakeFiles/TP.dir/src/dados/Pescaria.cpp.obj: ../src/dados/h/Territorio.h
-CMakeFiles/TP.dir/src/dados/Pescaria.cpp.obj: ../src/dados/Pescaria.cpp
-CMakeFiles/TP.dir/src/dados/Pescaria.cpp.obj: ../src/dados/Pescaria.h
-
-CMakeFiles/TP.dir/src/dados/Planicie.cpp.obj: ../src/dados/h/Continente.h
-CMakeFiles/TP.dir/src/dados/Planicie.cpp.obj: ../src/dados/h/Territorio.h
-CMakeFiles/TP.dir/src/dados/Planicie.cpp.obj: ../src/dados/Planicie.cpp
-CMakeFiles/TP.dir/src/dados/Planicie.cpp.obj: ../src/dados/Planicie.h
-
-CMakeFiles/TP.dir/src/dados/Refugio.cpp.obj: ../src/dados/h/Ilha.h
-CMakeFiles/TP.dir/src/dados/Refugio.cpp.obj: ../src/dados/h/Territorio.h
-CMakeFiles/TP.dir/src/dados/Refugio.cpp.obj: ../src/dados/Refugio.cpp
-CMakeFiles/TP.dir/src/dados/Refugio.cpp.obj: ../src/dados/Refugio.h
+CMakeFiles/TP.dir/src/dados/cpp/Castelo.cpp.obj: ../src/dados/h/Castelo.h
+CMakeFiles/TP.dir/src/dados/cpp/Castelo.cpp.obj: ../src/dados/h/Continente.h
+CMakeFiles/TP.dir/src/dados/cpp/Castelo.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/dados/cpp/Castelo.cpp.obj: ../src/dados/cpp/Castelo.cpp
 
 CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.obj: ../src/dados/cpp/Continente.cpp
 CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.obj: ../src/dados/h/Continente.h
 CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.obj: ../src/dados/h/Territorio.h
+
+CMakeFiles/TP.dir/src/dados/cpp/Duna.cpp.obj: ../src/dados/h/Continente.h
+CMakeFiles/TP.dir/src/dados/cpp/Duna.cpp.obj: ../src/dados/h/Duna.h
+CMakeFiles/TP.dir/src/dados/cpp/Duna.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/dados/cpp/Duna.cpp.obj: ../src/dados/cpp/Duna.cpp
+
+CMakeFiles/TP.dir/src/dados/cpp/Fortaleza.cpp.obj: ../src/dados/h/Continente.h
+CMakeFiles/TP.dir/src/dados/cpp/Fortaleza.cpp.obj: ../src/dados/h/Fortaleza.h
+CMakeFiles/TP.dir/src/dados/cpp/Fortaleza.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/dados/cpp/Fortaleza.cpp.obj: ../src/dados/cpp/Fortaleza.cpp
 
 CMakeFiles/TP.dir/src/dados/cpp/Ilha.cpp.obj: ../src/dados/cpp/Ilha.cpp
 CMakeFiles/TP.dir/src/dados/cpp/Ilha.cpp.obj: ../src/dados/h/Ilha.h
@@ -67,11 +42,46 @@ CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj: ../src/dados/h/Ilha.h
 CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj: ../src/dados/h/Imperio.h
 CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj: ../src/dados/h/Territorio.h
 
+CMakeFiles/TP.dir/src/dados/cpp/Mina.cpp.obj: ../src/dados/h/Continente.h
+CMakeFiles/TP.dir/src/dados/cpp/Mina.cpp.obj: ../src/dados/h/Mina.h
+CMakeFiles/TP.dir/src/dados/cpp/Mina.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/dados/cpp/Mina.cpp.obj: ../src/dados/cpp/Mina.cpp
+
+CMakeFiles/TP.dir/src/dados/cpp/Montanha.cpp.obj: ../src/dados/h/Continente.h
+CMakeFiles/TP.dir/src/dados/cpp/Montanha.cpp.obj: ../src/dados/h/Montanha.h
+CMakeFiles/TP.dir/src/dados/cpp/Montanha.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/dados/cpp/Montanha.cpp.obj: ../src/dados/cpp/Montanha.cpp
+
+CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/dados/h/Castelo.h
+CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/dados/h/Continente.h
+CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/dados/h/Duna.h
+CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/dados/h/Fortaleza.h
+CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/dados/h/Ilha.h
 CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/dados/h/Imperio.h
+CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/dados/h/Mina.h
+CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/dados/h/Montanha.h
 CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/dados/h/Mundo.h
+CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/dados/h/Pescaria.h
+CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/dados/h/Planicie.h
+CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/dados/h/Refugio.h
 CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/dados/h/Territorio.h
 CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/funcoes/Utils.h
 CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj: ../src/dados/cpp/Mundo.cpp
+
+CMakeFiles/TP.dir/src/dados/cpp/Pescaria.cpp.obj: ../src/dados/h/Ilha.h
+CMakeFiles/TP.dir/src/dados/cpp/Pescaria.cpp.obj: ../src/dados/h/Pescaria.h
+CMakeFiles/TP.dir/src/dados/cpp/Pescaria.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/dados/cpp/Pescaria.cpp.obj: ../src/dados/cpp/Pescaria.cpp
+
+CMakeFiles/TP.dir/src/dados/cpp/Planicie.cpp.obj: ../src/dados/h/Continente.h
+CMakeFiles/TP.dir/src/dados/cpp/Planicie.cpp.obj: ../src/dados/h/Planicie.h
+CMakeFiles/TP.dir/src/dados/cpp/Planicie.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/dados/cpp/Planicie.cpp.obj: ../src/dados/cpp/Planicie.cpp
+
+CMakeFiles/TP.dir/src/dados/cpp/Refugio.cpp.obj: ../src/dados/h/Ilha.h
+CMakeFiles/TP.dir/src/dados/cpp/Refugio.cpp.obj: ../src/dados/h/Refugio.h
+CMakeFiles/TP.dir/src/dados/cpp/Refugio.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/dados/cpp/Refugio.cpp.obj: ../src/dados/cpp/Refugio.cpp
 
 CMakeFiles/TP.dir/src/dados/cpp/Territorio.cpp.obj: ../src/dados/cpp/Territorio.cpp
 CMakeFiles/TP.dir/src/dados/cpp/Territorio.cpp.obj: ../src/dados/h/Territorio.h

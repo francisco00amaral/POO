@@ -18,6 +18,7 @@ using namespace std;
 class Mundo {
     Imperio imperio;
     vector<Territorio*> territorios;//territorios do mundo(não pertencentes ao império)
+    const vector<string> nomes{"planicie", "montanha", "fortaleza", "mina", "duna", "castelo", "refugio", "pescaria"}; // nomes dos territorios disponiveis para ele conqusitar
 
     //flags que impedem a repetição de comandos
     bool flagCP = false;
@@ -28,6 +29,7 @@ class Mundo {
 
     Territorio* getTerritorioByName(string nome);
     void setConquistado(Territorio * ptr);
+    bool verificaNomeTerritorio(string nome) const;
     bool verificaExistenciaTerritorio(string nome) const;
     bool verificaExistenciaTecnologia(string nome) const;
     int verificaPrecoTecnologia(string nome) const;
@@ -44,7 +46,7 @@ public:
     resMaisOP mMaisProduto();
     resMA mMaisMilitar();
     resMA mAdquire(const string& tipo);
-    void mLista(string nome) const;
+    void mLista(const string &nome) const;
     void mLista() const;
     void mGrava(fase& phase, istringstream& iss);
     void mAtiva(fase& phase, istringstream& iss);

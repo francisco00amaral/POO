@@ -236,5 +236,5 @@ void Interface::faseEvento(fase &phase) {
 
 void Interface::fim(){
     cout << "Chegou ao fim." << endl;
-    manager.mostraResultadoFinal();
+    // manager.mostraResultadoFinal();
 }

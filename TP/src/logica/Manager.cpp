@@ -174,7 +174,7 @@ void Manager::maisMilitar(istringstream& iss) {
 
 void Manager::adquire(istringstream &iss) {
 
-    string tipo;
+    /*string tipo;
     if((iss >> tipo).fail()){
         cout << "Erro ao ler os argumentos passados." << endl;
         return;
@@ -187,8 +187,8 @@ void Manager::adquire(istringstream &iss) {
         cout << "Tecnologia já adquirida neste turno." << endl;
     else if(res == RECURSOS)
         cout << "Falta recursos para adquirir a tecnologia." << endl;
-    else if(res == NAO_ADQUIRIDO)
-        cout << "Tecnologia nao existente." << endl;
+    else if(res == NAO_ADQUIRIDO) */
+    cout << "Tecnologia nao existente (TESTE DO ADQUIRE)." << endl;
 
 }
 
@@ -203,12 +203,13 @@ void Manager::lista(istringstream &iss) const {
             return;
         }
 
-        toLower(nome);
+        // toLower(nome);
 
         mundo.mLista(nome);
 
-    }else
+    }else{
         mundo.mLista();
+    }
 
 }
 
@@ -237,7 +238,7 @@ void Manager::toma(istringstream &iss) {
     }
 
     string nome;
-    int tecnologia;
+    string tecnologia;
     if(tipo == "terr"){//escolhe territorio
         if((iss >> nome).fail()){
             cout << "Erro ao ler os argumentos." << endl;
@@ -247,12 +248,14 @@ void Manager::toma(istringstream &iss) {
         resToma res = mundo.mTomaTerr(nome);
         if(res == TOMADO)
             cout << "Territorio tomado com sucesso." << endl;
-        else if(res == TERRTORIO_INEXISTENTE)
+        else if(res == TERRITORIO_INEXISTENTE)
             cout << "Territorio nao existente." << endl;
+        else if(res == TERRITORIO_JA_CONQUISTADO)
+            cout << "Territorio ja estava conquistado!" << endl;
 
         return;
 
-    }else if(tipo == "tech"){//escolhe tecnologia
+    }else if(tipo == "tec"){//escolhe tecnologia
         if((iss >> tecnologia).fail()){
             cout << "Erro ao ler os argumentos." << endl;
             return;
@@ -272,11 +275,14 @@ void Manager::toma(istringstream &iss) {
 
     //tipo escolhido nao existe
     cout << "Tipo nao reconhecido." << endl;
+}
 
+void Manager::modifica(istringstream &iss) {
+    cout << "Teste" << endl;
 }
 
 
-void Manager::modifica(istringstream &iss) {
+/* void Manager::modifica(istringstream &iss) {
 
     string tipo;
     if((iss >> tipo).fail()){
@@ -322,7 +328,7 @@ void Manager::modifica(istringstream &iss) {
 
     cout << "Tipo inserido nao existe." << endl;
 
-}
+} */
 
 
 void Manager::fevento(istringstream &iss) {
@@ -372,7 +378,7 @@ void Manager::harvest() const {
 
 //mostra info atual(status bar)
 string Manager::mostraImperio() const {
-    return mundo.getInfoImperio();
+    return "ola";
 }
 
 

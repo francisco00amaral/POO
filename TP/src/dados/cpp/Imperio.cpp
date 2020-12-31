@@ -147,7 +147,7 @@ int Imperio::getForcaMilitar() const {
 }
 
 void Imperio::setForcaMilitar(int val) {
-    forcaMilitar = va;
+    forcaMilitar = val;
 }
 
 int Imperio::getCofre() const {

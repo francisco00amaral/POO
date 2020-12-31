@@ -23,15 +23,15 @@ Mundo::~Mundo() {
 
 resCria Mundo::mCria(const string &tipo, int quant) {
 
-    if(!verificaExistenciaTerritorio(tipo))
+    if(!verificaNomeTerritorio(tipo))
         return TIPO_INEXISTENTE;
 
     if(quant <= 0)
         return QUANTIDADE_NEGATIVA;
 
-    Territorio* ptr;
 
-    for(int i = quant; i < quant; i++){
+    Territorio* ptr;
+    for(int i = 0; i < quant; i++){
         if(tipo == "castelo"){
             ptr = new Castelo("Castelo");
             territorios.push_back(ptr);
@@ -65,7 +65,6 @@ resCria Mundo::mCria(const string &tipo, int quant) {
             territorios.push_back(ptr);
         }
     }
-
     return CRIADO;
 }
 
@@ -80,10 +79,10 @@ resConquista Mundo::mConquista(const string &nome, fase& phase) {
     if(!verificaExistenciaTerritorio(nome))//verifica se o territorio existe
         return INEXISTENTE;
 
-    if(nome == "refugio" || nome == "pescaria")//verifica tecnologia necessária
-        if(!imperio.verificaTecnologia("misseis"))
+    if(nome == "refugio" || nome == "pescaria") {//verifica tecnologia necessária
+        if (!imperio.verificaTecnologia("misseis"))
             return SEM_MISSEIS;
-
+    }
     Territorio* ptr = getTerritorioByName(nome);
     if(ptr->getRes() <= val+forcaMilitar){
         setConquistado(ptr);//remove o pointer do territorios e mete-o no conquistados
@@ -178,12 +177,19 @@ resMA Mundo::mAdquire(const string &tipo) {
 
 }
 
-void Mundo::mLista(string nome) const {
-
+// problema de so funciona se for passado Mina ou Montanha, se for passado mina ou montanha não da
+void Mundo::mLista(const string &nome) const {
+    for(const auto &x : territorios){
+        if(x->getNome().find(nome) != string::npos){
+            cout << x->getAsString() << endl;
+        }
+    }
 }
 
 void Mundo::mLista() const {
-
+    for(const auto &x : territorios){
+        cout << x->getAsString() << endl;
+    }
 }
 
 void Mundo::mGrava(fase &phase, istringstream &iss) {
@@ -199,11 +205,29 @@ void Mundo::mApaga(fase &phase, istringstream &iss) {
 }
 
 resToma Mundo::mTomaTerr(const string &nome) {
-    return TECNOLOGIA_INEXISTENTE;
+    if(!verificaExistenciaTerritorio(nome)){
+        return TERRITORIO_INEXISTENTE;
+    }
+    for(const auto &x : imperio.getConquistados()){
+        if(x->getNome() == nome){
+            return TERRITORIO_JA_CONQUISTADO;
+        }
+    }
+
+    setConquistado(getTerritorioByName(nome));
+    return TOMADO;
 }
 
-resToma Mundo::mTomaTech(const string &nome) {
-    return TECNOLOGIA_INEXISTENTE;
+resToma Mundo::mTomaTech(const string &nome){
+    if(!verificaExistenciaTecnologia(nome)) {
+        return TECNOLOGIA_INEXISTENTE;
+    }
+
+    if(!imperio.verificaTecnologia(nome))
+        return TECNOLOGIA_JA_ADQUIRIDA;
+
+    imperio.compraTecnologia(nome);
+    return TOMADO;
 }
 
 resModifica Mundo::mModificaOuro(int quantidade) {
@@ -261,6 +285,13 @@ Territorio *Mundo::getTerritorioByName(string nome) {
 
 void Mundo::setConquistado(Territorio *ptr) {
     imperio.getConquistados().push_back(ptr);
+}
+
+bool Mundo::verificaNomeTerritorio(string nome) const {
+    for(const auto& it : nomes)
+        if(nome == it)
+            return true;
+    return false;
 }
 
 bool Mundo::verificaExistenciaTerritorio(string nome) const {
