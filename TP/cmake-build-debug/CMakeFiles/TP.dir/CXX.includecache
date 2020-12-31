@@ -122,7 +122,11 @@ algorithm
 ../dados/h/Imperio.h
 ../src/dados/h/Imperio.h
 
+<<<<<<< HEAD
 D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Mundo.cpp
+=======
+C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/cpp/Mundo.cpp
+>>>>>>> 97dc3ff9addfdfaa0e083a5c7c60c91c563e8e23
 Duna.h
 -
 Castelo.h
@@ -140,5 +144,9 @@ Pescaria.h
 Refugio.h
 -
 Mundo.h
+<<<<<<< HEAD
 D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Mundo.h
+=======
+C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/cpp/Mundo.h
+>>>>>>> 97dc3ff9addfdfaa0e083a5c7c60c91c563e8e23
 
