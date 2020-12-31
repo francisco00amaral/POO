@@ -39,7 +39,7 @@ public:
     void maisProduto(istringstream& iss);
     void maisMilitar(istringstream& iss);
     void adquire(istringstream& iss);
-    void lista(istringstream& iss) const;
+    void lista(istringstream& iss);
     void grava(fase& phase, istringstream& iss);
     void ativa(fase& phase, istringstream& iss);
     void apaga(fase& phase, istringstream& iss);

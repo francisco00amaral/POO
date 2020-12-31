@@ -85,7 +85,7 @@ resConquista Mundo::mConquista(const string &nome, fase& phase) {
     }
     Territorio* ptr = getTerritorioByName(nome);
     if(ptr->getRes() <= val+forcaMilitar){
-        setConquistado(ptr);//remove o pointer do territorios e mete-o no conquistados
+        setConquistado(ptr); //remove o pointer do territorios e mete-o no conquistados
         flagCP = true;
         return CONQUISTADO;
     }
@@ -189,9 +189,13 @@ void Mundo::mLista(const string &nome) const {
     }
 }
 
-void Mundo::mLista() const {
 
+void Mundo::mLista(){
     for(const auto &x : territorios){
+        cout << x->getAsString() << endl;
+    }
+    for(const auto &x : imperio.getConquistados()){
+        cout << "Conquistados: " << endl;
         cout << x->getAsString() << endl;
     }
 

@@ -49,7 +49,7 @@ public:
     resMA mMaisMilitar();
     resMA mAdquire(const string& tipo);
     void mLista(const string &nome) const;
-    void mLista() const;
+    void mLista();
     void mGrava(fase& phase, istringstream& iss);
     void mAtiva(fase& phase, istringstream& iss);
     void mApaga(fase& phase, istringstream& iss);
