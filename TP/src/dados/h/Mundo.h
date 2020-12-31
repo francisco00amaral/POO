@@ -18,11 +18,9 @@ using namespace std;
 class Mundo {
     Imperio imperio;
     vector<Territorio*> territorios;//territorios do mundo(não pertencentes ao império)
-<<<<<<< HEAD
-    vector<string> nomes = {"castelo", "duna", "fortaleza", "mina", "montanha", "planicie", "pescaria", "refugio"};
-=======
+
     const vector<string> nomes{"planicie", "montanha", "fortaleza", "mina", "duna", "castelo", "refugio", "pescaria"}; // nomes dos territorios disponiveis para ele conqusitar
->>>>>>> 97dc3ff9addfdfaa0e083a5c7c60c91c563e8e23
+
 
     //flags que impedem a repetição de comandos
     bool flagCP = false;

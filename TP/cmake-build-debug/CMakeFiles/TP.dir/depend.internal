@@ -7,52 +7,30 @@ CMakeFiles/TP.dir/main.cpp.obj
  ../src/funcoes/Utils.h
  ../src/interface/Interface.h
  ../src/logica/Manager.h
-<<<<<<< HEAD
  D:/3exe_POO/TP_2/POO/TP/main.cpp
  D:/3exe_POO/TP_2/POO/TP/src/dados/h/Continente.h
  D:/3exe_POO/TP_2/POO/TP/src/dados/h/Ilha.h
  D:/3exe_POO/TP_2/POO/TP/src/dados/h/Imperio.h
  D:/3exe_POO/TP_2/POO/TP/src/dados/h/Territorio.h
  D:/3exe_POO/TP_2/POO/TP/src/funcoes/Utils.h
-=======
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/main.cpp
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Continente.h
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Ilha.h
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Imperio.h
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Territorio.h
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/funcoes/Utils.h
->>>>>>> 97dc3ff9addfdfaa0e083a5c7c60c91c563e8e23
 CMakeFiles/TP.dir/src/dados/cpp/Castelo.cpp.obj
  ../src/dados/h/Castelo.h
  ../src/dados/h/Continente.h
  ../src/dados/h/Territorio.h
-<<<<<<< HEAD
  D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Castelo.cpp
 CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.obj
  D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Continente.cpp
  D:/3exe_POO/TP_2/POO/TP/src/dados/h/Continente.h
  D:/3exe_POO/TP_2/POO/TP/src/dados/h/Territorio.h
-=======
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/cpp/Castelo.cpp
-CMakeFiles/TP.dir/src/dados/cpp/Continente.cpp.obj
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/cpp/Continente.cpp
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Continente.h
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Territorio.h
->>>>>>> 97dc3ff9addfdfaa0e083a5c7c60c91c563e8e23
 CMakeFiles/TP.dir/src/dados/cpp/Duna.cpp.obj
  ../src/dados/h/Continente.h
  ../src/dados/h/Duna.h
  ../src/dados/h/Territorio.h
-<<<<<<< HEAD
  D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Duna.cpp
-=======
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/cpp/Duna.cpp
->>>>>>> 97dc3ff9addfdfaa0e083a5c7c60c91c563e8e23
 CMakeFiles/TP.dir/src/dados/cpp/Fortaleza.cpp.obj
  ../src/dados/h/Continente.h
  ../src/dados/h/Fortaleza.h
  ../src/dados/h/Territorio.h
-<<<<<<< HEAD
  D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Fortaleza.cpp
 CMakeFiles/TP.dir/src/dados/cpp/Ilha.cpp.obj
  D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Ilha.cpp
@@ -64,37 +42,16 @@ CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj
  D:/3exe_POO/TP_2/POO/TP/src/dados/h/Ilha.h
  D:/3exe_POO/TP_2/POO/TP/src/dados/h/Imperio.h
  D:/3exe_POO/TP_2/POO/TP/src/dados/h/Territorio.h
-=======
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/cpp/Fortaleza.cpp
-CMakeFiles/TP.dir/src/dados/cpp/Ilha.cpp.obj
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/cpp/Ilha.cpp
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Ilha.h
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Territorio.h
-CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/cpp/Imperio.cpp
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Continente.h
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Ilha.h
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Imperio.h
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Territorio.h
->>>>>>> 97dc3ff9addfdfaa0e083a5c7c60c91c563e8e23
 CMakeFiles/TP.dir/src/dados/cpp/Mina.cpp.obj
  ../src/dados/h/Continente.h
  ../src/dados/h/Mina.h
  ../src/dados/h/Territorio.h
-<<<<<<< HEAD
  D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Mina.cpp
-=======
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/cpp/Mina.cpp
->>>>>>> 97dc3ff9addfdfaa0e083a5c7c60c91c563e8e23
 CMakeFiles/TP.dir/src/dados/cpp/Montanha.cpp.obj
  ../src/dados/h/Continente.h
  ../src/dados/h/Montanha.h
  ../src/dados/h/Territorio.h
-<<<<<<< HEAD
  D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Montanha.cpp
-=======
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/cpp/Montanha.cpp
->>>>>>> 97dc3ff9addfdfaa0e083a5c7c60c91c563e8e23
 CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj
  ../src/dados/h/Castelo.h
  ../src/dados/h/Continente.h
@@ -110,58 +67,42 @@ CMakeFiles/TP.dir/src/dados/cpp/Mundo.cpp.obj
  ../src/dados/h/Refugio.h
  ../src/dados/h/Territorio.h
  ../src/funcoes/Utils.h
-<<<<<<< HEAD
  D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Mundo.cpp
-=======
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/cpp/Mundo.cpp
->>>>>>> 97dc3ff9addfdfaa0e083a5c7c60c91c563e8e23
 CMakeFiles/TP.dir/src/dados/cpp/Pescaria.cpp.obj
  ../src/dados/h/Ilha.h
  ../src/dados/h/Pescaria.h
  ../src/dados/h/Territorio.h
-<<<<<<< HEAD
  D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Pescaria.cpp
-=======
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/cpp/Pescaria.cpp
->>>>>>> 97dc3ff9addfdfaa0e083a5c7c60c91c563e8e23
 CMakeFiles/TP.dir/src/dados/cpp/Planicie.cpp.obj
  ../src/dados/h/Continente.h
  ../src/dados/h/Planicie.h
  ../src/dados/h/Territorio.h
-<<<<<<< HEAD
  D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Planicie.cpp
-=======
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/cpp/Planicie.cpp
->>>>>>> 97dc3ff9addfdfaa0e083a5c7c60c91c563e8e23
 CMakeFiles/TP.dir/src/dados/cpp/Refugio.cpp.obj
  ../src/dados/h/Ilha.h
  ../src/dados/h/Refugio.h
  ../src/dados/h/Territorio.h
-<<<<<<< HEAD
  D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Refugio.cpp
-=======
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/cpp/Refugio.cpp
->>>>>>> 97dc3ff9addfdfaa0e083a5c7c60c91c563e8e23
 CMakeFiles/TP.dir/src/dados/cpp/Territorio.cpp.obj
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/cpp/Territorio.cpp
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Territorio.h
+ D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Territorio.cpp
+ D:/3exe_POO/TP_2/POO/TP/src/dados/h/Territorio.h
 CMakeFiles/TP.dir/src/funcoes/Utils.cpp.obj
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Imperio.h
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/dados/h/Territorio.h
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/funcoes/Utils.cpp
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/funcoes/Utils.h
+ D:/3exe_POO/TP_2/POO/TP/src/dados/h/Imperio.h
+ D:/3exe_POO/TP_2/POO/TP/src/dados/h/Territorio.h
+ D:/3exe_POO/TP_2/POO/TP/src/funcoes/Utils.cpp
+ D:/3exe_POO/TP_2/POO/TP/src/funcoes/Utils.h
 CMakeFiles/TP.dir/src/interface/Interface.cpp.obj
  ../src/dados/h/Imperio.h
  ../src/dados/h/Mundo.h
  ../src/dados/h/Territorio.h
  ../src/funcoes/Utils.h
  ../src/logica/Manager.h
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/interface/Interface.cpp
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/interface/Interface.h
+ D:/3exe_POO/TP_2/POO/TP/src/interface/Interface.cpp
+ D:/3exe_POO/TP_2/POO/TP/src/interface/Interface.h
 CMakeFiles/TP.dir/src/logica/Manager.cpp.obj
  ../src/dados/h/Imperio.h
  ../src/dados/h/Mundo.h
  ../src/dados/h/Territorio.h
  ../src/funcoes/Utils.h
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/logica/Manager.cpp
- C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/src/logica/Manager.h
+ D:/3exe_POO/TP_2/POO/TP/src/logica/Manager.cpp
+ D:/3exe_POO/TP_2/POO/TP/src/logica/Manager.h

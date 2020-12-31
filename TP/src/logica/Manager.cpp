@@ -383,16 +383,12 @@ void Manager::harvest() const {
 
 //mostra info atual(status bar)
 string Manager::mostraImperio() const {
-<<<<<<< HEAD
     //return mundo.getInfoImperio();
     return "string somente para return\n";
 }
 
 void Manager::mostraResultadoFinal() {
 
-=======
-    return "ola";
->>>>>>> 97dc3ff9addfdfaa0e083a5c7c60c91c563e8e23
 }
 
 

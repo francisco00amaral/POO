@@ -321,11 +321,3 @@ int Mundo::verificaPrecoTecnologia(string nome) const{
     }
     return 0;
 }
-
-bool Mundo::verificaNomeTerritorio(string nome) const {
-    for(const auto &it : nomes)
-        if(it == nome)
-            return true;
-    return false;
-}
-
