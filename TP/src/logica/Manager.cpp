@@ -100,6 +100,7 @@ void Manager::conquista(istringstream &iss, fase& phase) {
     // toLower(nome);
 
     resConquista res = mundo.mConquista(nome, phase);
+
     if(res == CONQUISTADO)
         cout << "Territorio conquistado com sucesso." << endl;
     else if(res == NAO_CONQUISTADO)
@@ -113,6 +114,7 @@ void Manager::conquista(istringstream &iss, fase& phase) {
     else if(res == PERDEU_CP){
         cout << "Ficaste sem forca militar e perdeste." << endl;
     }
+
 }
 
 

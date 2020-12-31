@@ -70,8 +70,11 @@ resCria Mundo::mCria(const string &tipo, int quant) {
 
 resConquista Mundo::mConquista(const string &nome, fase& phase) {
 
-    if(flagCP)//comando repetido
+    //comando repetido
+    if(flagCP){
+        cout << flagCP << endl;
         return RE_CP;
+    }
 
     int val = rand() % 6 + 1;//valor random da conquista [1, 6]
     int forcaMilitar = imperio.getForcaMilitar();
@@ -83,15 +86,18 @@ resConquista Mundo::mConquista(const string &nome, fase& phase) {
         if (!imperio.verificaTecnologia("misseis"))
             return SEM_MISSEIS;
     }
-    Territorio* ptr = getTerritorioByName(nome);
-    if(ptr->getRes() <= val+forcaMilitar){
+
+    Territorio* ptr;
+    ptr = getTerritorioByName(nome);
+
+    if(ptr->getRes() <= val+forcaMilitar+10){
         setConquistado(ptr); //remove o pointer do territorios e mete-o no conquistados
-        flagCP = true;
+        this->flagCP = true;
         return CONQUISTADO;
     }
     else{
         imperio.setForcaMilitar(imperio.getForcaMilitar()-1);
-        if(imperio.getForcaMilitar() == 0){
+        if(imperio.getForcaMilitar() <= 0){
             phase = FIM;
             return PERDEU_CP;
         }
@@ -284,7 +290,7 @@ Territorio *Mundo::getTerritorioByName(string nome) {
     for(int i = 0; i < territorios.size(); i++){
         if(territorios[i]->getNome() == nome){
             Territorio* ptr = territorios[i];
-            territorios.erase(territorios.begin() + i);
+            //territorios.erase(territorios.begin() + i);
             return ptr;
         }
     }
@@ -294,6 +300,11 @@ Territorio *Mundo::getTerritorioByName(string nome) {
 
 void Mundo::setConquistado(Territorio *ptr) {
     imperio.getConquistados().push_back(ptr);
+
+    for(int i = 0; i < territorios.size(); i++){
+        if(ptr->getNome() == territorios[i]->getNome())
+            territorios.erase(territorios.begin()+i);
+    }
 }
 
 bool Mundo::verificaNomeTerritorio(string nome) const {

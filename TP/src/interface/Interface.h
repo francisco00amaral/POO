@@ -19,6 +19,7 @@ class Interface {
     Manager manager;
 public:
     explicit Interface(Manager& manager);
+//    Interface();
     ~Interface();
     void startLoad();
     void startGame();

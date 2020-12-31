@@ -10,9 +10,11 @@
  * pk n faz sentido um interface receber argumentos de input e n ter para onde os enviar
  * */
 Interface::Interface(Manager &manager) : manager(manager){
-    //this->manager = manager;
-    //manager.init();
+
 }
+//Interface::Interface(){
+//
+//}
 
 Interface::~Interface(){
 
@@ -75,9 +77,6 @@ void Interface::startGame(){
 
     while(count < 12){//o jogo só tem 12 turnos
 
-        //vai atualizar a informação do mundo(territorios e flags de repetição)
-        manager.update();
-
         cout << manager.mostraImperio() << "\n" << endl;//mostra estado do imperio
 
         switch(phase){
@@ -92,6 +91,7 @@ void Interface::startGame(){
                 break;
             case EVENTO:
                 faseEvento(phase);
+                manager.update();//reseta as flags de repetição
                 break;
             case FIM:
                 fim();
@@ -236,5 +236,6 @@ void Interface::faseEvento(fase &phase) {
 
 void Interface::fim(){
     cout << "Chegou ao fim." << endl;
+    exit(-1);
     // manager.mostraResultadoFinal();
 }

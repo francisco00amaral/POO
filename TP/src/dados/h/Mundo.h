@@ -23,11 +23,11 @@ class Mundo {
 
 
     //flags que impedem a repetição de comandos
-    bool flagCP = false;
-    bool flagOP = false;
-    bool flagMaisMilitar = false;
-    bool flagMaisTecno = false;
-    bool flagInvasao = false;
+//    bool flagCP = false;
+//    bool flagOP = false;
+//    bool flagMaisMilitar = false;
+//    bool flagMaisTecno = false;
+//    bool flagInvasao = false;
 
     Territorio* getTerritorioByName(string nome);
     void setConquistado(Territorio * ptr);
@@ -37,6 +37,13 @@ class Mundo {
     int verificaPrecoTecnologia(string nome) const;
 
 public:
+
+    bool flagCP = false;
+    bool flagOP = false;
+    bool flagMaisMilitar = false;
+    bool flagMaisTecno = false;
+    bool flagInvasao = false;
+
     Mundo();
     ~Mundo();
 

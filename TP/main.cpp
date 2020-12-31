@@ -17,6 +17,8 @@ int main() {
     Manager manager;
     Interface interface(manager);
 
+//    Interface interface;
+
     //começa ciclo de preparação
     interface.startLoad();
 
