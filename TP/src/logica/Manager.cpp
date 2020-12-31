@@ -97,7 +97,7 @@ void Manager::conquista(istringstream &iss, fase& phase) {
         return;
     }
 
-    toLower(nome);
+    // toLower(nome);
 
     resConquista res = mundo.mConquista(nome, phase);
     if(res == CONQUISTADO)
@@ -193,7 +193,7 @@ void Manager::adquire(istringstream &iss) {
 }
 
 
-void Manager::lista(istringstream &iss) const {
+void Manager::lista(istringstream &iss){
 
     if(iss.rdbuf()->in_avail() > 0){
 
