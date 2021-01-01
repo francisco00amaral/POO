@@ -26,6 +26,7 @@ void Interface::startLoad() {
     string resposta;
 
     cout << "Bem vindo ao jogo." << endl;
+    manager.criaInicial();
 
     while(true){
         cout << "Comandos pre-jogo(preparacao):" << endl;
@@ -138,6 +139,9 @@ void Interface::faseConquista(fase& phase){
         manager.ativa(phase, iss);
     else if(resposta == "apaga")
         manager.apaga(phase, iss);
+    else if(resposta == "sair"){
+        exit(-1);
+    }
 
 }
 
@@ -173,6 +177,9 @@ void Interface::faseRecolha(fase& phase){
         manager.ativa(phase, iss);
     else if(resposta == "apaga")
         manager.apaga(phase, iss);
+    else if(resposta == "sair"){
+        exit(-1);
+    }
 
 }
 
@@ -206,6 +213,9 @@ void Interface::faseCompra(fase &phase) {
         manager.ativa(phase, iss);
     else if(resposta == "apaga")
         manager.apaga(phase, iss);
+    else if(resposta == "sair"){
+        exit(-1);
+    }
 
 }
 
@@ -234,6 +244,9 @@ void Interface::faseEvento(fase &phase, int turn) {
         manager.ativa(phase, iss);
     else if(resposta == "apaga")
         manager.apaga(phase, iss);
+    else if(resposta == "sair"){
+        exit(-1);
+    }
 
 }
 

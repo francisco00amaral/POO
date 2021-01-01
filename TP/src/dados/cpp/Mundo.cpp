@@ -21,6 +21,17 @@ Mundo::~Mundo() {
 
 }
 
+/*
+*/
+
+// FUNCIONA MAS NAO FICA NO VETOR DE TERRITORIOS DO MUNDO PORQUE O SETCONQUISTADO APAGA-O DE LA... VER SE É ASSIM
+void Mundo::mCriaInicial(){
+    Territorio *ptr;
+    ptr = new Territorio();
+    territorios.push_back(ptr); // adicionar ao vetor de territorios do mundo
+    setConquistado(ptr);    // adicionar ao vetor de territorios do imperio
+}
+
 resCria Mundo::mCria(const string &tipo, int quant) {
 
     if(!verificaNomeTerritorio(tipo))

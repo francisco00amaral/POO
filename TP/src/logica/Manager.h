@@ -27,6 +27,7 @@ public:
     ~Manager();
 
     //pre-jogo
+    void criaInicial();
     void cria(istringstream& iss);
     void carrega(istringstream& iss);
 

@@ -13,7 +13,9 @@ Manager::~Manager() {
 
 }
 
-
+void Manager::criaInicial(){
+    mundo.mCriaInicial();
+}
 
 //pre-jogo
 void Manager::cria(istringstream &iss) {
@@ -400,7 +402,7 @@ void Manager::harvest() {
     mundo.mHarvest();
 }
 
-//mostra info atual(status bar)
+//R info atual(status bar)
 string Manager::mostraImperio() const {
     return mundo.mMostraImperio();
 }
