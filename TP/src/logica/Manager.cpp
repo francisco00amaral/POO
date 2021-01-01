@@ -176,7 +176,7 @@ void Manager::maisMilitar(istringstream& iss) {
 
 void Manager::adquire(istringstream &iss) {
 
-    /*string tipo;
+    string tipo;
     if((iss >> tipo).fail()){
         cout << "Erro ao ler os argumentos passados." << endl;
         return;
@@ -185,12 +185,14 @@ void Manager::adquire(istringstream &iss) {
     resMA res = mundo.mAdquire(tipo);
     if(res == ADQUIRIDO)
         cout << "Tecnologia adquirida com sucesso." << endl;
+    else if(res == JA_ADQUIRDA)
+        cout << "Tecnologia ja adquirida anteriormente." << endl;
     else if(res == RE_T)
-        cout << "Tecnologia já adquirida neste turno." << endl;
+        cout << "Escolha ja feita neste turno." << endl;
     else if(res == RECURSOS)
         cout << "Falta recursos para adquirir a tecnologia." << endl;
-    else if(res == NAO_ADQUIRIDO) */
-    cout << "Tecnologia nao existente (TESTE DO ADQUIRE)." << endl;
+    else if(res == NAO_ADQUIRIDO)
+        cout << "Tecnologia nao existente." << endl;
 
 }
 

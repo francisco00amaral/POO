@@ -175,6 +175,9 @@ resMA Mundo::mAdquire(const string &tipo) {
     if(!verificaExistenciaTecnologia(tipo))//verifica se existe
         return NAO_ADQUIRIDO;
 
+    if(imperio.verificaTecnologia(tipo))
+        return JA_ADQUIRDA;
+
     if(verificaPrecoTecnologia(tipo) <= imperio.getCofre()){//verifica se tem recursos
         imperio.compraTecnologia(tipo);
         flagMaisTecno = true;
@@ -274,8 +277,18 @@ void Mundo::mUpdate() {
     this->flagInvasao = false;
 }
 
-void Mundo::mHarvest() const {
+void Mundo::mHarvest() {
+    for(const auto &it : imperio.getConquistados()){
+        if(imperio.getCofre() + it->getOuro() <= imperio.getMaxCofre())
+            imperio.setCofre(imperio.getCofre() + it->getOuro());
+        else
+            imperio.setCofre(imperio.getMaxCofre());
 
+        if(imperio.getArmazem() + it->getProd() <= imperio.getMaxArmazem())
+            imperio.setArmazem((imperio.getArmazem() + it->getProd()));
+        else
+            imperio.setArmazem(imperio.getMaxArmazem());
+    }
 }
 
 
