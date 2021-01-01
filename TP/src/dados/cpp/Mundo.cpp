@@ -247,8 +247,9 @@ resToma Mundo::mTomaTech(const string &nome){
         return TECNOLOGIA_INEXISTENTE;
     }
 
-    if(!imperio.verificaTecnologia(nome))
+    if(imperio.verificaTecnologia(nome)){
         return TECNOLOGIA_JA_ADQUIRIDA;
+    }
 
     imperio.compraTecnologia(nome);//TODO aplicar alterações que cada tecnologia deve aplicar ao imperio
     return TOMADO;

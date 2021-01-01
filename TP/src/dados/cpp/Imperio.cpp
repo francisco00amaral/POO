@@ -137,12 +137,19 @@ int Imperio::getSizeConquistados() const{
 }
 
 bool Imperio::verificaTecnologia(const string &nome) const {
-    for(const auto &it : tecnologias)
-        if(it.first == nome)//verifica key
-            return get<bool>(it.second);//acede ao value(tuple) e acede ao primeiro valor dele(tuple<bool, int>)
+    for(const auto &it : tecnologias){
+        if(it.first == nome){//verifica key
+            if(!get<bool>(it.second)){ // SE ELE AINDA NAO TEM A TECNOLOGIA
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    }
+            //acede ao value(tuple) e acede ao primeiro valor dele(tuple<bool, int>)
             //este get podia ser feito por index, mas a partir do c++14 pode se usar o tipo do dado
             //https://en.cppreference.com/w/cpp/utility/tuple/get
-
     return false;
 }
 
@@ -203,9 +210,9 @@ unordered_map<string, tuple<bool, int>> Imperio::getUnMap() const{
 }
 
 void Imperio::compraTecnologia(const string &nome) {
-    for(const auto &it : tecnologias){
+    for(auto &it : tecnologias){
         if(it.first == nome){
-            tuple<bool, int> tp = it.second;
+            tuple<bool, int> &tp = it.second;
             get<bool>(tp) = true;
         }
     }
