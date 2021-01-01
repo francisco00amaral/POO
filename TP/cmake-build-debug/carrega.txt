@@ -1,2 +1,8 @@
-cria Mina 3
-cria Duna 5
+Mina 2
+Duna 2
+Planicie 2
+Castelo 2
+Montanha 2
+Fortaleza 2
+Pescaria 2
+Refugio 2

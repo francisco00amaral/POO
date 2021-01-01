@@ -28,6 +28,7 @@ class Imperio {
 
 public:
     vector <Territorio*>& getConquistados();
+    int getSizeConquistados() const;
     bool verificaTecnologia(string nome) const;
     int getForcaMilitar() const;
     void setForcaMilitar(int val);
@@ -43,6 +44,7 @@ public:
     vector<string>& getKeyValues() const;
     unordered_map<string, tuple<bool, int>> getUnMap() const;
     void compraTecnologia(string nome);
+    string toString() const;
 
     };
 

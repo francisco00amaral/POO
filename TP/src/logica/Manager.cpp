@@ -13,10 +13,6 @@ Manager::~Manager() {
 
 }
 
-void Manager::init() {
-
-}
-
 
 
 //pre-jogo
@@ -45,7 +41,6 @@ void Manager::cria(istringstream &iss) {
         cout << "Quantidade definida nao e positiva." << endl;
 
 }
-
 
 void Manager::carrega(istringstream &iss) {
     string path;
@@ -117,11 +112,9 @@ void Manager::conquista(istringstream &iss, fase& phase) {
 
 }
 
-
 void Manager::passa() {
     mundo.mPassa();
 }
-
 
 void Manager::maisOuro(istringstream& iss) {
 
@@ -140,7 +133,6 @@ void Manager::maisOuro(istringstream& iss) {
 
 }
 
-
 void Manager::maisProduto(istringstream& iss) {
 
     //maisOuro impede a escolha desta opção
@@ -158,7 +150,6 @@ void Manager::maisProduto(istringstream& iss) {
 
 }
 
-
 void Manager::maisMilitar(istringstream& iss) {
 
     resMA res = mundo.mMaisMilitar();
@@ -172,7 +163,6 @@ void Manager::maisMilitar(istringstream& iss) {
         cout << "Força militar ja no maximo possivel." << endl;
 
 }
-
 
 void Manager::adquire(istringstream &iss) {
 
@@ -196,7 +186,6 @@ void Manager::adquire(istringstream &iss) {
 
 }
 
-
 void Manager::lista(istringstream &iss){
 
     if(iss.rdbuf()->in_avail() > 0){
@@ -219,21 +208,20 @@ void Manager::lista(istringstream &iss){
 
 }
 
-
 void Manager::grava(fase& phase, istringstream &iss) {
     //ainda falta aprender isto
+    //TODO
 }
-
 
 void Manager::ativa(fase& phase, istringstream &iss) {
     //ainda falta aprender isto
+    //TODO
 }
-
 
 void Manager::apaga(fase& phase, istringstream &iss){
     //ainda falta aprender isto
+    //TODO
 }
-
 
 void Manager::toma(istringstream &iss) {
 
@@ -287,6 +275,7 @@ void Manager::toma(istringstream &iss) {
 }
 
 void Manager::modifica(istringstream &iss) {
+    //TODO
     cout << "Teste" << endl;
 }
 
@@ -364,13 +353,16 @@ void Manager::fevento(istringstream &iss) {
 
 }
 
-
 //passa para a proxima fase
 //fase != turno
 void Manager::avanca(fase& phase){
     mundo.mAvanca(phase);
 }
 
+//overload do avanca, somente chamado na fase EVENTO pra saber se está no final
+void Manager::avanca(fase& phase, int turn){
+    mundo.mAvanca(phase, turn);
+}
 
 //ocasião especial
 //atualiza os valores de cada territorio(conquistados e nao conquistados)
@@ -378,21 +370,23 @@ void Manager::update() {
     mundo.mUpdate();
 }
 
-
 //recolhe ouro e produtos no inicio de cada fase de recolha(2ª fase)
 //fase != turno
-void Manager::harvest() const {
+void Manager::harvest() {
     mundo.mHarvest();
 }
 
 //mostra info atual(status bar)
 string Manager::mostraImperio() const {
-    //return mundo.getInfoImperio();
-    return "string somente para return\n";
+    return mundo.mMostraImperio();
 }
 
+/*mostra info final
+ * quantidade de dados
+ * bonus extra(5 tecnologias adquiridas/todos os territorios conquistados)*/
 void Manager::mostraResultadoFinal() {
-
+    cout << mundo.mMostraImperio() << endl;
+    cout << "Total de pontos: " << mundo.mPontos() << endl;
 }
 
 

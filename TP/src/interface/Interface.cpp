@@ -12,9 +12,6 @@
 Interface::Interface(Manager &manager) : manager(manager){
 
 }
-//Interface::Interface(){
-//
-//}
 
 Interface::~Interface(){
 
@@ -62,6 +59,7 @@ void Interface::startLoad() {
 }
 
 
+
 /*
  * esta função tem como objetivo apresentar as opções do jogo em si,
  * onde o utilizador de facto está a jogar
@@ -79,6 +77,7 @@ void Interface::startGame(){
 
         cout << manager.mostraImperio() << "\n" << endl;//mostra estado do imperio
 
+
         switch(phase){
             case CONQUISTA:
                 faseConquista(phase);
@@ -90,19 +89,24 @@ void Interface::startGame(){
                 faseCompra(phase);
                 break;
             case EVENTO:
-                faseEvento(phase);
+                faseEvento(phase, count);
                 manager.update();//reseta as flags de repetição
+                count++;
                 break;
             case FIM:
-                fim();
+                count = 12;
                 break;
         }
 
     }
 
+    fim();
+
 }
 
 
+
+/*código correspondente a cada fase do jogo*/
 void Interface::faseConquista(fase& phase){
 
     cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ? significa opcional)" << endl;
@@ -206,7 +210,7 @@ void Interface::faseCompra(fase &phase) {
 
 }
 
-void Interface::faseEvento(fase &phase) {
+void Interface::faseEvento(fase &phase, int turn) {
 
     cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ? significa opcional)" << endl;
     cout << "fevento <nome-evento?>\tgrava <nome>\tativa <nome>\tapaga <nome>" << endl;
@@ -224,7 +228,7 @@ void Interface::faseEvento(fase &phase) {
     if(resposta == "fevento")
         manager.fevento(iss);
     else if(resposta == "avanca")
-        manager.avanca(phase);
+        manager.avanca(phase, turn);
     else if(resposta == "grava")
         manager.grava(phase, iss);
     else if(resposta == "ativa")
@@ -235,7 +239,7 @@ void Interface::faseEvento(fase &phase) {
 }
 
 void Interface::fim(){
-    cout << "Chegou ao fim." << endl;
+    cout << "\n\n-------Chegou ao fim.-------\n" << endl;
+    manager.mostraResultadoFinal();
     exit(-1);
-    // manager.mostraResultadoFinal();
 }

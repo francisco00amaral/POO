@@ -26,8 +26,6 @@ public:
     Manager();
     ~Manager();
 
-    void init();//função chamada quando o manager é criado
-
     //pre-jogo
     void cria(istringstream& iss);
     void carrega(istringstream& iss);
@@ -47,10 +45,11 @@ public:
     void modifica(istringstream& iss);
     void fevento(istringstream& iss);
     void avanca(fase& phase);
+    void avanca(fase& phase, int turn);
 
     //ocasiões especiais
     void update();//dá update aos territorios e às flags de repetição
-    void harvest() const;//na fase de Recolha
+    void harvest();//na fase de Recolha
     void mostraResultadoFinal();
 
     //mostra info atual(status bar)

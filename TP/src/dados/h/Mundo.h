@@ -61,9 +61,11 @@ public:
     void mFevento();
     bool mFevento(const string& tipo);
     void mAvanca(fase& phase);
+    void mAvanca(fase& phase, int turn);
     void mUpdate();
     void mHarvest();
-    string mostraImperio() const;
+    string mMostraImperio() const;
+    string mPontos() const;
 
     //métodos NÃO relacionados com o Império
     /*

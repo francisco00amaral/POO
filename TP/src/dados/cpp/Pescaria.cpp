@@ -4,7 +4,9 @@
 
 #include "Pescaria.h"
 
-Pescaria::Pescaria(string nome) : Ilha(nome) {
+static int count = 0;
+
+Pescaria::Pescaria(string nome) : Ilha(nome.append(to_string(++count))) {
     this->resistencia = 9;
     this->produtos = 2;
     this->ouro = 0;

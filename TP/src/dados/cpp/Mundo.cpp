@@ -82,7 +82,7 @@ resConquista Mundo::mConquista(const string &nome, fase& phase) {
     if(!verificaExistenciaTerritorio(nome))//verifica se o territorio existe
         return INEXISTENTE;
 
-    if(nome == "refugio" || nome == "pescaria") {//verifica tecnologia necessária
+    if(nome.find("Pescaria") != string::npos || nome.find("Refugio") != string::npos) {//verifica tecnologia necessária
         if (!imperio.verificaTecnologia("misseis"))
             return SEM_MISSEIS;
     }
@@ -92,7 +92,7 @@ resConquista Mundo::mConquista(const string &nome, fase& phase) {
 
     if(ptr->getRes() <= val+forcaMilitar+10){
         setConquistado(ptr); //remove o pointer do territorios e mete-o no conquistados
-        this->flagCP = true;
+        flagCP = true;
         return CONQUISTADO;
     }
     else{
@@ -169,18 +169,18 @@ resMA Mundo::mMaisMilitar() {
 }
 
 resMA Mundo::mAdquire(const string &tipo) {
-    if(flagMaisTecno)//verifica se já repetiu
+    if(flagMaisTecno)//verifica se já repetiu a escolha
         return RE_T;
 
     if(!verificaExistenciaTecnologia(tipo))//verifica se existe
         return NAO_ADQUIRIDO;
 
-    if(imperio.verificaTecnologia(tipo))
+    if(imperio.verificaTecnologia(tipo))//verifica se já foi adquirida
         return JA_ADQUIRDA;
 
     if(verificaPrecoTecnologia(tipo) <= imperio.getCofre()){//verifica se tem recursos
-        imperio.compraTecnologia(tipo);
-        flagMaisTecno = true;
+        imperio.compraTecnologia(tipo);//TODO aplicar modificações de cada tecnologia ao imperio
+        flagMaisTecno = true;//ativa flag pra impedir repetição
         return ADQUIRIDO;
     }
     else//nao tem recursos
@@ -188,8 +188,8 @@ resMA Mundo::mAdquire(const string &tipo) {
 
 }
 
-
 // problema de so funciona se for passado Mina ou Montanha, se for passado mina ou montanha não da
+//TODO ver verificação do toLower
 void Mundo::mLista(const string &nome) const {
     for(const auto &x : territorios){
         if(x->getNome().find(nome) != string::npos){
@@ -198,28 +198,22 @@ void Mundo::mLista(const string &nome) const {
     }
 }
 
-
 void Mundo::mLista(){
     for(const auto &x : territorios){
         cout << x->getAsString() << endl;
     }
-    for(const auto &x : imperio.getConquistados()){
-        cout << "Conquistados: " << endl;
-        cout << x->getAsString() << endl;
-    }
-
 }
 
 void Mundo::mGrava(fase &phase, istringstream &iss) {
-
+//TODO
 }
 
 void Mundo::mAtiva(fase &phase, istringstream &iss) {
-
+//TODO
 }
 
 void Mundo::mApaga(fase &phase, istringstream &iss) {
-
+//TODO
 }
 
 resToma Mundo::mTomaTerr(const string &nome) {
@@ -244,28 +238,49 @@ resToma Mundo::mTomaTech(const string &nome){
     if(!imperio.verificaTecnologia(nome))
         return TECNOLOGIA_JA_ADQUIRIDA;
 
-    imperio.compraTecnologia(nome);
+    imperio.compraTecnologia(nome);//TODO aplicar alterações que cada tecnologia deve aplicar ao imperio
     return TOMADO;
 }
 
 resModifica Mundo::mModificaOuro(int quantidade) {
+    //TODO
     return VAL_NEGATIVO;
 }
 
 resModifica Mundo::mModificaProduto(int quantidade) {
+    //TODO
     return VAL_NEGATIVO;
 }
 
 void Mundo::mFevento() {
-
+//TODO
 }
 
 bool Mundo::mFevento(const string &tipo) {
+    //TODO n me lembro se isto deve ser bool sequer
     return false;
 }
 
 void Mundo::mAvanca(fase &phase) {
+    switch(phase){
+        case CONQUISTA:
+            phase = RECOLHA;
+            break;
+        case RECOLHA:
+            phase = COMPRA;
+            break;
+        case COMPRA:
+            phase = EVENTO;
+            break;
+    }
+}
 
+//este é diferente pk é o avanca que faz a verificação do turno
+void Mundo::mAvanca(fase& phase, int turn){
+    if(turn == 12)
+        phase = FIM;
+    else
+        phase = CONQUISTA;
 }
 
 void Mundo::mUpdate() {
@@ -291,19 +306,41 @@ void Mundo::mHarvest() {
     }
 }
 
+string Mundo::mMostraImperio() const {
+    return imperio.toString();
+}
+
+string Mundo::mPontos() const{
+    int pontos = 0;
+    bool flag = false;
+
+    if(territorios.empty())//verifica se conquistou todos, n deve haver territorios para conquistar
+        pontos += 3;
+
+    pontos += imperio.getSizeConquistados();//soma o valor de cada territorio
+
+    for(const auto &it : imperio.getUnMap())
+        if(get<bool>(it.second))
+            pontos += 1;
+        else//ativa caso n tenha uma tecnologia adquirida
+            flag = true;
+
+    if(!flag)//se a flag n foi ativada, tem todas as tecnologais adquiridas
+        pontos += 1;
+
+    return to_string(pontos);
+}
+
+
 
 /*funções private que servem apenas para auxiliar as funlções public
  * só podem ser chamadas de dentro das funçoes public*/
-string Mundo::mostraImperio() const {
-    return std::string();
-}
 
 Territorio *Mundo::getTerritorioByName(string nome) {
 
     for(int i = 0; i < territorios.size(); i++){
         if(territorios[i]->getNome() == nome){
             Territorio* ptr = territorios[i];
-            //territorios.erase(territorios.begin() + i);
             return ptr;
         }
     }

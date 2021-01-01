@@ -26,7 +26,7 @@ public:
     void faseConquista(fase& phase);
     void faseRecolha(fase& phase);
     void faseCompra(fase& phase);
-    void faseEvento(fase& phase);
+    void faseEvento(fase& phase, int turn);
     void fim();
 
 };

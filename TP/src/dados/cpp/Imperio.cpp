@@ -132,6 +132,10 @@ vector <Territorio*>& Imperio::getConquistados()
     return territConquistados;
 }
 
+int Imperio::getSizeConquistados() const{
+    return territConquistados.size();
+}
+
 bool Imperio::verificaTecnologia(string nome) const {
     for(const auto &it : tecnologias)
         if(it.first == nome)//verifica key
@@ -205,4 +209,27 @@ void Imperio::compraTecnologia(string nome) {
             get<bool>(tp) = true;
         }
     }
+}
+
+string Imperio::toString() const{
+    ostringstream oss;
+
+    //ouro, produtos e militar
+    oss << "Cofre: " << cofre << "/" << maxCofre << "\t" <<
+           "Armazem: " << armazem << "/" << maxArmazem << "\t" <<
+           "Forca militar: " << forcaMilitar << "/" << maxMilitar << endl;
+    oss << endl;
+
+    //tecnologias
+    oss << "Tecnologias:\n";
+    for(const auto &it : tecnologias)
+            oss << "\t" << it.first << "\t Custo: " << get<int>(it.second) << "\tEstado:" << get<bool>(it.second) << endl;
+    oss << endl;
+
+    //territorios
+    oss << "Territorios conquistados:" << endl;
+    for(const auto &it : territConquistados)
+        oss << "\t" << it->getAsString() << endl;
+
+    return oss.str();
 }
