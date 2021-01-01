@@ -105,7 +105,7 @@ void Manager::conquista(istringstream &iss, fase& phase) {
     else if(res == SEM_MISSEIS)
         cout << "Nao possui a tecnologia misseis teleguiados para conquistar um territorio do tipo Ilha." << endl;
     else if(res == RE_CP)
-        cout << "Escolha já feita anteriormente." << endl;
+        cout << "Escolha ja feita anteriormente." << endl;
     else if(res == PERDEU_CP){
         cout << "Ficaste sem forca militar e perdeste." << endl;
     }
@@ -275,8 +275,32 @@ void Manager::toma(istringstream &iss) {
 }
 
 void Manager::modifica(istringstream &iss) {
-    //TODO
-    cout << "Teste" << endl;
+    string tipo;
+    if((iss >> tipo).fail()){
+        cout << "Erro ao obter os argumentos." << endl;
+        return;
+    }
+    toLower(tipo);
+
+    int quantidade;
+    if(tipo == "ouro"){
+        if((iss >> quantidade).fail()){
+            cout << "Erro ao obter os argumentos." << endl;
+            return;
+        }
+        mundo.mModificaOuro(quantidade);
+        return;
+    }
+    else if(tipo == "prod"){
+        if((iss >> quantidade).fail()){
+            cout << "Erro ao obter os argumentos." << endl;
+            return;
+        }
+        mundo.mModificaProduto(quantidade);
+        return;
+    }
+
+    cout << "Tipo inserido nao existe." << endl;
 }
 
 

@@ -29,12 +29,12 @@ class Mundo {
     bool flagMaisTecno = false;
     bool flagInvasao = false;
 
-    Territorio* getTerritorioByName(string nome);
+    Territorio* getTerritorioByName(const string &nome);
     void setConquistado(Territorio * ptr);
-    bool verificaNomeTerritorio(string nome) const;
-    bool verificaExistenciaTerritorio(string nome) const;
-    bool verificaExistenciaTecnologia(string nome) const;
-    int verificaPrecoTecnologia(string nome) const;
+    bool verificaNomeTerritorio(const string &nome) const;
+    bool verificaExistenciaTerritorio(const string &nome) const;
+    bool verificaExistenciaTecnologia(const string &nome) const;
+    int verificaPrecoTecnologia(const string &nome) const;
 
 public:
 
@@ -56,8 +56,8 @@ public:
     void mApaga(fase& phase, istringstream& iss);
     resToma mTomaTerr(const string& nome);
     resToma mTomaTech(const string& nome);
-    resModifica mModificaOuro(int quantidade);
-    resModifica mModificaProduto(int quantidade);
+    void mModificaOuro(int quantidade);
+    void mModificaProduto(int quantidade);
     void mFevento();
     bool mFevento(const string& tipo);
     void mAvanca(fase& phase);

@@ -29,7 +29,7 @@ class Imperio {
 public:
     vector <Territorio*>& getConquistados();
     int getSizeConquistados() const;
-    bool verificaTecnologia(string nome) const;
+    bool verificaTecnologia(const string &nome) const;
     int getForcaMilitar() const;
     void setForcaMilitar(int val);
     int getCofre() const;
@@ -43,7 +43,7 @@ public:
     int getMaxArmazem() const;
     vector<string>& getKeyValues() const;
     unordered_map<string, tuple<bool, int>> getUnMap() const;
-    void compraTecnologia(string nome);
+    void compraTecnologia(const string &nome);
     string toString() const;
 
     };

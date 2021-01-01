@@ -8,9 +8,9 @@
 // static int count = 0;
 
 Territorio::Territorio(const string &nome) : nome(nome) {
-    this->ouro = 0;
+    this->ouro = 1;
     this->resistencia = 9;
-    this->produtos = 0;
+    this->produtos = 1;
     this->pontos = 0;
 }
 

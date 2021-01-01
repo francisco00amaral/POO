@@ -136,7 +136,7 @@ int Imperio::getSizeConquistados() const{
     return territConquistados.size();
 }
 
-bool Imperio::verificaTecnologia(string nome) const {
+bool Imperio::verificaTecnologia(const string &nome) const {
     for(const auto &it : tecnologias)
         if(it.first == nome)//verifica key
             return get<bool>(it.second);//acede ao value(tuple) e acede ao primeiro valor dele(tuple<bool, int>)
@@ -202,7 +202,7 @@ unordered_map<string, tuple<bool, int>> Imperio::getUnMap() const{
     return tecnologias;
 }
 
-void Imperio::compraTecnologia(string nome) {
+void Imperio::compraTecnologia(const string &nome) {
     for(const auto &it : tecnologias){
         if(it.first == nome){
             tuple<bool, int> tp = it.second;

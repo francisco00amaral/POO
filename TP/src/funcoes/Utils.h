@@ -39,7 +39,7 @@ enum resMA{ADQUIRIDO, NAO_ADQUIRIDO, RECURSOS, JA_ADQUIRDA, RE_M, RE_T};
 enum resToma{TOMADO, TERRITORIO_INEXISTENTE,TERRITORIO_JA_CONQUISTADO,TECNOLOGIA_INEXISTENTE, TECNOLOGIA_JA_ADQUIRIDA};
 
 /*resultados da funcao mModifica*/
-enum resModifica{MODIFICADO, VAL_NEGATIVO, VAL_ACIMA_MAX};
+// enum resModifica{MODIFICADO, VAL_NEGATIVO, VAL_ACIMA_MAX};
 
 //passa strings para lower case
 void toLower(string& str);

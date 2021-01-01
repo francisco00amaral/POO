@@ -90,6 +90,7 @@ resConquista Mundo::mConquista(const string &nome, fase& phase) {
     Territorio* ptr;
     ptr = getTerritorioByName(nome);
 
+    // TIRAR ESTE +10 DAQUI!!!
     if(ptr->getRes() <= val+forcaMilitar+10){
         setConquistado(ptr); //remove o pointer do territorios e mete-o no conquistados
         flagCP = true;
@@ -242,14 +243,26 @@ resToma Mundo::mTomaTech(const string &nome){
     return TOMADO;
 }
 
-resModifica Mundo::mModificaOuro(int quantidade) {
-    //TODO
-    return VAL_NEGATIVO;
+void Mundo::mModificaOuro(int quantidade) {
+    if(quantidade <= 0){
+        imperio.setCofre(0);
+        return;
+    }
+    if(quantidade >= imperio.getMaxCofre()){
+        imperio.setCofre(imperio.getMaxCofre());
+        return;
+    }
 }
 
-resModifica Mundo::mModificaProduto(int quantidade) {
-    //TODO
-    return VAL_NEGATIVO;
+void Mundo::mModificaProduto(int quantidade){
+    if(quantidade <= 0){
+        imperio.setArmazem(0);
+        return;
+    }
+    if(quantidade >= imperio.getMaxCofre()){
+        imperio.setArmazem(imperio.getMaxArmazem());
+        return;
+    }
 }
 
 void Mundo::mFevento() {
@@ -336,7 +349,7 @@ string Mundo::mPontos() const{
 /*funções private que servem apenas para auxiliar as funlções public
  * só podem ser chamadas de dentro das funçoes public*/
 
-Territorio *Mundo::getTerritorioByName(string nome) {
+Territorio *Mundo::getTerritorioByName(const string &nome) {
 
     for(int i = 0; i < territorios.size(); i++){
         if(territorios[i]->getNome() == nome){
@@ -357,28 +370,28 @@ void Mundo::setConquistado(Territorio *ptr) {
     }
 }
 
-bool Mundo::verificaNomeTerritorio(string nome) const {
+bool Mundo::verificaNomeTerritorio(const string &nome) const {
     for(const auto& it : nomes)
         if(nome == it)
             return true;
     return false;
 }
 
-bool Mundo::verificaExistenciaTerritorio(string nome) const {
+bool Mundo::verificaExistenciaTerritorio(const string &nome) const {
     for(const auto& it : territorios)
         if(it->getNome() == nome)
             return true;
     return false;
 }
 
-bool Mundo::verificaExistenciaTecnologia(string nome) const {
+bool Mundo::verificaExistenciaTecnologia(const string &nome) const {
     for(const auto &it : imperio.getKeyValues())
         if(it == nome)
             return true;
     return false;
 }
 
-int Mundo::verificaPrecoTecnologia(string nome) const{
+int Mundo::verificaPrecoTecnologia(const string &nome) const{
     auto mapa = imperio.getUnMap();
     for(const auto &it : mapa){
         if(it.first == nome)

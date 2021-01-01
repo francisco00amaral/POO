@@ -74,9 +74,8 @@ void Interface::startGame(){
     cout << "O jogo vai comecar. Boa sorte!!! :D" << endl;
 
     while(count < 12){//o jogo só tem 12 turnos
-
+        cout << "Turno " << count+1 << endl;
         cout << manager.mostraImperio() << "\n" << endl;//mostra estado do imperio
-
 
         switch(phase){
             case CONQUISTA:
