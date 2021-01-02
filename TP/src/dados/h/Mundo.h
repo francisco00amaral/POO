@@ -62,6 +62,8 @@ public:
     void mModificaProduto(int quantidade);
     void mFevento();
     bool mFevento(const string& tipo);
+    bool mEventoRecurso(const string &tipo);
+    bool mEventoAlianca();
     void mAvanca(fase& phase);
     void mAvanca(fase& phase, int turn);
     void mUpdate();

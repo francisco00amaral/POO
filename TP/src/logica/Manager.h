@@ -34,6 +34,7 @@ public:
     //durante o jogo
     void conquista(istringstream& iss, fase& phase);
     void passa();
+    int random();
     void maisOuro(istringstream& iss);
     void maisProduto(istringstream& iss);
     void maisMilitar(istringstream& iss);
@@ -45,6 +46,7 @@ public:
     void toma(istringstream& iss);
     void modifica(istringstream& iss);
     void fevento(istringstream& iss);
+    void evento(int turno);
     void avanca(fase& phase);
     void avanca(fase& phase, int turn);
 

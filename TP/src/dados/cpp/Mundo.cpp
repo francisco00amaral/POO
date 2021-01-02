@@ -109,7 +109,7 @@ resConquista Mundo::mConquista(const string &nome, fase& phase) {
     }
     else{
         imperio.setForcaMilitar(imperio.getForcaMilitar()-1);
-        if(imperio.getForcaMilitar() <= 0){
+        if(imperio.getForcaMilitar() <= 0){ // ELE N PERDE SE A FORCA MILITAR FOR 0, CORRIGIR ISTO
             phase = FIM;
             return PERDEU_CP;
         }
@@ -191,7 +191,7 @@ resMA Mundo::mAdquire(const string &tipo) {
         return JA_ADQUIRDA;
 
     if(verificaPrecoTecnologia(tipo) <= imperio.getCofre()){//verifica se tem recursos
-        imperio.compraTecnologia(tipo);//TODO aplicar modificações de cada tecnologia ao imperio
+        imperio.compraTecnologia(tipo);
         mAtivaTec(tipo);
         flagMaisTecno = true;//ativa flag pra impedir repetição
         return ADQUIRIDO;
@@ -262,7 +262,7 @@ resToma Mundo::mTomaTech(const string &nome){
         return TECNOLOGIA_JA_ADQUIRIDA;
     }
 
-    imperio.compraTecnologia(nome);//TODO aplicar alterações que cada tecnologia deve aplicar ao imperio
+    imperio.compraTecnologia(nome);
     mAtivaTec(nome);
     return TOMADO;
 }
@@ -296,6 +296,36 @@ void Mundo::mFevento() {
 bool Mundo::mFevento(const string &tipo) {
     //TODO n me lembro se isto deve ser bool sequer
     return false;
+}
+
+bool Mundo::mEventoRecurso(const string &tipo){
+    if(tipo == "ouro"){
+        if(imperio.getCofre() == imperio.getMaxCofre())
+            return false;
+        else{
+            imperio.setCofre(imperio.getCofre()+1);
+            return true;
+        }
+    }
+    if(tipo == "prod"){
+        if(imperio.getArmazem() == imperio.getMaxArmazem())
+            return false;
+        else{
+            imperio.setArmazem(imperio.getArmazem()+1);
+            return true;
+        }
+    }
+    return false;
+}
+
+bool Mundo::mEventoAlianca(){
+    if(imperio.getForcaMilitar() == imperio.getMaxMilitar()){
+        return false;
+    }
+    else{
+        imperio.setForcaMilitar(imperio.getForcaMilitar()+1);
+        return true;
+    }
 }
 
 void Mundo::mAvanca(fase &phase) {

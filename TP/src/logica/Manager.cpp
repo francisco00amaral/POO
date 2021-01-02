@@ -354,6 +354,43 @@ void Manager::modifica(istringstream &iss) {
 
 } */
 
+int Manager::random(){
+    return rand() % 4 + 1;//valor random do evento [1, 4]
+}
+
+void Manager::evento(int turno){
+        int a = random(); // meti isto numa funcao porque pensava que ia ser entre 1 a 6 entao ia meter a cena das resistencias random na func tambem
+        string tipo;
+        switch(a){
+            case 1: // Recurso abandonado
+                cout << "Foi encontrado um recurso abandonado" << endl;
+                if(turno <= 6) { // primeiro ano adiciona uma unidade de produto
+                    tipo = "prod";
+                }
+                if(turno > 6){
+                    tipo ="ouro";
+                }
+                if(mundo.mEventoRecurso(tipo)){
+                    cout << "Recurso abandonado adicionado com sucesso!" << endl;
+                }
+                else
+                    cout << "Recurso foi desperdicado devido a valores maximos" << endl;
+                break;
+            case 2:
+                cout << "INVASAO A UM TERRITORIO!!!" << endl;
+                break;
+            case 3:
+                cout << "Alianca diplomatica foi assinada!" << endl;
+                if(mundo.mEventoAlianca()){
+                    cout << "Forca militar aumentou uma unidade!";
+                }else
+                    cout << "Forca militar ja estava no maximo!";
+                break;
+            case 4:
+                cout << "Nao aconteceu nenhum evento,podem ir dormir descansado" << endl;
+        }
+}
+
 
 void Manager::fevento(istringstream &iss) {
 

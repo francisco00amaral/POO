@@ -223,6 +223,7 @@ void Interface::faseEvento(fase &phase, int turn) {
 
     cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ? significa opcional)" << endl;
     cout << "fevento <nome-evento?>\tgrava <nome>\tativa <nome>\tapaga <nome>" << endl;
+    manager.evento(turn); // AQUI VAI ACONTECER O EVENTO RANDOM
 
     string resposta;
     getline(cin, resposta);
