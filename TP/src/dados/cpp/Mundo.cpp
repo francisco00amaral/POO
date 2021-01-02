@@ -308,7 +308,7 @@ bool Mundo::mFevento(const string &tipo,int turn){
         return true;
     }
     if(tipo == "Invasao"){
-        cout << "INVASAO BLA BLA" << endl;
+        mInvasao(turn);
         return true;
     }
     if(tipo == "sem"){
