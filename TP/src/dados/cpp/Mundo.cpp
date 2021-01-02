@@ -192,6 +192,7 @@ resMA Mundo::mAdquire(const string &tipo) {
 
     if(verificaPrecoTecnologia(tipo) <= imperio.getCofre()){//verifica se tem recursos
         imperio.compraTecnologia(tipo);//TODO aplicar modificações de cada tecnologia ao imperio
+        mAtivaTec(tipo);
         flagMaisTecno = true;//ativa flag pra impedir repetição
         return ADQUIRIDO;
     }
@@ -242,6 +243,16 @@ resToma Mundo::mTomaTerr(const string &nome) {
     return TOMADO;
 }
 
+void Mundo::mAtivaTec(const string &nome){
+    if(nome == "drones"){
+        imperio.setMaxMilitar();
+    }
+    if(nome == "banco"){
+        imperio.setMaxCofre();
+        imperio.setMaxArmazem();
+    }
+}
+
 resToma Mundo::mTomaTech(const string &nome){
     if(!verificaExistenciaTecnologia(nome)) {
         return TECNOLOGIA_INEXISTENTE;
@@ -252,6 +263,7 @@ resToma Mundo::mTomaTech(const string &nome){
     }
 
     imperio.compraTecnologia(nome);//TODO aplicar alterações que cada tecnologia deve aplicar ao imperio
+    mAtivaTec(nome);
     return TOMADO;
 }
 

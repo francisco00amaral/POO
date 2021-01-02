@@ -43,6 +43,7 @@ public:
 
     //métodos relacionados com o Império
     void mCriaInicial();
+    void mAtivaTec(const string &nome);
     resCria mCria(const string& tipo, int quant);
     resConquista mConquista(const string& nome, fase& phase);
     void mPassa();

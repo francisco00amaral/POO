@@ -38,7 +38,10 @@ public:
     void setArmazem(int val);
     void updateMilitar();
     int getMaxMilitar() const;
+    void setMaxMilitar();
     void updateOP();
+    void setMaxCofre();
+    void setMaxArmazem();
     int getMaxCofre() const;
     int getMaxArmazem() const;
     vector<string>& getKeyValues() const;

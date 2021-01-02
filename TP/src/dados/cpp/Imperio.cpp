@@ -185,6 +185,12 @@ int Imperio::getMaxMilitar() const {
     return maxMilitar;
 }
 
+void Imperio::setMaxMilitar(){
+    if(verificaTecnologia("drones")){
+        maxMilitar = 5;
+    }
+}
+
 void Imperio::updateOP() {
     maxArmazem = 5;
     maxCofre = 5;
@@ -194,9 +200,25 @@ int Imperio::getMaxCofre() const {
     return maxCofre;
 }
 
+void Imperio::setMaxCofre(){
+    if(verificaTecnologia("drones")){
+        maxCofre = 5;
+    }
+}
+
 int Imperio::getMaxArmazem() const{
     return maxArmazem;
 }
+
+void Imperio::setMaxArmazem(){
+    if(verificaTecnologia("banco")){
+        maxArmazem = 5;
+    }
+}
+
+
+
+
 
 vector<string>& Imperio::getKeyValues() const{
     static vector<string> nomes;
