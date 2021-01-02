@@ -289,12 +289,28 @@ void Mundo::mModificaProduto(int quantidade){
     }
 }
 
-void Mundo::mFevento() {
-//TODO
-}
 
-bool Mundo::mFevento(const string &tipo) {
-    //TODO n me lembro se isto deve ser bool sequer
+bool Mundo::mFevento(const string &tipo,int turn){
+    if(tipo == "Recurso"){
+        if(turn <= 6){
+            mEventoRecurso("prod");
+        }
+        else
+            mEventoRecurso("ouro");
+        return true;
+    }
+    if(tipo == "Alianca"){
+        mEventoAlianca();
+        return true;
+    }
+    if(tipo == "Invasao"){
+        cout << "INVASAO BLA BLA" << endl;
+        return true;
+    }
+    if(tipo == "sem"){
+        cout << "Nao aconteceu nada e podem ir dormir descansados" << endl;
+        return true;
+    }
     return false;
 }
 

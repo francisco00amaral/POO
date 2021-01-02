@@ -376,30 +376,24 @@ void Manager::evento(int turno){
                 else
                     cout << "Recurso foi desperdicado devido a valores maximos" << endl;
                 break;
-            case 2:
+            case 2: // INVASAO A TERRITORIO
                 cout << "INVASAO A UM TERRITORIO!!!" << endl;
                 break;
-            case 3:
+            case 3: // Alianca
                 cout << "Alianca diplomatica foi assinada!" << endl;
                 if(mundo.mEventoAlianca()){
-                    cout << "Forca militar aumentou uma unidade!";
+                    cout << "Forca militar aumentou uma unidade!" << endl;;
                 }else
-                    cout << "Forca militar ja estava no maximo!";
+                    cout << "Forca militar ja estava no maximo!" << endl;
                 break;
-            case 4:
+            case 4: // nada
                 cout << "Nao aconteceu nenhum evento,podem ir dormir descansado" << endl;
+                break;
         }
 }
 
 
-void Manager::fevento(istringstream &iss) {
-
-    if(iss.rdbuf()->in_avail() == 0) {//se n tiver nada no iss
-
-        mundo.mFevento();
-        cout << "Evento random aplicado com sucesso." << endl;
-
-    }else{//caso tenha alguma coisa no iss
+void Manager::fevento(istringstream &iss,int turn) {
 
         string tipo;
         if((iss >> tipo).fail()){
@@ -407,14 +401,13 @@ void Manager::fevento(istringstream &iss) {
             return;
         }
 
-        if(mundo.mFevento(tipo))
+        if(mundo.mFevento(tipo,turn))
             cout << "Evento aplicado com sucesso." << endl;
         else
             cout << "Evento pedido nao existe." << endl;
 
     }
 
-}
 
 //passa para a proxima fase
 //fase != turno

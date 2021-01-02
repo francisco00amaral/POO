@@ -219,10 +219,12 @@ void Interface::faseCompra(fase &phase) {
 
 }
 
-void Interface::faseEvento(fase &phase, int turn) {
 
+//TODO FALTA COMPOR O EVENTO RANDOM, SO DEVE ACONTECER 1X POR TURNO E ACONTECE VARIAS SE SE METER ALGUM COMANDO, E COMPOR TURNOS Q TA MAL COM ESTA FUNCAO
+void Interface::faseEvento(fase &phase, int turn) {
     cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ? significa opcional)" << endl;
     cout << "fevento <nome-evento?>\tgrava <nome>\tativa <nome>\tapaga <nome>" << endl;
+
     manager.evento(turn); // AQUI VAI ACONTECER O EVENTO RANDOM
 
     string resposta;
@@ -236,7 +238,7 @@ void Interface::faseEvento(fase &phase, int turn) {
     toLower(resposta);
 
     if(resposta == "fevento")
-        manager.fevento(iss);
+        manager.fevento(iss,turn);
     else if(resposta == "avanca")
         manager.avanca(phase, turn);
     else if(resposta == "grava")
@@ -248,7 +250,6 @@ void Interface::faseEvento(fase &phase, int turn) {
     else if(resposta == "sair"){
         exit(-1);
     }
-
 }
 
 void Interface::fim(){

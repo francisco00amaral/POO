@@ -45,7 +45,7 @@ public:
     void apaga(fase& phase, istringstream& iss);
     void toma(istringstream& iss);
     void modifica(istringstream& iss);
-    void fevento(istringstream& iss);
+    void fevento(istringstream& iss,int turn);
     void evento(int turno);
     void avanca(fase& phase);
     void avanca(fase& phase, int turn);

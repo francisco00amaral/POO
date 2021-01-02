@@ -61,7 +61,7 @@ public:
     void mModificaOuro(int quantidade);
     void mModificaProduto(int quantidade);
     void mFevento();
-    bool mFevento(const string& tipo);
+    bool mFevento(const string& tipo,int turn);
     bool mEventoRecurso(const string &tipo);
     bool mEventoAlianca();
     void mAvanca(fase& phase);
