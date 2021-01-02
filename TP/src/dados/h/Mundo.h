@@ -46,6 +46,7 @@ public:
     void mAtivaTec(const string &nome);
     resCria mCria(const string& tipo, int quant);
     resConquista mConquista(const string& nome, fase& phase);
+    int aleatorio();
     void mPassa();
     resMaisOP mMaisOuro();
     resMaisOP mMaisProduto();
@@ -64,6 +65,7 @@ public:
     bool mFevento(const string& tipo,int turn);
     bool mEventoRecurso(const string &tipo);
     bool mEventoAlianca();
+    bool mInvasao(int turno);
     void mAvanca(fase& phase);
     void mAvanca(fase& phase, int turn);
     void mUpdate();

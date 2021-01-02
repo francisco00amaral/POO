@@ -91,7 +91,11 @@ void Interface::startGame(){
             case EVENTO:
                 faseEvento(phase, count);
                 manager.update();//reseta as flags de repetição
+                break;
+            case AVANCA: // NAO FACO A MENOR IDEIA PORQUE E Q ELE NAO ENTRA AQUI
                 count++;
+                cout << "ABCD" << endl;
+                // manager.update();//reseta as flags de repetição
                 break;
             case FIM:
                 count = 12;

@@ -21,7 +21,7 @@ using namespace std;
 /*são usadas em certas funções para definir o resultado da função
  * como por exemplo, se a função tiver 3 ou mais resultados diferentes*/
 
-enum fase{CONQUISTA, RECOLHA, COMPRA, EVENTO, FIM};//define a fase do turno
+enum fase{CONQUISTA, RECOLHA, COMPRA, EVENTO, AVANCA, FIM};//define a fase do turno
 
 /*resultados possiveis da função mCria*/
 enum resCria{CRIADO, TIPO_INEXISTENTE, QUANTIDADE_NEGATIVA};

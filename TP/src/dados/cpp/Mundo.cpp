@@ -79,6 +79,10 @@ resCria Mundo::mCria(const string &tipo, int quant) {
     return CRIADO;
 }
 
+int Mundo::aleatorio(){
+    return rand()% 6 + 1; //valor random [1, 6]
+}
+
 resConquista Mundo::mConquista(const string &nome, fase& phase) {
 
     //comando repetido
@@ -87,7 +91,7 @@ resConquista Mundo::mConquista(const string &nome, fase& phase) {
         return RE_CP;
     }
 
-    int val = rand() % 6 + 1;//valor random da conquista [1, 6]
+    int val = aleatorio();
     int forcaMilitar = imperio.getForcaMilitar();
 
     if(!verificaExistenciaTerritorio(nome))//verifica se o territorio existe
@@ -344,6 +348,38 @@ bool Mundo::mEventoAlianca(){
     }
 }
 
+bool Mundo::mInvasao(int turno){
+    // ULTIMA POSICAO DO VETOR imperio.getConquistados().back();
+    int val = aleatorio();
+    int forcaInv = 0;
+
+    if(turno <= 6){
+        forcaInv = 2; // FORCA DE INVASAO É DE 2 NO PRIMEIRO ANO
+    }else
+        forcaInv = 3;// FORCA DE INVASAO É DE 3 NO SEGUNDO ANO
+    val += forcaInv;
+
+    // ULTIMO CONQUISTADO
+    Territorio *ptr = imperio.getConquistados().back();
+    // SE TEM A TECNOLOGIA DEFESAS ACRESCENTA 1 VALOR À RESISTENCIA
+    if(imperio.verificaTecnologia("defesas")){
+        ptr->setRes(ptr->getRes()+1);
+    }
+    if(val <= ptr->getRes()-8){
+        return false;
+    }
+    else{
+        if(ptr->getNome() == "Inicial"){
+            cout << "Ficou sem territorios disponiveis, perdeu o jogo!";
+            exit(-1);
+            // meter a phase a FIM?
+        }
+        imperio.getConquistados().pop_back(); // apagar do vetor de conquistados
+        return true;
+    }
+    return false;
+}
+
 void Mundo::mAvanca(fase &phase) {
     switch(phase){
         case CONQUISTA:
@@ -354,6 +390,9 @@ void Mundo::mAvanca(fase &phase) {
             break;
         case COMPRA:
             phase = EVENTO;
+            break;
+        case EVENTO:
+            phase = AVANCA;
             break;
     }
 }

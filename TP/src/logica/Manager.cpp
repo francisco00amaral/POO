@@ -378,6 +378,10 @@ void Manager::evento(int turno){
                 break;
             case 2: // INVASAO A TERRITORIO
                 cout << "INVASAO A UM TERRITORIO!!!" << endl;
+                if(mundo.mInvasao(turno))
+                    cout << "Territorio foi conquistado" << endl;
+                else
+                    cout << "Territorio nao foi conquistado" << endl;
                 break;
             case 3: // Alianca
                 cout << "Alianca diplomatica foi assinada!" << endl;
