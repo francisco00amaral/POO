@@ -305,61 +305,15 @@ void Manager::modifica(istringstream &iss) {
     cout << "Tipo inserido nao existe." << endl;
 }
 
-
-/* void Manager::modifica(istringstream &iss) {
-
-    string tipo;
-    if((iss >> tipo).fail()){
-        cout << "Erro ao obter os argumentos." << endl;
-        return;
-    }
-
-    toLower(tipo);
-
-    int quant;
-    if(tipo == "ouro"){
-        if((iss >> quant).fail()){
-            cout << "Erro ao ler os argumentos." << endl;
-            return;
-        }
-
-        resModifica res = mundo.mModificaOuro(quant);
-        if(res == MODIFICADO)
-            cout << "Modificacao feita ao ouro com sucesso." << endl;
-        else if(res == VAL_ACIMA_MAX)
-            cout << "Valor designado supera a capaciade maxima." << endl;
-        else if(res == VAL_NEGATIVO)
-            cout << "Valor negativo." << endl;
-
-        return;
-
-    }else if(tipo == "prod"){
-        if((iss >> quant).fail()){
-            cout << "Erro ao ler os argumentos." << endl;
-            return;
-        }
-
-        resModifica res = mundo.mModificaProduto(quant);
-        if(res == MODIFICADO)
-            cout << "Alteracao feita aos produtos com sucesso." << endl;
-        else if(res == VAL_ACIMA_MAX)
-            cout << "Valor designado supera a capaciade maxima." << endl;
-        else if(res == VAL_NEGATIVO)
-            cout << "Valor negativo." << endl;
-
-        return;
-    }
-
-    cout << "Tipo inserido nao existe." << endl;
-
-} */
-
 int Manager::random(){
     return rand() % 4 + 1;//valor random do evento [1, 4]
 }
 
 void Manager::evento(int turno){
         int a = random(); // meti isto numa funcao porque pensava que ia ser entre 1 a 6 entao ia meter a cena das resistencias random na func tambem
+
+        mundo.mEvento();
+
         string tipo;
         switch(a){
             case 1: // Recurso abandonado
@@ -422,6 +376,13 @@ void Manager::avanca(fase& phase){
 //overload do avanca, somente chamado na fase EVENTO pra saber se está no final
 void Manager::avanca(fase& phase, int turn){
     mundo.mAvanca(phase, turn);
+}
+
+void Manager::novoTurno(fase &phase, int turn){
+    if(turn == 12)
+        phase = FIM;
+    else
+        phase = CONQUISTA;
 }
 
 //ocasião especial

@@ -113,9 +113,8 @@ resConquista Mundo::mConquista(const string &nome, fase& phase) {
     }
     else{
         imperio.setForcaMilitar(imperio.getForcaMilitar()-1);
-        if(imperio.getForcaMilitar() <= 0){ // ELE N PERDE SE A FORCA MILITAR FOR 0, CORRIGIR ISTO
-            phase = FIM;
-            return PERDEU_CP;
+        if(imperio.getForcaMilitar() < 0){
+            imperio.setForcaMilitar(0);
         }
         return NAO_CONQUISTADO;
     }
@@ -394,6 +393,9 @@ void Mundo::mAvanca(fase &phase) {
         case EVENTO:
             phase = AVANCA;
             break;
+        case AVANCA:
+            phase = CONQUISTA;
+            break;
     }
 }
 
@@ -411,7 +413,7 @@ void Mundo::mUpdate() {
     this->flagOP = false;
     this->flagMaisMilitar = false;
     this->flagMaisTecno = false;
-    this->flagInvasao = false;
+    this->flagEvento = false;
 }
 
 void Mundo::mHarvest() {

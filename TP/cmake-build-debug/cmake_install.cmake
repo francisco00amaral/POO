@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP
+# Install script for directory: D:/3exe_POO/TP_2/POO/TP
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Utilizador/Desktop/POO/TP_Git/POO/TP/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

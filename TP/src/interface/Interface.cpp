@@ -70,7 +70,7 @@ void Interface::startGame(){
 
     int count = 0;
     string resposta;
-    enum::fase phase = CONQUISTA;
+    enum::fase phase = EVENTO;//mudar para conquista depois
 
     cout << "O jogo vai comecar. Boa sorte!!! :D" << endl;
 
@@ -90,12 +90,12 @@ void Interface::startGame(){
                 break;
             case EVENTO:
                 faseEvento(phase, count);
-                manager.update();//reseta as flags de repetição
                 break;
             case AVANCA: // NAO FACO A MENOR IDEIA PORQUE E Q ELE NAO ENTRA AQUI
+                manager.update();//reseta as flags de repetição
+                manager.novoTurno(phase, count);
                 count++;
                 cout << "ABCD" << endl;
-                // manager.update();//reseta as flags de repetição
                 break;
             case FIM:
                 count = 12;
@@ -244,7 +244,7 @@ void Interface::faseEvento(fase &phase, int turn) {
     if(resposta == "fevento")
         manager.fevento(iss,turn);
     else if(resposta == "avanca")
-        manager.avanca(phase, turn);
+        manager.avanca(phase);
     else if(resposta == "grava")
         manager.grava(phase, iss);
     else if(resposta == "ativa")

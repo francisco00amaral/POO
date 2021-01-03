@@ -27,7 +27,7 @@ class Mundo {
     bool flagOP = false;
     bool flagMaisMilitar = false;
     bool flagMaisTecno = false;
-    bool flagInvasao = false;
+    bool flagEvento = false;
 
     Territorio* getTerritorioByName(const string &nome);
     void setConquistado(Territorio * ptr);
@@ -35,6 +35,7 @@ class Mundo {
     bool verificaExistenciaTerritorio(const string &nome) const;
     bool verificaExistenciaTecnologia(const string &nome) const;
     int verificaPrecoTecnologia(const string &nome) const;
+    int aleatorio();
 
 public:
 
@@ -46,7 +47,6 @@ public:
     void mAtivaTec(const string &nome);
     resCria mCria(const string& tipo, int quant);
     resConquista mConquista(const string& nome, fase& phase);
-    int aleatorio();
     void mPassa();
     resMaisOP mMaisOuro();
     resMaisOP mMaisProduto();

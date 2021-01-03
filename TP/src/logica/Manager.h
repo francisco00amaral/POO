@@ -49,6 +49,7 @@ public:
     void evento(int turno);
     void avanca(fase& phase);
     void avanca(fase& phase, int turn);
+    void novoTurno(fase &phase, int turno);
 
     //ocasiões especiais
     void update();//dá update aos territorios e às flags de repetição
