@@ -70,7 +70,7 @@ void Interface::startGame(){
 
     int count = 0;
     string resposta;
-    enum::fase phase = EVENTO;//mudar para conquista depois
+    enum::fase phase = CONQUISTA;
 
     cout << "O jogo vai comecar. Boa sorte!!! :D" << endl;
 
