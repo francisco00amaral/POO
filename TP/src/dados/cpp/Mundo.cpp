@@ -335,6 +335,7 @@ resEvento Mundo::mEvento(int turno){
             break;
     }
     this->flagEvento = true;
+    return NADA;
 }
 
 
