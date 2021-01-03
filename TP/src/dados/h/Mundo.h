@@ -61,7 +61,7 @@ public:
     resToma mTomaTech(const string& nome);
     void mModificaOuro(int quantidade);
     void mModificaProduto(int quantidade);
-    void mFevento();
+    resEvento mEvento(int turno);
     bool mFevento(const string& tipo,int turn);
     bool mEventoRecurso(const string &tipo);
     bool mEventoAlianca();

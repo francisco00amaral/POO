@@ -305,49 +305,29 @@ void Manager::modifica(istringstream &iss) {
     cout << "Tipo inserido nao existe." << endl;
 }
 
-int Manager::random(){
-    return rand() % 4 + 1;//valor random do evento [1, 4]
-}
-
 void Manager::evento(int turno){
-        int a = random(); // meti isto numa funcao porque pensava que ia ser entre 1 a 6 entao ia meter a cena das resistencias random na func tambem
-
-        mundo.mEvento();
-
-        string tipo;
-        switch(a){
-            case 1: // Recurso abandonado
-                cout << "Foi encontrado um recurso abandonado" << endl;
-                if(turno <= 6) { // primeiro ano adiciona uma unidade de produto
-                    tipo = "prod";
-                }
-                if(turno > 6){
-                    tipo ="ouro";
-                }
-                if(mundo.mEventoRecurso(tipo)){
-                    cout << "Recurso abandonado adicionado com sucesso!" << endl;
-                }
-                else
-                    cout << "Recurso foi desperdicado devido a valores maximos" << endl;
-                break;
-            case 2: // INVASAO A TERRITORIO
-                cout << "INVASAO A UM TERRITORIO!!!" << endl;
-                if(mundo.mInvasao(turno))
-                    cout << "Territorio foi conquistado" << endl;
-                else
-                    cout << "Territorio nao foi conquistado" << endl;
-                break;
-            case 3: // Alianca
-                cout << "Alianca diplomatica foi assinada!" << endl;
-                if(mundo.mEventoAlianca()){
-                    cout << "Forca militar aumentou uma unidade!" << endl;;
-                }else
-                    cout << "Forca militar ja estava no maximo!" << endl;
-                break;
-            case 4: // nada
-                cout << "Nao aconteceu nenhum evento,podem ir dormir descansado" << endl;
-                break;
-        }
+     resEvento res = mundo.mEvento(turno);
+     if(res == ALIANCA){
+         cout << "Alianca diplomatica foi assinada!" << endl;
+     }
+     if(res == INVADIDO){
+         cout << "Territorio foi conquistado" << endl;
+     }
+    if(res == N_INVADIDO){
+        cout << "Territorio nao foi conquistado" << endl;
+    }
+     if(res == ADICIONADO){
+         cout << "Recurso abandonado adicionado com sucesso!" << endl;
+     }
+    if(res == DESPERDICADO){
+        cout << "Recurso foi desperdicado devido a valores maximos" << endl;
+    }
+     if(res == NADA){
+         cout << "Nao aconteceu nenhum evento,podem ir dormir descansado" << endl;
+     }
+     if(res == RE_EVENTO){
+         cout << "Ja aconteceu o evento deste turno!" << endl;
+     }
 }
 
 

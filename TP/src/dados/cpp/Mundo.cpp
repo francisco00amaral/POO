@@ -292,6 +292,51 @@ void Mundo::mModificaProduto(int quantidade){
     }
 }
 
+resEvento Mundo::mEvento(int turno){
+    int a = rand() % 4 + 1;//valor random do evento [1, 4]
+
+    // evento ja aconteceu 1x
+    if(flagEvento){
+        return RE_EVENTO;
+    }
+    flagEvento = true;
+
+    string tipo;
+    switch(a){
+        case 1: // Recurso abandonado
+            cout << "Foi encontrado um recurso abandonado" << endl;
+            if(turno <= 6) { // primeiro ano adiciona uma unidade de produto
+                tipo = "prod";
+            }
+            if(turno > 6){
+                tipo ="ouro";
+            }
+            if(this->mEventoRecurso(tipo)){
+                return ADICIONADO;
+            }
+            else
+                return DESPERDICADO;
+            break;
+        case 2: // INVASAO A TERRITORIO
+            if(this->mInvasao(turno))
+                return INVADIDO;
+            else
+                return N_INVADIDO;
+            break;
+        case 3: // Alianca
+            if(this->mEventoAlianca()){
+                cout << "Forca militar aumentou uma unidade!" << endl;;
+            }else
+                cout << "Forca militar ja estava no maximo!" << endl;
+            return ALIANCA;
+            break;
+        case 4: // nada
+            return NADA;
+            break;
+    }
+    this->flagEvento = true;
+}
+
 
 bool Mundo::mFevento(const string &tipo,int turn){
     if(tipo == "Recurso"){
