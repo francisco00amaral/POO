@@ -16,6 +16,6 @@ Territorio::Territorio(const string &nome) : nome(nome) {
 
 string Territorio::getAsString() const {
     ostringstream os;
-    os << "Territorio: " << nome  << " Ouro: " << ouro << " Resistencia: " << resistencia;
+    os << "Territorio: " << nome  << " Ouro: " << ouro << " Produtos: " << produtos << " Resistencia: " << resistencia;
     return os.str();
 }

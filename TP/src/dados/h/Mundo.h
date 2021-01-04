@@ -71,7 +71,7 @@ public:
     void mUpdate();
     void mHarvest();
     string mMostraImperio() const;
-    string mPontos() const;
+    string mPontos();
 
     //métodos NÃO relacionados com o Império
     /*

@@ -68,14 +68,14 @@ void Interface::startLoad() {
  */
 void Interface::startGame(){
 
-    int count = 0;
+    int count = 1;
     string resposta;
     enum::fase phase = CONQUISTA;
 
     cout << "O jogo vai comecar. Boa sorte!!! :D" << endl;
 
     while(count < 12){//o jogo só tem 12 turnos
-        cout << "Turno " << count+1 << endl;
+        cout << "Turno " << count << endl;
         cout << manager.mostraImperio() << "\n" << endl;//mostra estado do imperio
 
         switch(phase){
@@ -95,7 +95,6 @@ void Interface::startGame(){
                 manager.update();//reseta as flags de repetição
                 manager.novoTurno(phase, count);
                 count++;
-                cout << "ABCD" << endl;
                 break;
             case FIM:
                 count = 12;

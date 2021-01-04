@@ -317,7 +317,8 @@ resEvento Mundo::mEvento(int turno){
             else
                 return DESPERDICADO;
             break;
-        case 2: // INVASAO A TERRITORIO
+        case 54: // INVASAO A TERRITORIO
+            cout << "TERRITORIO A SER INVADIDO!!" << endl;
             if(this->mInvasao(turno))
                 return INVADIDO;
             else
@@ -417,7 +418,6 @@ bool Mundo::mInvasao(int turno){
         if(ptr->getNome() == "Inicial"){
             cout << "Ficou sem territorios disponiveis, perdeu o jogo!";
             exit(-1);
-            // meter a phase a FIM?
         }
         imperio.getConquistados().pop_back(); // apagar do vetor de conquistados
         return true;
@@ -480,14 +480,31 @@ string Mundo::mMostraImperio() const {
     return imperio.toString();
 }
 
-string Mundo::mPontos() const{
+string Mundo::mPontos(){
     int pontos = 0;
+    int i=0;
+    int inicial = 0;
     bool flag = false;
 
-    if(territorios.empty())//verifica se conquistou todos, n deve haver territorios para conquistar
+    /* se territorios ficarem no vetor do mundo tambem:
+    if(imperio.getSizeConquistados() == territorios.size()){
+        pontos +=3;
+    }
+    */
+    /* if(territorios.empty())//verifica se conquistou todos, n deve haver territorios para conquistar
         pontos += 3;
-
-    pontos += imperio.getSizeConquistados();//soma o valor de cada territorio
+    */
+    for(const auto &i : imperio.getConquistados()){
+        if(i->getNome() == "Inicial"){
+            pontos += 0;
+            continue;
+        }
+        if(i->getNome().find("Pescaria") != string::npos || i->getNome().find("Refugio") != string::npos)
+            pontos += 2;
+        else{
+            pontos += 1;
+        }
+    }
 
     for(const auto &it : imperio.getUnMap())
         if(get<bool>(it.second))
@@ -521,10 +538,10 @@ Territorio *Mundo::getTerritorioByName(const string &nome) {
 void Mundo::setConquistado(Territorio *ptr) {
     imperio.getConquistados().push_back(ptr);
 
-    for(int i = 0; i < territorios.size(); i++){
+    /* for(int i = 0; i < territorios.size(); i++){
         if(ptr->getNome() == territorios[i]->getNome())
             territorios.erase(territorios.begin()+i);
-    }
+    } */
 }
 
 bool Mundo::verificaNomeTerritorio(const string &nome) const {
