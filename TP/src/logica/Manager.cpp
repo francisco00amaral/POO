@@ -401,7 +401,7 @@ void Manager::harvest() {
     mundo.mHarvest();
 }
 
-//R info atual(status bar)
+//info atual(status bar)
 string Manager::mostraImperio() const {
     return mundo.mMostraImperio();
 }

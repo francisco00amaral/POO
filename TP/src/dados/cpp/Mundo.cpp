@@ -222,6 +222,8 @@ void Mundo::mLista(){
     }
 }
 
+
+
 resDados Mundo::mGrava(const fase &phase, istringstream &iss,const int& turn) {
     string nome;//lê argumento
     if((iss >> nome).fail()){
@@ -234,12 +236,14 @@ resDados Mundo::mGrava(const fase &phase, istringstream &iss,const int& turn) {
             return NOME_REPETIDO;
     }
 
-    tuple<string, Mundo*, int, fase> tuplo(nome, this, turn, phase);//cria tuple e adiciona o tuple aos saves
+    Mundo* ptr = new Mundo();
+    *ptr = *this;
+    //TODO atribuir valores do this ao ptr
+    bfhewk vchwkvcq wjkvnwjk
+    tuple<string, Mundo*, int, fase> tuplo(nome, ptr, turn, phase);//cria tuple e adiciona o tuple aos saves
     saves.push_back(tuplo);
     return GRAVADO;
 }
-
-
 
 /* Aqui n foi possível utilizar o construtor por cópia, visto que o this é um ponteiro,
  * e n se pode usar ponteiros no construtor por cópia.
@@ -256,16 +260,7 @@ resDados Mundo::mAtiva(fase &phase, istringstream &iss, int& turn) {
         const tuple<string, Mundo*, int, fase> &tp = it;
         if(get<string>(tp) == nome){
             auto& var = get<Mundo*>(it);
-//            this->imperio = var->imperio;
-//            this->flagCP = var->flagCP;
-//            this->flagOP = var->flagOP;
-//            this->flagMaisMilitar = var->flagMaisMilitar;
-//            this->flagMaisTecno = var->flagMaisTecno;
-//            this->flagEvento = var->flagEvento;
-
             *this = *var;
-
-
             phase = get<fase>(it);
             turn = get<int>(it);
             return ATIVADO;
@@ -643,13 +638,21 @@ void Mundo::switcheroo(Mundo* ptr1, Mundo* ptr2){
 Mundo &Mundo::operator=(const Mundo &outro) {
 
     cout << "Entrei no operador =" << endl;
+
+    cout << this->imperio.toString() << " | " << outro.imperio.toString() << endl;
+
     system("pause");
 
     if(this == &outro){ // auto atribuiçao
         return *this;
     }
 
+    cout << "========================================" << endl;
+
+    cout << this->imperio.toString() << " | " << outro.imperio.toString() << endl;
     this->imperio = outro.imperio;
+    cout << this->imperio.toString() << " | " << outro.imperio.toString() << endl;
+    system("pause");
     this->flagCP = outro.flagCP;
     this->flagOP = outro.flagOP;
     this->flagMaisMilitar = outro.flagMaisMilitar;
