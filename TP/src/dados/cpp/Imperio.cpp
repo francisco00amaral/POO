@@ -127,6 +127,27 @@
 //            cofre = 3;
 //}
 
+Imperio::Imperio(){
+
+}
+
+Imperio::Imperio(const Imperio& aCopiar){
+    this->territConquistados = aCopiar.territConquistados;
+    this->tecnologias = aCopiar.tecnologias;
+    this->maxMilitar = aCopiar.maxMilitar;
+    this->forcaMilitar = aCopiar.forcaMilitar;
+    this->maxArmazem = aCopiar.maxArmazem;
+    this->armazem = aCopiar.armazem;
+    this->maxCofre = aCopiar.maxCofre;
+    this->cofre = aCopiar.cofre;
+}
+
+Imperio::~Imperio(){
+    for(const auto& p : territConquistados)//apaga informação para onde os ponteiros estão a apontar
+        delete p;
+    territConquistados.clear();//apaga os pointers
+}
+
 vector <Territorio*>& Imperio::getConquistados()
 {
     return territConquistados;
@@ -262,3 +283,4 @@ string Imperio::toString() const{
 
     return oss.str();
 }
+

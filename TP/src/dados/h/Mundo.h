@@ -5,6 +5,19 @@
 #ifndef TP_MUNDO_H
 #define TP_MUNDO_H
 
+/* Esta classe é a responsável pela lógica toda.
+ *
+ * Recebe o input da interface ATRAVÉS do manager, testa esse mesmo input e consoante o a veracidade do mesmo
+ * desencadeia toda a lógica necessária.
+ *
+ * Possui certas funções que são private para auxiliar as funções principais.
+ *
+ * Não possui nem gets nem sets pk a lógica é somente referente ao mundo, não à interface nem aomanager.
+ *
+ * As únicas funções que dão return de algum valor servem somente para saber o resultado da função.
+ * Não foram feitas com booleans pk os resultados eram mais para além de um simples sim ou não.
+ * EX: confirmado, ação repetida, falta recursos, input incorreto
+ * */
 
 #include "Imperio.h"
 #include <iostream>
@@ -18,7 +31,7 @@ using namespace std;
 class Mundo {
     Imperio imperio;
     vector<Territorio*> territorios;//territorios do mundo(não pertencentes ao império)
-
+    vector<tuple<string, Mundo*, int, fase>> saves;
     const vector<string> nomes{"planicie", "montanha", "fortaleza", "mina", "duna", "castelo", "refugio", "pescaria"}; // nomes dos territorios disponiveis para ele conqusitar
 
 
@@ -29,6 +42,7 @@ class Mundo {
     bool flagMaisTecno = false;
     bool flagEvento = false;
 
+    //funções de auxílio
     Territorio* getTerritorioByName(const string &nome);
     void setConquistado(Territorio * ptr);
     bool verificaNomeTerritorio(const string &nome) const;
@@ -36,13 +50,13 @@ class Mundo {
     bool verificaExistenciaTecnologia(const string &nome) const;
     int verificaPrecoTecnologia(const string &nome) const;
     int aleatorio();
+    void switcheroo(Mundo* ptr1, Mundo* ptr2);
 
 public:
 
     Mundo();
     ~Mundo();
 
-    //métodos relacionados com o Império
     void mCriaInicial();
     void mAtivaTec(const string &nome);
     resCria mCria(const string& tipo, int quant);
@@ -54,9 +68,9 @@ public:
     resMA mAdquire(const string& tipo);
     void mLista(const string &nome) const;
     void mLista();
-    void mGrava(fase& phase, istringstream& iss);
-    void mAtiva(fase& phase, istringstream& iss);
-    void mApaga(fase& phase, istringstream& iss);
+    resDados mGrava(const fase& phase, istringstream& iss, const int& turn);
+    resDados mAtiva(fase& phase, istringstream& iss, int& turn);
+    resDados mApaga(istringstream& iss);
     resToma mTomaTerr(const string& nome);
     resToma mTomaTech(const string& nome);
     void mModificaOuro(int quantidade);
@@ -73,10 +87,8 @@ public:
     string mMostraImperio() const;
     string mPontos();
 
-    //métodos NÃO relacionados com o Império
-    /*
-     * etc
-     * */
+    Mundo &operator=(const Mundo &outro);
+
 };
 
 

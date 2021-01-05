@@ -27,6 +27,9 @@ class Imperio {
     };
 
 public:
+    Imperio();
+    Imperio(const Imperio& aCopiar);
+    ~Imperio();
     vector <Territorio*>& getConquistados();
     int getSizeConquistados() const;
     bool verificaTecnologia(const string &nome) const;

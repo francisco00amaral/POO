@@ -51,7 +51,7 @@ void Interface::startLoad() {
             this->startGame();
         }
         else if(resposta == "sair"){
-            exit(-1);
+            return;
         }else
             cout << "Comando nao existente.\n" << endl;
 
@@ -80,13 +80,13 @@ void Interface::startGame(){
 
         switch(phase){
             case CONQUISTA:
-                faseConquista(phase);
+                faseConquista(phase, count);
                 break;
             case RECOLHA:
-                faseRecolha(phase);
+                faseRecolha(phase, count);
                 break;
             case COMPRA:
-                faseCompra(phase);
+                faseCompra(phase, count);
                 break;
             case EVENTO:
                 faseEvento(phase, count);
@@ -110,7 +110,7 @@ void Interface::startGame(){
 
 
 /*código correspondente a cada fase do jogo*/
-void Interface::faseConquista(fase& phase){
+void Interface::faseConquista(fase& phase, int& turn){
 
     cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ? significa opcional)" << endl;
     cout << "conquista <nome>\tpassa\tlista <nome?>\ttoma <tipo> <nome>\tavanca\n"
@@ -137,18 +137,18 @@ void Interface::faseConquista(fase& phase){
     else if(resposta == "toma")
         manager.toma(iss);
     else if(resposta == "grava")
-        manager.grava(phase, iss);
+        manager.grava(phase, iss, turn);
     else if(resposta == "ativa")
-        manager.ativa(phase, iss);
+        manager.ativa(phase, iss, turn);
     else if(resposta == "apaga")
-        manager.apaga(phase, iss);
+        manager.apaga(iss);
     else if(resposta == "sair"){
-        exit(-1);
+        phase = FIM;
     }
 
 }
 
-void Interface::faseRecolha(fase& phase){
+void Interface::faseRecolha(fase& phase, int& turn){
 
     manager.harvest();
 
@@ -175,18 +175,18 @@ void Interface::faseRecolha(fase& phase){
     else if(resposta == "modifica")
         manager.modifica(iss);
     else if(resposta == "grava")
-        manager.grava(phase, iss);
+        manager.grava(phase, iss, turn);
     else if(resposta == "ativa")
-        manager.ativa(phase, iss);
+        manager.ativa(phase, iss, turn);
     else if(resposta == "apaga")
-        manager.apaga(phase, iss);
+        manager.apaga(iss);
     else if(resposta == "sair"){
-        exit(-1);
+        phase = FIM;
     }
 
 }
 
-void Interface::faseCompra(fase &phase) {
+void Interface::faseCompra(fase &phase, int& turn) {
 
     cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ? significa opcional)" << endl;
     cout << "maismilitar\tadquire <tipo de tecnologia>\tmodifica <tipo de recurso> <quantidade>\tavanca\n"
@@ -211,20 +211,19 @@ void Interface::faseCompra(fase &phase) {
     else if(resposta == "modifica")
         manager.modifica(iss);
     else if(resposta == "grava")
-        manager.grava(phase, iss);
+        manager.grava(phase, iss, turn);
     else if(resposta == "ativa")
-        manager.ativa(phase, iss);
+        manager.ativa(phase, iss, turn);
     else if(resposta == "apaga")
-        manager.apaga(phase, iss);
+        manager.apaga(iss);
     else if(resposta == "sair"){
-        exit(-1);
+        phase = FIM;
     }
 
 }
 
 
-//TODO FALTA COMPOR O EVENTO RANDOM, SO DEVE ACONTECER 1X POR TURNO E ACONTECE VARIAS SE SE METER ALGUM COMANDO, E COMPOR TURNOS Q TA MAL COM ESTA FUNCAO
-void Interface::faseEvento(fase &phase, int turn) {
+void Interface::faseEvento(fase &phase, int& turn) {
     cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ? significa opcional)" << endl;
     cout << "fevento <nome-evento?>\tgrava <nome>\tativa <nome>\tapaga <nome>" << endl;
 
@@ -245,18 +244,17 @@ void Interface::faseEvento(fase &phase, int turn) {
     else if(resposta == "avanca")
         manager.avanca(phase);
     else if(resposta == "grava")
-        manager.grava(phase, iss);
+        manager.grava(phase, iss, turn);
     else if(resposta == "ativa")
-        manager.ativa(phase, iss);
+        manager.ativa(phase, iss,turn);
     else if(resposta == "apaga")
-        manager.apaga(phase, iss);
+        manager.apaga(iss);
     else if(resposta == "sair"){
-        exit(-1);
+        phase = FIM;
     }
 }
 
 void Interface::fim(){
     cout << "\n\n-------Chegou ao fim.-------\n" << endl;
     manager.mostraResultadoFinal();
-    exit(-1);
 }

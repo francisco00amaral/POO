@@ -13,12 +13,15 @@
 #include "Mundo.h"
 
 Mundo::Mundo() {
-    srand(time(NULL));//inicializa random seed
+    srand(time(nullptr));//inicializa random seed
     //n deve ter grande problema uma vez que só há 1 Mundo
 }
 
 Mundo::~Mundo() {
-
+    for(const auto& it : territorios){
+        delete it;
+    }
+    territorios.clear();
 }
 
 /*
@@ -205,7 +208,6 @@ resMA Mundo::mAdquire(const string &tipo) {
 }
 
 // problema de so funciona se for passado Mina ou Montanha, se for passado mina ou montanha não da
-//TODO ver verificação do toLower
 void Mundo::mLista(const string &nome) const {
     for(const auto &x : territorios){
         if(x->getNome().find(nome) != string::npos){
@@ -220,17 +222,78 @@ void Mundo::mLista(){
     }
 }
 
-void Mundo::mGrava(fase &phase, istringstream &iss) {
-//TODO
+resDados Mundo::mGrava(const fase &phase, istringstream &iss,const int& turn) {
+    string nome;//lê argumento
+    if((iss >> nome).fail()){
+        return FALHA;
+    }
+
+    for(const auto& it : saves){//verifica se nome n é repetido
+        const tuple<string, Mundo*, int, fase> &tp = it;
+        if(get<string>(tp) == nome)
+            return NOME_REPETIDO;
+    }
+
+    tuple<string, Mundo*, int, fase> tuplo(nome, this, turn, phase);//cria tuple e adiciona o tuple aos saves
+    saves.push_back(tuplo);
+    return GRAVADO;
 }
 
-void Mundo::mAtiva(fase &phase, istringstream &iss) {
-//TODO
+
+
+/* Aqui n foi possível utilizar o construtor por cópia, visto que o this é um ponteiro,
+ * e n se pode usar ponteiros no construtor por cópia.
+ * Isso iria apenas copiar o ponteiro e essa NÃO É A INTENÇÃO.
+ *
+ * Porém, será necessário o construtor por cópia do Império.*/
+resDados Mundo::mAtiva(fase &phase, istringstream &iss, int& turn) {
+    string nome;
+    if((iss >> nome).fail()){
+        return FALHA;
+    }
+
+    for(const auto &it : saves){
+        const tuple<string, Mundo*, int, fase> &tp = it;
+        if(get<string>(tp) == nome){
+            auto& var = get<Mundo*>(it);
+//            this->imperio = var->imperio;
+//            this->flagCP = var->flagCP;
+//            this->flagOP = var->flagOP;
+//            this->flagMaisMilitar = var->flagMaisMilitar;
+//            this->flagMaisTecno = var->flagMaisTecno;
+//            this->flagEvento = var->flagEvento;
+
+            *this = *var;
+
+
+            phase = get<fase>(it);
+            turn = get<int>(it);
+            return ATIVADO;
+        }
+    }
+
+    return NOME_INEXISTENTE;
 }
 
-void Mundo::mApaga(fase &phase, istringstream &iss) {
-//TODO
+/*Aqui será necessário usar os destrutores.*/
+resDados Mundo::mApaga(istringstream &iss) {
+    string nome;
+    if((iss >> nome).fail()){
+        return FALHA;
+    }
+
+    for(int i = 0; i < saves.size(); i++){
+        const tuple<string, Mundo*, int, fase> &tp = saves[i];
+        if(get<string>(tp) == nome){
+            saves.erase(saves.begin()+i);
+            return APAGADO;
+        }
+    }
+
+    return NOME_INEXISTENTE;
 }
+
+
 
 resToma Mundo::mTomaTerr(const string &nome) {
     if(!verificaExistenciaTerritorio(nome)){
@@ -338,7 +401,6 @@ resEvento Mundo::mEvento(int turno){
     this->flagEvento = true;
     return NADA;
 }
-
 
 bool Mundo::mFevento(const string &tipo,int turn){
     if(tipo == "Recurso"){
@@ -572,4 +634,33 @@ int Mundo::verificaPrecoTecnologia(const string &nome) const{
             return get<int>(it.second);
     }
     return 0;
+}
+
+void Mundo::switcheroo(Mundo* ptr1, Mundo* ptr2){
+
+}
+
+Mundo &Mundo::operator=(const Mundo &outro) {
+
+    cout << "Entrei no operador =" << endl;
+    system("pause");
+
+    if(this == &outro){ // auto atribuiçao
+        return *this;
+    }
+
+    this->imperio = outro.imperio;
+    this->flagCP = outro.flagCP;
+    this->flagOP = outro.flagOP;
+    this->flagMaisMilitar = outro.flagMaisMilitar;
+    this->flagMaisTecno = outro.flagMaisTecno;
+    this->flagEvento = outro.flagEvento;
+
+    for(const auto &it : territorios)
+        delete it;
+
+    for(const auto &it : outro.territorios)
+        territorios.push_back(it);
+
+    return *this;
 }

@@ -210,19 +210,43 @@ void Manager::lista(istringstream &iss){
 
 }
 
-void Manager::grava(fase& phase, istringstream &iss) {
-    //ainda falta aprender isto
-    //TODO
+void Manager::grava(const fase& phase, istringstream &iss,const int& turn) {
+
+    resDados res = mundo.mGrava(phase, iss, turn);
+
+    if(res == FALHA)
+        cout << "Falha ao ler os argumentos passados." << endl;
+    else if(res == NOME_REPETIDO)
+        cout << "Nome passado ja e referente a um save diferente." << endl;
+    else if(res == GRAVADO)
+        cout << "Save feito com sucesso." << endl;
+
 }
 
-void Manager::ativa(fase& phase, istringstream &iss) {
-    //ainda falta aprender isto
-    //TODO
+void Manager::ativa(fase& phase, istringstream &iss, int& turn) {
+
+    resDados res = mundo.mAtiva(phase, iss, turn);
+
+    if(res == FALHA)
+        cout << "Erro ao ler os argumentos passados." << endl;
+    else if(res == NOME_INEXISTENTE)
+        cout << "Nome do save passado nao existe." << endl;
+    else if(res == ATIVADO)
+        cout << "Carregamento do save feito com sucesso." << endl;
+
 }
 
-void Manager::apaga(fase& phase, istringstream &iss){
-    //ainda falta aprender isto
-    //TODO
+void Manager::apaga(istringstream &iss){
+
+    resDados res = mundo.mApaga(iss);
+
+    if(res == FALHA)
+        cout << "Erro ao ler os argumentos passados." << endl;
+    else if(res == NOME_INEXISTENTE)
+        cout << "Nome do save passado nao existe." << endl;
+    else if(res == APAGADO)
+        cout << "Save apagado com sucesso." << endl;
+
 }
 
 void Manager::toma(istringstream &iss) {
