@@ -9,3 +9,7 @@ void toLower(string& str){
         return tolower(c);
     });
 }
+
+void initRand() {
+    srand(time(nullptr));//inicializa random seed
+}

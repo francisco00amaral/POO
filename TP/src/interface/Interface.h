@@ -23,8 +23,7 @@ using namespace std;
 class Interface {
     Manager manager;
 public:
-    explicit Interface(Manager& manager);
-//    Interface();
+    explicit Interface();
     ~Interface();
     void startLoad();
     void startGame();

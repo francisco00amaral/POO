@@ -3,15 +3,11 @@
 
 CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Imperio.h
 CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Mundo.h
+CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Territorio.h
 CMakeFiles/TP.dir/main.cpp.obj: ../src/funcoes/Utils.h
 CMakeFiles/TP.dir/main.cpp.obj: ../src/interface/Interface.h
 CMakeFiles/TP.dir/main.cpp.obj: ../src/logica/Manager.h
 CMakeFiles/TP.dir/main.cpp.obj: ../main.cpp
-CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Continente.h
-CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Ilha.h
-CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Imperio.h
-CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Territorio.h
-CMakeFiles/TP.dir/main.cpp.obj: ../src/funcoes/Utils.h
 
 CMakeFiles/TP.dir/src/dados/cpp/Castelo.cpp.obj: ../src/dados/h/Castelo.h
 CMakeFiles/TP.dir/src/dados/cpp/Castelo.cpp.obj: ../src/dados/h/Continente.h
@@ -38,7 +34,6 @@ CMakeFiles/TP.dir/src/dados/cpp/Ilha.cpp.obj: ../src/dados/h/Territorio.h
 
 CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj: ../src/dados/cpp/Imperio.cpp
 CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj: ../src/dados/h/Continente.h
-CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj: ../src/dados/h/Ilha.h
 CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj: ../src/dados/h/Imperio.h
 CMakeFiles/TP.dir/src/dados/cpp/Imperio.cpp.obj: ../src/dados/h/Territorio.h
 

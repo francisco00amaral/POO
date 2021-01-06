@@ -413,5 +413,3 @@ void Manager::mostraResultadoFinal() {
     cout << mundo.mMostraImperio() << endl;
     cout << "Total de pontos: " << mundo.mPontos() << endl;
 }
-
-

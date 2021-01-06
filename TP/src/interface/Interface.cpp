@@ -9,13 +9,11 @@
  * interface precisa obrigatoriamente de um Manager,
  * pk n faz sentido um interface receber argumentos de input e n ter para onde os enviar
  * */
-Interface::Interface(Manager &manager) : manager(manager){
+//Interface::Interface(Manager &manager) : manager(manager){}
 
-}
+Interface::Interface(){}
 
-Interface::~Interface(){
-
-}
+Interface::~Interface(){}
 
 /*
  * esta função tem como objetivo apresentar ao utilizador o menu pre-jogo
@@ -60,7 +58,6 @@ void Interface::startLoad() {
 }
 
 
-
 /*
  * esta função tem como objetivo apresentar as opções do jogo em si,
  * onde o utilizador de facto está a jogar
@@ -75,7 +72,7 @@ void Interface::startGame(){
     cout << "O jogo vai comecar. Boa sorte!!! :D" << endl;
 
     while(count < 12){//o jogo só tem 12 turnos
-        cout << "Turno " << count << endl;
+        cout << "\n\n" << "Turno " << count << endl;
         cout << manager.mostraImperio() << "\n" << endl;//mostra estado do imperio
 
         switch(phase){
@@ -93,7 +90,7 @@ void Interface::startGame(){
                 break;
             case AVANCA: // NAO FACO A MENOR IDEIA PORQUE E Q ELE NAO ENTRA AQUI
                 manager.update();//reseta as flags de repetição
-                manager.novoTurno(phase, count);
+                Manager::novoTurno(phase, count);
                 count++;
                 break;
             case FIM:
@@ -106,7 +103,6 @@ void Interface::startGame(){
     fim();
 
 }
-
 
 
 /*código correspondente a cada fase do jogo*/
@@ -221,7 +217,6 @@ void Interface::faseCompra(fase &phase, int& turn) {
     }
 
 }
-
 
 void Interface::faseEvento(fase &phase, int& turn) {
     cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ? significa opcional)" << endl;

@@ -31,7 +31,6 @@ public:
     Imperio(const Imperio& aCopiar);
     ~Imperio();
     vector <Territorio*>& getConquistados();
-    int getSizeConquistados() const;
     bool verificaTecnologia(const string &nome) const;
     int getForcaMilitar() const;
     void setForcaMilitar(int val);

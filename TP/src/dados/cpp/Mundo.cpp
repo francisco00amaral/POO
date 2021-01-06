@@ -13,8 +13,7 @@
 #include "Mundo.h"
 
 Mundo::Mundo() {
-    srand(time(nullptr));//inicializa random seed
-    //n deve ter grande problema uma vez que só há 1 Mundo
+
 }
 
 Mundo::~Mundo() {
@@ -24,15 +23,14 @@ Mundo::~Mundo() {
     territorios.clear();
 }
 
-/*
-*/
 
 // FUNCIONA MAS NAO FICA NO VETOR DE TERRITORIOS DO MUNDO PORQUE O SETCONQUISTADO APAGA-O DE LA... VER SE É ASSIM
 void Mundo::mCriaInicial(){
     Territorio *ptr;
     ptr = new Territorio();
-    territorios.push_back(ptr); // adicionar ao vetor de territorios do mundo
-    setConquistado(ptr);    // adicionar ao vetor de territorios do imperio
+    imperio.getConquistados().push_back(ptr);
+//    territorios.push_back(ptr); // adicionar ao vetor de territorios do mundo
+//    setConquistado(ptr);    // adicionar ao vetor de territorios do imperio
 }
 
 resCria Mundo::mCria(const string &tipo, int quant) {
@@ -238,8 +236,7 @@ resDados Mundo::mGrava(const fase &phase, istringstream &iss,const int& turn) {
 
     Mundo* ptr = new Mundo();
     *ptr = *this;
-    //TODO atribuir valores do this ao ptr
-    bfhewk vchwkvcq wjkvnwjk
+
     tuple<string, Mundo*, int, fase> tuplo(nome, ptr, turn, phase);//cria tuple e adiciona o tuple aos saves
     saves.push_back(tuplo);
     return GRAVADO;
@@ -248,8 +245,7 @@ resDados Mundo::mGrava(const fase &phase, istringstream &iss,const int& turn) {
 /* Aqui n foi possível utilizar o construtor por cópia, visto que o this é um ponteiro,
  * e n se pode usar ponteiros no construtor por cópia.
  * Isso iria apenas copiar o ponteiro e essa NÃO É A INTENÇÃO.
- *
- * Porém, será necessário o construtor por cópia do Império.*/
+ * */
 resDados Mundo::mAtiva(fase &phase, istringstream &iss, int& turn) {
     string nome;
     if((iss >> nome).fail()){
@@ -631,39 +627,21 @@ int Mundo::verificaPrecoTecnologia(const string &nome) const{
     return 0;
 }
 
-void Mundo::switcheroo(Mundo* ptr1, Mundo* ptr2){
-
-}
-
 Mundo &Mundo::operator=(const Mundo &outro) {
 
-    cout << "Entrei no operador =" << endl;
+//    if(this == &outro){ // auto atribuiçao
+//        cout << "Auto atribuicao" << endl;
+//        return *this;
+//    }
+//isto n é necessário pk o ponteiro que está no
 
-    cout << this->imperio.toString() << " | " << outro.imperio.toString() << endl;
-
-    system("pause");
-
-    if(this == &outro){ // auto atribuiçao
-        return *this;
-    }
-
-    cout << "========================================" << endl;
-
-    cout << this->imperio.toString() << " | " << outro.imperio.toString() << endl;
+    this->territorios = outro.territorios;
     this->imperio = outro.imperio;
-    cout << this->imperio.toString() << " | " << outro.imperio.toString() << endl;
-    system("pause");
     this->flagCP = outro.flagCP;
     this->flagOP = outro.flagOP;
     this->flagMaisMilitar = outro.flagMaisMilitar;
     this->flagMaisTecno = outro.flagMaisTecno;
     this->flagEvento = outro.flagEvento;
-
-    for(const auto &it : territorios)
-        delete it;
-
-    for(const auto &it : outro.territorios)
-        territorios.push_back(it);
 
     return *this;
 }

@@ -50,4 +50,6 @@ enum resDados{FALHA, GRAVADO, ATIVADO, APAGADO, NOME_INEXISTENTE, NOME_REPETIDO}
 //passa strings para lower case
 void toLower(string& str);
 
+void initRand();
+
 #endif //TP_UTILS_H

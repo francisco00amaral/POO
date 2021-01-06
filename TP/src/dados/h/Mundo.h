@@ -12,7 +12,7 @@
  *
  * Possui certas funções que são private para auxiliar as funções principais.
  *
- * Não possui nem gets nem sets pk a lógica é somente referente ao mundo, não à interface nem aomanager.
+ * Não possui nem gets nem sets pk a lógica é somente referente ao mundo, não à interface nem ao manager.
  *
  * As únicas funções que dão return de algum valor servem somente para saber o resultado da função.
  * Não foram feitas com booleans pk os resultados eram mais para além de um simples sim ou não.
@@ -50,7 +50,6 @@ class Mundo {
     bool verificaExistenciaTecnologia(const string &nome) const;
     int verificaPrecoTecnologia(const string &nome) const;
     int aleatorio();
-    void switcheroo(Mundo* ptr1, Mundo* ptr2);
 
 public:
 

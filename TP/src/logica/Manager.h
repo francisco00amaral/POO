@@ -6,14 +6,15 @@
 #define TP_MANAGER_H
 
 /* Esta classe recebe o input do utilizador através da classe interface
- * e desencadeia toda a lógica correspondente ao comando recebido.
+ * e permite que a classe mundo desencadeia toda a lógica correspondente ao comando recebido.
  *
  * NÃO É ELA QUE FAZ A LÓGICA!!!
  *
  * Contém um objeto da classe Mundo, que só ele tem. Não é possível aceder diretamente ao mundo(não tem gets e sets)
  *
- * A ideia é o manager obter a linha de argumentos, pegar nos argumentos como deve ser(NÃO OS TESTA) e envia-los para o mundo.
- * O mundo é que testa se os arguentos são válidos, o manager apenas verifica se existem.*/
+ * A ideia é o manager obter a linha de argumentos,
+ * pegar nos argumentos como deve ser(NÃO OS TESTA, APNEAS VERIFICA SE EXISTEM) e envia-los para o mundo.
+ * O mundo é que testa se os arguentos são válidos.*/
 
 #include "Mundo.h"
 #include <iostream>
