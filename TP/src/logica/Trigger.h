@@ -2,8 +2,8 @@
 // Created by migue on 15/12/2020.
 //
 
-#ifndef TP_MANAGER_H
-#define TP_MANAGER_H
+#ifndef TP_TRIGGER_H
+#define TP_TRIGGER_H
 
 /* Esta classe recebe o input do utilizador através da classe interface
  * e permite que a classe mundo desencadeia toda a lógica correspondente ao comando recebido.
@@ -24,11 +24,11 @@
 
 using namespace std;
 
-class Manager {
+class Trigger {
     Mundo mundo;
 public:
-    Manager();
-    ~Manager();
+    Trigger();
+    ~Trigger();
 
     //pre-jogo
     void criaInicial();
@@ -65,4 +65,4 @@ public:
 };
 
 
-#endif //TP_MANAGER_H
+#endif //TP_TRIGGER_H

@@ -31,7 +31,6 @@ public:
     Imperio(const Imperio& aCopiar);
     ~Imperio();
     vector <Territorio*>& getConquistados();
-    bool verificaTecnologia(const string &nome) const;
     int getForcaMilitar() const;
     void setForcaMilitar(int val);
     int getCofre() const;
@@ -49,6 +48,7 @@ public:
     vector<string>& getKeyValues() const;
     unordered_map<string, tuple<bool, int>> getUnMap() const;
     void compraTecnologia(const string &nome);
+    bool verificaTecnologia(const string &nome) const;
     string toString() const;
 
     };

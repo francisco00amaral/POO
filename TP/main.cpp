@@ -6,7 +6,7 @@ int main() {
 
     initRand();//inicia random value generator
 
-//    Manager manager;
+//    Trigger manager;
     Interface interface;
 
 //    Interface interface;

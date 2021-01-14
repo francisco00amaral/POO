@@ -6,10 +6,10 @@
 #include "Interface.h"
 
 /*
- * interface precisa obrigatoriamente de um Manager,
+ * interface precisa obrigatoriamente de um Trigger,
  * pk n faz sentido um interface receber argumentos de input e n ter para onde os enviar
  * */
-//Interface::Interface(Manager &manager) : manager(manager){}
+//Interface::Interface(Trigger &manager) : manager(manager){}
 
 Interface::Interface(){}
 
@@ -90,7 +90,7 @@ void Interface::startGame(){
                 break;
             case AVANCA: // NAO FACO A MENOR IDEIA PORQUE E Q ELE NAO ENTRA AQUI
                 manager.update();//reseta as flags de repetição
-                Manager::novoTurno(phase, count);
+                Trigger::novoTurno(phase, count);
                 count++;
                 break;
             case FIM:

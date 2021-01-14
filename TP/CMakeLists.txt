@@ -24,7 +24,7 @@ add_executable(TP
         main.cpp
         src/interface/Interface.cpp
         src/interface/Interface.h
-        src/logica/Manager.cpp
-        src/logica/Manager.h
+        src/logica/Trigger.cpp
+        src/logica/Trigger.h
         src/dados/cpp/Mundo.cpp
         src/dados/h/Mundo.h src/dados/cpp/Planicie.cpp src/dados/h/Planicie.h src/dados/cpp/Montanha.cpp src/dados/h/Montanha.h src/dados/cpp/Fortaleza.cpp src/dados/h/Fortaleza.h src/dados/cpp/Mina.cpp src/dados/h/Mina.h src/dados/cpp/Duna.cpp src/dados/h/Duna.h src/dados/cpp/Castelo.cpp src/dados/h/Castelo.h src/dados/cpp/Refugio.cpp src/dados/h/Refugio.h src/dados/cpp/Pescaria.cpp src/dados/h/Pescaria.h)

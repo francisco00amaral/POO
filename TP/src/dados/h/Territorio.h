@@ -30,7 +30,7 @@ public:
     void setProd(int val){this->produtos = val;}
     void setPts(int val){this->pontos = val;}
     string getAsString() const;
-    virtual void update(int turn){}//TODO n sei se isto é boa ideia
+    virtual void update(int turn){}
 };
 
 

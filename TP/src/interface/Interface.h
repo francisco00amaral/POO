@@ -11,7 +11,7 @@
  *
  * A fase é alterada dentro do mundo.*/
 
-#include "logica/Manager.h"
+#include "logica/Trigger.h"
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -21,7 +21,7 @@
 using namespace std;
 
 class Interface {
-    Manager manager;
+    Trigger manager;
 public:
     explicit Interface();
     ~Interface();

@@ -3,22 +3,22 @@
 //
 
 #include <Utils.h>
-#include "Manager.h"
+#include "Trigger.h"
 
-Manager::Manager() {
-
-}
-
-Manager::~Manager() {
+Trigger::Trigger() {
 
 }
 
-void Manager::criaInicial(){
+Trigger::~Trigger() {
+
+}
+
+void Trigger::criaInicial(){
     mundo.mCriaInicial();
 }
 
 //pre-jogo
-void Manager::cria(istringstream &iss) {
+void Trigger::cria(istringstream &iss) {
     string tipo;
     if((iss >> tipo).fail()){
         cout << "Erro ao ler argumentos." << endl;
@@ -44,7 +44,7 @@ void Manager::cria(istringstream &iss) {
 
 }
 
-void Manager::carrega(istringstream &iss) {
+void Trigger::carrega(istringstream &iss) {
     string path;
     if((iss >> path).fail()){
         cout << "Erro ao obter o nome do ficheiro." << endl;
@@ -86,7 +86,7 @@ void Manager::carrega(istringstream &iss) {
 
 
 //durante o jogo
-void Manager::conquista(istringstream &iss, fase& phase) {
+void Trigger::conquista(istringstream &iss, fase& phase) {
 
     string nome;
     if((iss >> nome).fail()){
@@ -114,11 +114,11 @@ void Manager::conquista(istringstream &iss, fase& phase) {
 
 }
 
-void Manager::passa() {
+void Trigger::passa() {
     mundo.mPassa();
 }
 
-void Manager::maisOuro(istringstream& iss) {
+void Trigger::maisOuro(istringstream& iss) {
 
     //maisProduto impede a escolha desta opção
     resMaisOP res = mundo.mMaisOuro();
@@ -135,7 +135,7 @@ void Manager::maisOuro(istringstream& iss) {
 
 }
 
-void Manager::maisProduto(istringstream& iss) {
+void Trigger::maisProduto(istringstream& iss) {
 
     //maisOuro impede a escolha desta opção
     resMaisOP res = mundo.mMaisProduto();
@@ -152,7 +152,7 @@ void Manager::maisProduto(istringstream& iss) {
 
 }
 
-void Manager::maisMilitar(istringstream& iss) {
+void Trigger::maisMilitar(istringstream& iss) {
 
     resMA res = mundo.mMaisMilitar();
     if(res == ADQUIRIDO)
@@ -166,7 +166,7 @@ void Manager::maisMilitar(istringstream& iss) {
 
 }
 
-void Manager::adquire(istringstream &iss) {
+void Trigger::adquire(istringstream &iss) {
 
     string tipo;
     if((iss >> tipo).fail()){
@@ -188,7 +188,7 @@ void Manager::adquire(istringstream &iss) {
 
 }
 
-void Manager::lista(istringstream &iss){
+void Trigger::lista(istringstream &iss){
 
     if(iss.rdbuf()->in_avail() > 0){
 
@@ -210,7 +210,7 @@ void Manager::lista(istringstream &iss){
 
 }
 
-void Manager::grava(const fase& phase, istringstream &iss,const int& turn) {
+void Trigger::grava(const fase& phase, istringstream &iss, const int& turn) {
 
     resDados res = mundo.mGrava(phase, iss, turn);
 
@@ -223,7 +223,7 @@ void Manager::grava(const fase& phase, istringstream &iss,const int& turn) {
 
 }
 
-void Manager::ativa(fase& phase, istringstream &iss, int& turn) {
+void Trigger::ativa(fase& phase, istringstream &iss, int& turn) {
 
     resDados res = mundo.mAtiva(phase, iss, turn);
 
@@ -236,7 +236,7 @@ void Manager::ativa(fase& phase, istringstream &iss, int& turn) {
 
 }
 
-void Manager::apaga(istringstream &iss){
+void Trigger::apaga(istringstream &iss){
 
     resDados res = mundo.mApaga(iss);
 
@@ -249,7 +249,7 @@ void Manager::apaga(istringstream &iss){
 
 }
 
-void Manager::toma(istringstream &iss) {
+void Trigger::toma(istringstream &iss) {
 
     string tipo;
     if((iss >> tipo).fail()){
@@ -300,7 +300,7 @@ void Manager::toma(istringstream &iss) {
     cout << "Tipo nao reconhecido." << endl;
 }
 
-void Manager::modifica(istringstream &iss) {
+void Trigger::modifica(istringstream &iss) {
     string tipo;
     if((iss >> tipo).fail()){
         cout << "Erro ao obter os argumentos." << endl;
@@ -329,7 +329,7 @@ void Manager::modifica(istringstream &iss) {
     cout << "Tipo inserido nao existe." << endl;
 }
 
-void Manager::evento(int turno){
+void Trigger::evento(int turno){
      resEvento res = mundo.mEvento(turno);
      if(res == ALIANCA){
          cout << "Alianca diplomatica foi assinada!" << endl;
@@ -355,7 +355,7 @@ void Manager::evento(int turno){
 }
 
 
-void Manager::fevento(istringstream &iss,int turn) {
+void Trigger::fevento(istringstream &iss, int turn) {
 
         string tipo;
         if((iss >> tipo).fail()){
@@ -373,16 +373,16 @@ void Manager::fevento(istringstream &iss,int turn) {
 
 //passa para a proxima fase
 //fase != turno
-void Manager::avanca(fase& phase){
+void Trigger::avanca(fase& phase){
     mundo.mAvanca(phase);
 }
 
 //overload do avanca, somente chamado na fase EVENTO pra saber se está no final
-void Manager::avanca(fase& phase, int turn){
+void Trigger::avanca(fase& phase, int turn){
     mundo.mAvanca(phase, turn);
 }
 
-void Manager::novoTurno(fase &phase, int turn){
+void Trigger::novoTurno(fase &phase, int turn){
     if(turn == 12)
         phase = FIM;
     else
@@ -391,25 +391,25 @@ void Manager::novoTurno(fase &phase, int turn){
 
 //ocasião especial
 //atualiza os valores de cada territorio(conquistados e nao conquistados)
-void Manager::update() {
+void Trigger::update() {
     mundo.mUpdate();
 }
 
 //recolhe ouro e produtos no inicio de cada fase de recolha(2ª fase)
 //fase != turno
-void Manager::harvest() {
+void Trigger::harvest() {
     mundo.mHarvest();
 }
 
 //info atual(status bar)
-string Manager::mostraImperio() const {
+string Trigger::mostraImperio() const {
     return mundo.mMostraImperio();
 }
 
 /*mostra info final
  * quantidade de dados
  * bonus extra(5 tecnologias adquiridas/todos os territorios conquistados)*/
-void Manager::mostraResultadoFinal() {
+void Trigger::mostraResultadoFinal() {
     cout << mundo.mMostraImperio() << endl;
     cout << "Total de pontos: " << mundo.mPontos() << endl;
 }
