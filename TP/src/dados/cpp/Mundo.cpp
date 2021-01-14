@@ -106,8 +106,7 @@ resConquista Mundo::mConquista(const string &nome, fase& phase) {
     Territorio* ptr;
     ptr = getTerritorioByName(nome);
 
-    // TIRAR ESTE +10 DAQUI!!!
-    if(ptr->getRes() <= val+forcaMilitar+10){
+    if(ptr->getRes() <= val+forcaMilitar){
         setConquistado(ptr); //remove o pointer do territorios e mete-o no conquistados
         flagCP = true;
         return CONQUISTADO;
@@ -173,7 +172,9 @@ resMA Mundo::mMaisMilitar() {
 
     if(imperio.getArmazem() > 1 && imperio.getCofre() > 1){//verifica se tem recursos para trocar
         if(imperio.getForcaMilitar() < imperio.getMaxMilitar()){
-            imperio.setForcaMilitar(imperio.getForcaMilitar()+1);
+            imperio.setCofre(imperio.getCofre()-1); // reduz uma unidade de ouro
+            imperio.setArmazem(imperio.getArmazem()-1); // reduz uma unidade de produtos
+            imperio.setForcaMilitar(imperio.getForcaMilitar()+1); // aumenta uma unidade de força militar
             flagMaisMilitar = true;
             return ADQUIRIDO;
         }
@@ -464,7 +465,7 @@ bool Mundo::mInvasao(int turno){
     if(imperio.verificaTecnologia("defesas")){
         ptr->setRes(ptr->getRes()+1);
     }
-    if(val <= ptr->getRes()-8){
+    if(val <= ptr->getRes()){
         return false;
     }
     else{

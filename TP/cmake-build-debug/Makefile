@@ -58,19 +58,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.1.3\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2020.1.3\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\3exe_POO\TP_2\POO\TP
+CMAKE_SOURCE_DIR = C:\Users\Utilizador\Desktop\POO\TP_Git\POO\TP
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\3exe_POO\TP_2\POO\TP\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Utilizador\Desktop\POO\TP_Git\POO\TP\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = D:\3exe_POO\TP_2\POO\TP\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2020.1.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -89,7 +89,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2020.1.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -99,9 +99,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\3exe_POO\TP_2\POO\TP\cmake-build-debug\CMakeFiles D:\3exe_POO\TP_2\POO\TP\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Utilizador\Desktop\POO\TP_Git\POO\TP\cmake-build-debug\CMakeFiles C:\Users\Utilizador\Desktop\POO\TP_Git\POO\TP\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\3exe_POO\TP_2\POO\TP\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Utilizador\Desktop\POO\TP_Git\POO\TP\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -574,32 +574,32 @@ src/interface/Interface.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/interface/Interface.cpp.s
 .PHONY : src/interface/Interface.cpp.s
 
-src/logica/Manager.obj: src/logica/Manager.cpp.obj
+src/logica/Trigger.obj: src/logica/Trigger.cpp.obj
 
-.PHONY : src/logica/Manager.obj
+.PHONY : src/logica/Trigger.obj
 
 # target to build an object file
-src/logica/Manager.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/Manager.cpp.obj
-.PHONY : src/logica/Manager.cpp.obj
+src/logica/Trigger.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/Trigger.cpp.obj
+.PHONY : src/logica/Trigger.cpp.obj
 
-src/logica/Manager.i: src/logica/Manager.cpp.i
+src/logica/Trigger.i: src/logica/Trigger.cpp.i
 
-.PHONY : src/logica/Manager.i
+.PHONY : src/logica/Trigger.i
 
 # target to preprocess a source file
-src/logica/Manager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/Manager.cpp.i
-.PHONY : src/logica/Manager.cpp.i
+src/logica/Trigger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/Trigger.cpp.i
+.PHONY : src/logica/Trigger.cpp.i
 
-src/logica/Manager.s: src/logica/Manager.cpp.s
+src/logica/Trigger.s: src/logica/Trigger.cpp.s
 
-.PHONY : src/logica/Manager.s
+.PHONY : src/logica/Trigger.s
 
 # target to generate assembly for a file
-src/logica/Manager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/Manager.cpp.s
-.PHONY : src/logica/Manager.cpp.s
+src/logica/Trigger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/Trigger.cpp.s
+.PHONY : src/logica/Trigger.cpp.s
 
 # Help Target
 help:
@@ -658,9 +658,9 @@ help:
 	@echo ... src/interface/Interface.obj
 	@echo ... src/interface/Interface.i
 	@echo ... src/interface/Interface.s
-	@echo ... src/logica/Manager.obj
-	@echo ... src/logica/Manager.i
-	@echo ... src/logica/Manager.s
+	@echo ... src/logica/Trigger.obj
+	@echo ... src/logica/Trigger.i
+	@echo ... src/logica/Trigger.s
 .PHONY : help
 
 
