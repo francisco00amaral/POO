@@ -19,7 +19,7 @@ Montanha::~Montanha() {
 }
 
 void Montanha::update(int turn) {
-    if(cooldown > 0)
+    if(cooldown >= 0)
         cooldown--;
     else
         this->produtos = 1;

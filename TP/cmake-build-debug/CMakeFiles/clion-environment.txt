@@ -1,4 +1,4 @@
-ToolSet: w64 6.0 (local)@C:\Users\Utilizador\Desktop\POO\mingw64
+ToolSet: w64 6.0 (local)@C:\Users\Utilizador\Desktop\ISEC\POO\mingw64
 Options: 
 
-Options:C:\Users\Utilizador\Desktop\POO\mingw64\bin
+Options:C:\Users\Utilizador\Desktop\ISEC\POO\mingw64\bin

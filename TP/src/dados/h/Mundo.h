@@ -81,7 +81,7 @@ public:
     bool mInvasao(int turno);
     void mAvanca(fase& phase);
     void mAvanca(fase& phase, int turn);
-    void mUpdate();
+    void mUpdate(int turno);
     void mHarvest();
     string mMostraImperio() const;
     string mPontos();

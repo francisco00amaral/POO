@@ -99,8 +99,8 @@ resConquista Mundo::mConquista(const string &nome, fase& phase) {
         return INEXISTENTE;
 
     if(nome.find("Pescaria") != string::npos || nome.find("Refugio") != string::npos) {//verifica tecnologia necessária
-        if (!imperio.verificaTecnologia("misseis"))
-            return SEM_MISSEIS;
+        if (!imperio.verificaTecnologia("misseis") && imperio.getConquistados().size() < 5)
+            return CONQ_INSUF;
     }
 
     Territorio* ptr;
@@ -170,7 +170,7 @@ resMA Mundo::mMaisMilitar() {
     if(flagMaisMilitar)
         return RE_M;
 
-    if(imperio.getArmazem() > 1 && imperio.getCofre() > 1){//verifica se tem recursos para trocar
+    if(imperio.getArmazem() >= 1 && imperio.getCofre() >= 1){//verifica se tem recursos para trocar
         if(imperio.getForcaMilitar() < imperio.getMaxMilitar()){
             imperio.setCofre(imperio.getCofre()-1); // reduz uma unidade de ouro
             imperio.setArmazem(imperio.getArmazem()-1); // reduz uma unidade de produtos
@@ -334,6 +334,7 @@ void Mundo::mModificaOuro(int quantidade) {
         imperio.setCofre(imperio.getMaxCofre());
         return;
     }
+    imperio.setCofre(quantidade);
 }
 
 void Mundo::mModificaProduto(int quantidade){
@@ -345,6 +346,7 @@ void Mundo::mModificaProduto(int quantidade){
         imperio.setArmazem(imperio.getMaxArmazem());
         return;
     }
+    imperio.setArmazem(quantidade);
 }
 
 resEvento Mundo::mEvento(int turno){
@@ -507,13 +509,17 @@ void Mundo::mAvanca(fase& phase, int turn){
         phase = CONQUISTA;
 }
 
-void Mundo::mUpdate() {
+void Mundo::mUpdate(int turno) {
     //dá reset às flags no início de cada turno
     this->flagCP = false;
     this->flagOP = false;
     this->flagMaisMilitar = false;
     this->flagMaisTecno = false;
     this->flagEvento = false;
+
+    for(const auto &x : imperio.getConquistados()){
+        x->update(turno);
+    }
 }
 
 void Mundo::mHarvest() {
@@ -545,9 +551,9 @@ string Mundo::mPontos(){
         pontos +=3;
     }
     */
-    /* if(territorios.empty())//verifica se conquistou todos, n deve haver territorios para conquistar
+    if(territorios.empty())//verifica se conquistou todos, n deve haver territorios para conquistar
         pontos += 3;
-    */
+
     for(const auto &i : imperio.getConquistados()){
         if(i->getNome() == "Inicial"){
             pontos += 0;
