@@ -208,7 +208,9 @@ resMA Mundo::mAdquire(const string &tipo) {
 // problema de so funciona se for passado Mina ou Montanha, se for passado mina ou montanha não da
 void Mundo::mLista(const string &nome) const {
     for(const auto &x : territorios){
-        if(x->getNome().find(nome) != string::npos){
+        string str = x->getNome();
+        toLower(str);
+        if(str.find(nome) != string::npos){
             cout << x->getAsString() << endl;
         }
     }
@@ -234,8 +236,8 @@ resDados Mundo::mGrava(const fase &phase, istringstream &iss,const int& turn) {
             return NOME_REPETIDO;
     }
 
-    Mundo* ptr = new Mundo();
-    *ptr = *this;
+    Mundo* ptr = new Mundo();//cria uma cópia do mundo atual
+    *ptr = *this;//copia
 
     tuple<string, Mundo*, int, fase> tuplo(nome, ptr, turn, phase);//cria tuple e adiciona o tuple aos saves
     saves.push_back(tuplo);
@@ -253,9 +255,9 @@ resDados Mundo::mAtiva(fase &phase, istringstream &iss, int& turn) {
     }
 
     for(const auto &it : saves){
-        const tuple<string, Mundo*, int, fase> &tp = it;
+        const tuple<string, Mundo*, int, fase> &tp = it;//apanha referencia
         if(get<string>(tp) == nome){
-            auto& var = get<Mundo*>(it);
+            auto& var = get<Mundo*>(it);//buscar referencia do mundo
             *this = *var;
             phase = get<fase>(it);
             turn = get<int>(it);
@@ -579,7 +581,9 @@ string Mundo::mPontos(){
 Territorio *Mundo::getTerritorioByName(const string &nome) {
 
     for(int i = 0; i < territorios.size(); i++){
-        if(territorios[i]->getNome() == nome){
+        string str = territorios[i]->getNome();
+        toLower(str);
+        if(str == nome){
             Territorio* ptr = territorios[i];
             return ptr;
         }
@@ -605,9 +609,12 @@ bool Mundo::verificaNomeTerritorio(const string &nome) const {
 }
 
 bool Mundo::verificaExistenciaTerritorio(const string &nome) const {
-    for(const auto& it : territorios)
-        if(it->getNome() == nome)
+    for (const auto &it : territorios) {
+        string str = it->getNome();//copia valor pra poder passar pra lower sem problemas
+        toLower(str);
+        if (str == nome)//compara valores
             return true;
+    }
     return false;
 }
 

@@ -574,32 +574,32 @@ src/interface/Interface.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/interface/Interface.cpp.s
 .PHONY : src/interface/Interface.cpp.s
 
-src/logica/Manager.obj: src/logica/Manager.cpp.obj
+src/logica/Trigger.obj: src/logica/Trigger.cpp.obj
 
-.PHONY : src/logica/Manager.obj
+.PHONY : src/logica/Trigger.obj
 
 # target to build an object file
-src/logica/Manager.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/Manager.cpp.obj
-.PHONY : src/logica/Manager.cpp.obj
+src/logica/Trigger.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/Trigger.cpp.obj
+.PHONY : src/logica/Trigger.cpp.obj
 
-src/logica/Manager.i: src/logica/Manager.cpp.i
+src/logica/Trigger.i: src/logica/Trigger.cpp.i
 
-.PHONY : src/logica/Manager.i
+.PHONY : src/logica/Trigger.i
 
 # target to preprocess a source file
-src/logica/Manager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/Manager.cpp.i
-.PHONY : src/logica/Manager.cpp.i
+src/logica/Trigger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/Trigger.cpp.i
+.PHONY : src/logica/Trigger.cpp.i
 
-src/logica/Manager.s: src/logica/Manager.cpp.s
+src/logica/Trigger.s: src/logica/Trigger.cpp.s
 
-.PHONY : src/logica/Manager.s
+.PHONY : src/logica/Trigger.s
 
 # target to generate assembly for a file
-src/logica/Manager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/Manager.cpp.s
-.PHONY : src/logica/Manager.cpp.s
+src/logica/Trigger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP.dir\build.make CMakeFiles/TP.dir/src/logica/Trigger.cpp.s
+.PHONY : src/logica/Trigger.cpp.s
 
 # Help Target
 help:
@@ -658,9 +658,9 @@ help:
 	@echo ... src/interface/Interface.obj
 	@echo ... src/interface/Interface.i
 	@echo ... src/interface/Interface.s
-	@echo ... src/logica/Manager.obj
-	@echo ... src/logica/Manager.i
-	@echo ... src/logica/Manager.s
+	@echo ... src/logica/Trigger.obj
+	@echo ... src/logica/Trigger.i
+	@echo ... src/logica/Trigger.s
 .PHONY : help
 
 

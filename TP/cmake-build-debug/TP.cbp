@@ -185,10 +185,10 @@
 		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/interface/Interface.h">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/logica/Manager.cpp">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/logica/Trigger.cpp">
 			<Option target="TP"/>
 		</Unit>
-		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/logica/Manager.h">
+		<Unit filename="D:/3exe_POO/TP_2/POO/TP/src/logica/Trigger.h">
 			<Option target="TP"/>
 		</Unit>
 		<Unit filename="D:/3exe_POO/TP_2/POO/TP/CMakeLists.txt">

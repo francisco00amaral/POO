@@ -20,7 +20,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "D:/3exe_POO/TP_2/POO/TP/src/dados/cpp/Territorio.cpp" "D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/CMakeFiles/TP.dir/src/dados/cpp/Territorio.cpp.obj"
   "D:/3exe_POO/TP_2/POO/TP/src/funcoes/Utils.cpp" "D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/CMakeFiles/TP.dir/src/funcoes/Utils.cpp.obj"
   "D:/3exe_POO/TP_2/POO/TP/src/interface/Interface.cpp" "D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/CMakeFiles/TP.dir/src/interface/Interface.cpp.obj"
-  "D:/3exe_POO/TP_2/POO/TP/src/logica/Manager.cpp" "D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/CMakeFiles/TP.dir/src/logica/Manager.cpp.obj"
+  "D:/3exe_POO/TP_2/POO/TP/src/logica/Trigger.cpp" "D:/3exe_POO/TP_2/POO/TP/cmake-build-debug/CMakeFiles/TP.dir/src/logica/Trigger.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

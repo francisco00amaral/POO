@@ -45,8 +45,8 @@ class Mundo {
     //funções de auxílio
     Territorio* getTerritorioByName(const string &nome);
     void setConquistado(Territorio * ptr);
-    bool verificaNomeTerritorio(const string &nome) const;
-    bool verificaExistenciaTerritorio(const string &nome) const;
+    bool verificaNomeTerritorio(const string &nome) const;//verifica se tipo territorio existe
+    bool verificaExistenciaTerritorio(const string &nome) const;//verifica se territorio conquistado existe
     bool verificaExistenciaTecnologia(const string &nome) const;
     int verificaPrecoTecnologia(const string &nome) const;
     int aleatorio();

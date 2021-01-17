@@ -94,7 +94,7 @@ void Trigger::conquista(istringstream &iss, fase& phase) {
         return;
     }
 
-    // toLower(nome);
+     toLower(nome);
 
     resConquista res = mundo.mConquista(nome, phase);
 
@@ -198,7 +198,7 @@ void Trigger::lista(istringstream &iss){
             return;
         }
 
-        // toLower(nome);
+        toLower(nome);
 
         mundo.mLista(nome);
 

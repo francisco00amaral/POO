@@ -6,7 +6,7 @@ CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Mundo.h
 CMakeFiles/TP.dir/main.cpp.obj: ../src/dados/h/Territorio.h
 CMakeFiles/TP.dir/main.cpp.obj: ../src/funcoes/Utils.h
 CMakeFiles/TP.dir/main.cpp.obj: ../src/interface/Interface.h
-CMakeFiles/TP.dir/main.cpp.obj: ../src/logica/Manager.h
+CMakeFiles/TP.dir/main.cpp.obj: ../src/logica/Trigger.h
 CMakeFiles/TP.dir/main.cpp.obj: ../main.cpp
 
 CMakeFiles/TP.dir/src/dados/cpp/Castelo.cpp.obj: ../src/dados/h/Castelo.h
@@ -90,14 +90,14 @@ CMakeFiles/TP.dir/src/interface/Interface.cpp.obj: ../src/dados/h/Imperio.h
 CMakeFiles/TP.dir/src/interface/Interface.cpp.obj: ../src/dados/h/Mundo.h
 CMakeFiles/TP.dir/src/interface/Interface.cpp.obj: ../src/dados/h/Territorio.h
 CMakeFiles/TP.dir/src/interface/Interface.cpp.obj: ../src/funcoes/Utils.h
-CMakeFiles/TP.dir/src/interface/Interface.cpp.obj: ../src/logica/Manager.h
+CMakeFiles/TP.dir/src/interface/Interface.cpp.obj: ../src/logica/Trigger.h
 CMakeFiles/TP.dir/src/interface/Interface.cpp.obj: ../src/interface/Interface.cpp
 CMakeFiles/TP.dir/src/interface/Interface.cpp.obj: ../src/interface/Interface.h
 
-CMakeFiles/TP.dir/src/logica/Manager.cpp.obj: ../src/dados/h/Imperio.h
-CMakeFiles/TP.dir/src/logica/Manager.cpp.obj: ../src/dados/h/Mundo.h
-CMakeFiles/TP.dir/src/logica/Manager.cpp.obj: ../src/dados/h/Territorio.h
-CMakeFiles/TP.dir/src/logica/Manager.cpp.obj: ../src/funcoes/Utils.h
-CMakeFiles/TP.dir/src/logica/Manager.cpp.obj: ../src/logica/Manager.cpp
-CMakeFiles/TP.dir/src/logica/Manager.cpp.obj: ../src/logica/Manager.h
+CMakeFiles/TP.dir/src/logica/Trigger.cpp.obj: ../src/dados/h/Imperio.h
+CMakeFiles/TP.dir/src/logica/Trigger.cpp.obj: ../src/dados/h/Mundo.h
+CMakeFiles/TP.dir/src/logica/Trigger.cpp.obj: ../src/dados/h/Territorio.h
+CMakeFiles/TP.dir/src/logica/Trigger.cpp.obj: ../src/funcoes/Utils.h
+CMakeFiles/TP.dir/src/logica/Trigger.cpp.obj: ../src/logica/Trigger.cpp
+CMakeFiles/TP.dir/src/logica/Trigger.cpp.obj: ../src/logica/Trigger.h
 
