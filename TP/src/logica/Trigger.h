@@ -55,7 +55,7 @@ public:
     static void novoTurno(fase &phase, int turno);
 
     //ocasiões especiais
-    void update();//dá update aos territorios e às flags de repetição
+    void update(int turno);//dá update aos territorios e às flags de repetição
     void harvest();//na fase de Recolha
     void mostraResultadoFinal();
 

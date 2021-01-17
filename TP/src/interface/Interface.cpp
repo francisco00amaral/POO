@@ -89,7 +89,7 @@ void Interface::startGame(){
                 faseEvento(phase, count);
                 break;
             case AVANCA: // NAO FACO A MENOR IDEIA PORQUE E Q ELE NAO ENTRA AQUI
-                manager.update();//reseta as flags de repetição
+                manager.update(count);//reseta as flags de repetição
                 Trigger::novoTurno(phase, count);
                 count++;
                 break;

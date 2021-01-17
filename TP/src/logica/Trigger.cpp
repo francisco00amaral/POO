@@ -104,8 +104,8 @@ void Trigger::conquista(istringstream &iss, fase& phase) {
         cout << "Territorio nao foi conquistado." << endl;
     else if(res == INEXISTENTE)
         cout << "Territorio passado nao existe." << endl;
-    else if(res == SEM_MISSEIS)
-        cout << "Nao possui a tecnologia misseis teleguiados para conquistar um territorio do tipo Ilha." << endl;
+    else if(res == CONQ_INSUF)
+        cout << "Territorios conquistados inferior a 5 e/ou nao possui misseis" << endl;
     else if(res == RE_CP)
         cout << "Escolha ja feita anteriormente." << endl;
     else if(res == PERDEU_CP){
@@ -391,8 +391,8 @@ void Trigger::novoTurno(fase &phase, int turn){
 
 //ocasião especial
 //atualiza os valores de cada territorio(conquistados e nao conquistados)
-void Trigger::update() {
-    mundo.mUpdate();
+void Trigger::update(int turno) {
+    mundo.mUpdate(turno);
 }
 
 //recolhe ouro e produtos no inicio de cada fase de recolha(2ª fase)
