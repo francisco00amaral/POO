@@ -41,6 +41,7 @@ class Mundo {
     bool flagMaisMilitar = false;
     bool flagMaisTecno = false;
     bool flagEvento = false;
+    bool flagHarvest = false;
 
     //funções de auxílio
     Territorio* getTerritorioByName(const string &nome);
@@ -50,6 +51,11 @@ class Mundo {
     bool verificaExistenciaTecnologia(const string &nome) const;
     int verificaPrecoTecnologia(const string &nome) const;
     int aleatorio();
+
+    //funções de evento
+    bool mEventoRecurso(const string &tipo);
+    bool mEventoAlianca();
+    bool mInvasao(int turno, fase& phase);
 
 public:
 
@@ -74,11 +80,8 @@ public:
     resToma mTomaTech(const string& nome);
     void mModificaOuro(int quantidade);
     void mModificaProduto(int quantidade);
-    resEvento mEvento(int turno);
-    bool mFevento(const string& tipo,int turn);
-    bool mEventoRecurso(const string &tipo);
-    bool mEventoAlianca();
-    bool mInvasao(int turno);
+    resEvento mEvento(int turno, fase& phase);
+    bool mFevento(const string& tipo,int turn, fase& phase);
     void mAvanca(fase& phase);
     void mAvanca(fase& phase, int turn);
     void mUpdate(int turno);

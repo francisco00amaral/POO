@@ -197,6 +197,17 @@ resMA Mundo::mAdquire(const string &tipo) {
 
     if(verificaPrecoTecnologia(tipo) <= imperio.getCofre()){//verifica se tem recursos
         imperio.compraTecnologia(tipo);
+        if(tipo == "bolsa"){
+            imperio.setCofre(imperio.getCofre()-2);
+        }else if(tipo == "banco"){
+            imperio.setCofre(imperio.getCofre()-3);
+        }else if(tipo == "misseis"){
+            imperio.setCofre(imperio.getCofre()-4);
+        }else if(tipo == "drones"){
+            imperio.setCofre(imperio.getCofre()-3);
+        }else if(tipo == "defesas"){
+            imperio.setCofre(imperio.getCofre()-4);
+        }
         mAtivaTec(tipo);
         flagMaisTecno = true;//ativa flag pra impedir repetição
         return ADQUIRIDO;
@@ -351,7 +362,7 @@ void Mundo::mModificaProduto(int quantidade){
     imperio.setArmazem(quantidade);
 }
 
-resEvento Mundo::mEvento(int turno){
+resEvento Mundo::mEvento(int turno, fase& phase){
     int a = rand() % 4 + 1;//valor random do evento [1, 4]
 
     // evento ja aconteceu 1x
@@ -376,9 +387,9 @@ resEvento Mundo::mEvento(int turno){
             else
                 return DESPERDICADO;
             break;
-        case 54: // INVASAO A TERRITORIO
+        case 2: // INVASAO A TERRITORIO
             cout << "TERRITORIO A SER INVADIDO!!" << endl;
-            if(this->mInvasao(turno))
+            if(this->mInvasao(turno, phase))
                 return INVADIDO;
             else
                 return N_INVADIDO;
@@ -398,7 +409,7 @@ resEvento Mundo::mEvento(int turno){
     return NADA;
 }
 
-bool Mundo::mFevento(const string &tipo,int turn){
+bool Mundo::mFevento(const string &tipo,int turn, fase& phase){
     if(tipo == "Recurso"){
         if(turn <= 6){
             mEventoRecurso("prod");
@@ -412,7 +423,7 @@ bool Mundo::mFevento(const string &tipo,int turn){
         return true;
     }
     if(tipo == "Invasao"){
-        mInvasao(turn);
+        mInvasao(turn, phase);
         return true;
     }
     if(tipo == "sem"){
@@ -452,10 +463,10 @@ bool Mundo::mEventoAlianca(){
     }
 }
 
-bool Mundo::mInvasao(int turno){
+bool Mundo::mInvasao(int turno, fase& phase){
     // ULTIMA POSICAO DO VETOR imperio.getConquistados().back();
-    int val = aleatorio();
-    int forcaInv = 0;
+    int val = aleatorio();//fator sorte [1, 6]
+    int forcaInv, forcaDefesa;
 
     if(turno <= 6){
         forcaInv = 2; // FORCA DE INVASAO É DE 2 NO PRIMEIRO ANO
@@ -466,21 +477,27 @@ bool Mundo::mInvasao(int turno){
     // ULTIMO CONQUISTADO
     Territorio *ptr = imperio.getConquistados().back();
     // SE TEM A TECNOLOGIA DEFESAS ACRESCENTA 1 VALOR À RESISTENCIA
-    if(imperio.verificaTecnologia("defesas")){
-        ptr->setRes(ptr->getRes()+1);
-    }
-    if(val <= ptr->getRes()){
+    if(imperio.verificaTecnologia("defesas"))
+        forcaDefesa = ptr->getRes()+1;
+    else
+        forcaDefesa = 0;
+//        forcaDefesa = ptr->getRes();
+
+    if(val <= forcaDefesa){
         return false;
     }
     else{
         if(ptr->getNome() == "Inicial"){
             cout << "Ficou sem territorios disponiveis, perdeu o jogo!";
-            exit(-1);
+            phase = FIM;
+            imperio.getConquistados().pop_back();
+            return true;
         }
         imperio.getConquistados().pop_back(); // apagar do vetor de conquistados
+        territorios.push_back(ptr);
         return true;
     }
-    return false;
+
 }
 
 void Mundo::mAvanca(fase &phase) {
@@ -518,6 +535,7 @@ void Mundo::mUpdate(int turno) {
     this->flagMaisMilitar = false;
     this->flagMaisTecno = false;
     this->flagEvento = false;
+    this->flagHarvest = false;
 
     for(const auto &x : imperio.getConquistados()){
         x->update(turno);
@@ -525,6 +543,10 @@ void Mundo::mUpdate(int turno) {
 }
 
 void Mundo::mHarvest() {
+
+    if(flagHarvest)
+        return;
+
     for(const auto &it : imperio.getConquistados()){
         if(imperio.getCofre() + it->getOuro() <= imperio.getMaxCofre())
             imperio.setCofre(imperio.getCofre() + it->getOuro());
@@ -536,6 +558,7 @@ void Mundo::mHarvest() {
         else
             imperio.setArmazem(imperio.getMaxArmazem());
     }
+    flagHarvest = true;
 }
 
 string Mundo::mMostraImperio() const {

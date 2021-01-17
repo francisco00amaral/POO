@@ -27,7 +27,7 @@ enum fase{CONQUISTA, RECOLHA, COMPRA, EVENTO, AVANCA, FIM};//define a fase do tu
 enum resCria{CRIADO, TIPO_INEXISTENTE, QUANTIDADE_NEGATIVA};
 
 /*resultados possiveis da funcao mConquista*/
-enum resConquista{CONQUISTADO, NAO_CONQUISTADO, INEXISTENTE, SEM_MISSEIS,CONQ_INSUF, RE_CP, PERDEU_CP};
+enum resConquista{CONQUISTADO, NAO_CONQUISTADO, INEXISTENTE, SEM_MISSEIS, CONQ_INSUF, RE_CP, PERDEU_CP};
 
 /*resultados das funcoes maisOuro e maisProd */
 enum resMaisOP{TROCADO, NAO_TROCADO, SEM_RECURSOS, SEM_BOLSA, RE_OP};

@@ -72,8 +72,6 @@ void Interface::startGame(){
     cout << "O jogo vai comecar. Boa sorte!!! :D" << endl;
 
     while(count < 12){//o jogo só tem 12 turnos
-        cout << "\n\n" << "Turno " << count << endl;
-        cout << manager.mostraImperio() << "\n" << endl;//mostra estado do imperio
 
         switch(phase){
             case CONQUISTA:
@@ -108,9 +106,13 @@ void Interface::startGame(){
 /*código correspondente a cada fase do jogo*/
 void Interface::faseConquista(fase& phase, int& turn){
 
+    cout << "\n\n" << "Turno " << turn << endl;
+    cout << manager.mostraImperio() << "\n" << endl;//mostra estado do imperio
+
     cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ? significa opcional)" << endl;
-    cout << "conquista <nome>\tpassa\tlista <nome?>\ttoma <tipo> <nome>\tavanca\n"
-            "grava <nome>\tativa <nome>\tapaga <nome>" << endl;
+    cout << "conquista <nome>\tpassa\tavanca\tlista <nome?>" << endl;
+    cout << "DEBUG:\ttoma <tipo> <nome>\tmodifica <tipo recurso> <quantidade pretendida>\tfevento<nome-evento?>"
+            "\tgrava <nome>\tativa <nome>\tapaga <nome>" << endl;
 
     string resposta;
     getline(cin, resposta);
@@ -130,8 +132,12 @@ void Interface::faseConquista(fase& phase, int& turn){
         manager.lista(iss);
     else if(resposta == "avanca")
         manager.avanca(phase);
+    else if(resposta == "fevento")
+        manager.fevento(iss, turn, phase);
     else if(resposta == "toma")
         manager.toma(iss);
+    else if(resposta == "modifica")
+        manager.modifica(iss);
     else if(resposta == "grava")
         manager.grava(phase, iss, turn);
     else if(resposta == "ativa")
@@ -148,9 +154,13 @@ void Interface::faseRecolha(fase& phase, int& turn){
 
     manager.harvest();
 
+    cout << "\n\n" << "Turno " << turn << endl;
+    cout << manager.mostraImperio() << "\n" << endl;//mostra estado do imperio
+
     cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ? significa opcional)" << endl;
-    cout << "maisouro <quantidade>\tmaisprod <quantidade>\tavanca\n"
-            "modifica <tipo recurso> <quantidade pretendida>\tgrava <nome>\tativa <nome>\tapaga <nome>" << endl;
+    cout << "maisouro\tmaisprod\tavanca\n" << endl;
+    cout << "DEBUG:\ttoma <tipo> <nome>\tmodifica <tipo recurso> <quantidade pretendida>\tfevento<nome-evento?>"
+            "\tgrava <nome>\tativa <nome>\tapaga <nome>" << endl;
 
     string resposta;
     getline(cin, resposta);
@@ -168,6 +178,12 @@ void Interface::faseRecolha(fase& phase, int& turn){
         manager.maisProduto(iss);
     else if(resposta == "avanca")
         manager.avanca(phase);
+    else if(resposta == "lista")
+        manager.lista(iss);
+    else if(resposta == "fevento")
+        manager.fevento(iss, turn, phase);
+    else if(resposta == "toma")
+        manager.toma(iss);
     else if(resposta == "modifica")
         manager.modifica(iss);
     else if(resposta == "grava")
@@ -184,9 +200,13 @@ void Interface::faseRecolha(fase& phase, int& turn){
 
 void Interface::faseCompra(fase &phase, int& turn) {
 
+    cout << "\n\n" << "Turno " << turn << endl;
+    cout << manager.mostraImperio() << "\n" << endl;//mostra estado do imperio
+
     cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ? significa opcional)" << endl;
-    cout << "maismilitar\tadquire <tipo de tecnologia>\tmodifica <tipo de recurso> <quantidade>\tavanca\n"
-            "grava <nome>\tativa <nome>\tapaga <nome>" << endl;
+    cout << "maismilitar\tadquire <tipo de tecnologia>\tavanca\n" << endl;
+    cout << "DEBUG:\ttoma <tipo> <nome>\tmodifica <tipo recurso> <quantidade pretendida>\tfevento<nome-evento?>"
+            "\tgrava <nome>\tativa <nome>\tapaga <nome>" << endl;
 
     string resposta;
     getline(cin, resposta);
@@ -204,6 +224,12 @@ void Interface::faseCompra(fase &phase, int& turn) {
         manager.adquire(iss);
     else if(resposta == "avanca")
         manager.avanca(phase);
+    else if(resposta == "lista")
+        manager.lista(iss);
+    else if(resposta == "fevento")
+        manager.fevento(iss, turn, phase);
+    else if(resposta == "toma")
+        manager.toma(iss);
     else if(resposta == "modifica")
         manager.modifica(iss);
     else if(resposta == "grava")
@@ -219,10 +245,19 @@ void Interface::faseCompra(fase &phase, int& turn) {
 }
 
 void Interface::faseEvento(fase &phase, int& turn) {
-    cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ? significa opcional)" << endl;
-    cout << "fevento <nome-evento?>\tgrava <nome>\tativa <nome>\tapaga <nome>" << endl;
 
-    manager.evento(turn); // AQUI VAI ACONTECER O EVENTO RANDOM
+    cout << "\n\n" << "Turno " << turn << endl;
+    cout << manager.mostraImperio() << "\n" << endl;//mostra estado do imperio
+
+    cout << "Comandos disponiveis:(o que esta entre <> sao os argumentos / ? significa opcional)" << endl;
+    cout << "avanca" << endl;
+    cout << "DEBUG:\ttoma <tipo> <nome>\tmodifica <tipo recurso> <quantidade pretendida>\tfevento<nome-evento?>"
+            "\tgrava <nome>\tativa <nome>\tapaga <nome>" << endl;
+
+    manager.evento(turn, phase); // AQUI VAI ACONTECER O EVENTO RANDOM
+
+    if(phase == FIM)
+        return;
 
     string resposta;
     getline(cin, resposta);
@@ -234,10 +269,16 @@ void Interface::faseEvento(fase &phase, int& turn) {
 
     toLower(resposta);
 
-    if(resposta == "fevento")
-        manager.fevento(iss,turn);
-    else if(resposta == "avanca")
+    if(resposta == "avanca")
         manager.avanca(phase);
+    else if(resposta == "lista")
+        manager.lista(iss);
+    else if(resposta == "fevento")
+        manager.fevento(iss, turn, phase);
+    else if(resposta == "toma")
+        manager.toma(iss);
+    else if(resposta == "modifica")
+        manager.modifica(iss);
     else if(resposta == "grava")
         manager.grava(phase, iss, turn);
     else if(resposta == "ativa")

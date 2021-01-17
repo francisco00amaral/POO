@@ -329,8 +329,8 @@ void Trigger::modifica(istringstream &iss) {
     cout << "Tipo inserido nao existe." << endl;
 }
 
-void Trigger::evento(int turno){
-     resEvento res = mundo.mEvento(turno);
+void Trigger::evento(int turno, fase& phase){
+     resEvento res = mundo.mEvento(turno, phase);
      if(res == ALIANCA){
          cout << "Alianca diplomatica foi assinada!" << endl;
      }
@@ -355,7 +355,7 @@ void Trigger::evento(int turno){
 }
 
 
-void Trigger::fevento(istringstream &iss, int turn) {
+void Trigger::fevento(istringstream &iss, int turn, fase& phase) {
 
         string tipo;
         if((iss >> tipo).fail()){
@@ -363,7 +363,7 @@ void Trigger::fevento(istringstream &iss, int turn) {
             return;
         }
 
-        if(mundo.mFevento(tipo,turn))
+        if(mundo.mFevento(tipo,turn, phase))
             cout << "Evento aplicado com sucesso." << endl;
         else
             cout << "Evento pedido nao existe." << endl;
